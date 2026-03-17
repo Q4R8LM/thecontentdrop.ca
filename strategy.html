@@ -247,6 +247,28 @@
     .journey-tab{font-size:9px;padding:12px 10px;}
   }
 
+
+  .also-section{padding:80px 64px;background:var(--cream-dark);}
+  .also-inner{max-width:1100px;margin:0 auto;}
+  .also-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;margin-top:36px;}
+  .also-card{background:var(--cream);padding:40px 36px;text-decoration:none;color:inherit;display:flex;flex-direction:column;transition:background 0.2s;}
+  .also-card:hover{background:var(--forest);}
+  .also-card:hover .also-title,.also-card:hover .also-desc{color:var(--cream);}
+  .also-card:hover .also-tag,.also-card:hover .also-price{color:var(--sand);}
+  .also-tag{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;transition:color 0.2s;}
+  .also-title{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--forest);margin-bottom:10px;line-height:1.2;transition:color 0.2s;}
+  .also-desc{font-size:13px;font-weight:300;color:var(--text-body);line-height:1.6;margin-bottom:20px;flex:1;transition:color 0.2s;}
+  .also-price{font-family:'DM Mono',monospace;font-size:12px;font-weight:500;color:var(--accent);transition:color 0.2s;}
+  @media(max-width:900px){.also-section{padding:60px 28px;}.also-grid{grid-template-columns:1fr;}}
+
+  .doc-post-preview{padding:16px 20px;border-top:1px solid #EDE7D9;margin-top:8px;}
+  .doc-post-num{font-size:9px;letter-spacing:0.12em;color:#C4B49A;margin-bottom:4px;font-family:'DM Mono',monospace;}
+  .doc-post-title{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:#1E3A2F;margin-bottom:8px;}
+  .doc-post-badge{display:inline-block;font-size:8px;letter-spacing:0.1em;padding:2px 8px;background:#1E3A2F;color:#F5F0E8;margin-bottom:10px;font-family:'DM Mono',monospace;}
+  .doc-post-body{font-size:12px;line-height:1.7;color:#3A3A36;margin-bottom:8px;}
+  .doc-post-cta{font-size:12px;color:#1E3A2F;font-weight:500;margin-bottom:6px;}
+  .doc-post-tags{font-size:11px;color:#4A6741;margin-bottom:8px;}
+  .doc-post-tip{font-size:11px;color:#3A3A36;background:#EAF3E0;border-left:2px solid #4A6741;padding:6px 10px;}
 </style>
 <!-- Meta Pixel Code -->
 <script>
@@ -495,7 +517,7 @@ src="https://www.facebook.com/tr?id=1935587483876031&ev=PageView&noscript=1"
           </div>
         </div>
       </div>
-      <div class="journey-pane" id="jpane-doc">
+            <div class="journey-pane" id="jpane-doc">
         <div class="doc-mockup">
           <div class="doc-chrome">
             <div class="doc-chrome-dots"><span></span><span></span><span></span></div>
@@ -505,13 +527,22 @@ src="https://www.facebook.com/tr?id=1935587483876031&ev=PageView&noscript=1"
           <div class="doc-body">
             <div class="doc-header-band">
               <div class="doc-eyebrow">THE CONTENT DROP &nbsp;·&nbsp; YOUR DELIVERABLE</div>
-              <div class="doc-headline">Your 1-Month Social Media Strategy. <em>Built for your business.</em></div>
-              <div class="doc-business">Your Business &nbsp;·&nbsp; Delivered within 48 hours</div>
+              <div class="doc-headline">Your 1-Month Strategy. <em>Built for your business.</em></div>
+              <div class="doc-business">New Wellness Brand · Instagram + Facebook · March 2026</div>
             </div>
             <div class="doc-content">
               <div class="doc-intro-box">
-                <p><strong>Hi Sarah,</strong></p>
-                <p>Hi Emma, your strategy is built around your specific goals, platforms, and content pillars. Every recommendation is tailored to Bloom & Thread.</p>
+                <p><strong>Hi there,</strong></p>
+                <p>Everything below was built specifically for your business — your voice, your audience, your goals. Nothing recycled, nothing generic. Here's what we made for you.</p>
+              </div>
+              <div class="doc-post-preview">
+                <div class="doc-post-num">ENTRY 01</div>
+                <div class="doc-post-title">Content Pillar 1 — Education</div>
+                <div class="doc-post-badge">CONTENT PILLAR</div>
+                <div class="doc-post-body">Share what you know. Teach your audience something useful every week. This pillar builds credibility and keeps people coming back — even when they're not ready to buy yet...</div>
+                <div class="doc-post-cta">Posting schedule: Tuesday + Thursday · Best times: 8–10am and 6–8pm</div>
+                <div class="doc-post-tags">Week 1: Education · Week 2: Social proof · Week 3: Product · Week 4: Community</div>
+                <div class="doc-post-tip">Strategy note: Lead with value. Sell second. The algorithm rewards content that earns attention.</div>
               </div>
               <div class="doc-fade-out"></div>
             </div>
