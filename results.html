@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Results — The Content Drop</title>
+<meta name="description" content="Real results from small business owners who used The Content Drop. Case studies across captions, audience personas, social media strategy, and digital advertising.">
+<link rel="canonical" href="https://thecontentdrop.ca/results.html">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--cream:#F5F0E8;--cream-dark:#EDE7D9;--forest:#1E3A2F;--forest-light:#2D5240;--moss:#4A6741;--sand:#C4B49A;--sand-light:#D4C8B0;--charcoal:#1A1A18;--text-body:#3A3A36;--accent:#8B6F4E;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--charcoal);}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:20px 48px;background:rgba(245,240,232,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(196,180,154,0.3);}
+  .nav-logo{font-family:'DM Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--forest);text-decoration:none;}
+  .nav-links{display:flex;gap:36px;list-style:none;}
+  .nav-links a{font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-body);text-decoration:none;transition:color 0.2s;}
+  .nav-links a:hover,.nav-links a.active{color:var(--forest);}
+  .nav-cta{font-family:'DM Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--cream);background:var(--forest);padding:10px 22px;text-decoration:none;}
+  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;}
+  .hamburger span{display:block;width:22px;height:2px;background:var(--forest);}
+  .mobile-menu{display:none;position:fixed;top:61px;left:0;right:0;background:var(--forest);z-index:99;padding:24px 28px;flex-direction:column;gap:0;}
+  .mobile-menu a{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--cream);text-decoration:none;padding:16px 0;border-bottom:1px solid rgba(196,180,154,0.15);}
+  @media(max-width:900px){.hamburger{display:flex;}.nav-links,.nav-cta{display:none;}}
+
+  .results-hero{background:var(--forest);padding:140px 64px 80px;text-align:center;}
+  .results-eyebrow{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--sand);margin-bottom:20px;}
+  .results-headline{font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,60px);font-weight:900;color:var(--cream);line-height:1.05;margin-bottom:20px;}
+  .results-headline em{font-style:italic;color:var(--sand-light);}
+  .results-sub{font-size:16px;font-weight:300;color:rgba(245,240,232,0.6);max-width:520px;margin:0 auto;line-height:1.7;}
+
+  .cs-section{padding:80px 64px;max-width:1100px;margin:0 auto;}
+  .cs-tabs{display:flex;gap:0;border:1px solid var(--sand-light);margin-bottom:0;}
+  .cs-tab{flex:1;padding:14px 20px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-body);background:none;border:none;cursor:pointer;border-right:1px solid var(--sand-light);transition:all 0.2s;text-align:center;}
+  .cs-tab:last-child{border-right:none;}
+  .cs-tab.active{background:var(--forest);color:var(--cream);}
+  .cs-tab:hover:not(.active){background:var(--cream-dark);}
+  .cs-panes{border:1px solid var(--sand-light);border-top:none;}
+  .cs-pane{display:none;}
+  .cs-pane.active{display:block;}
+
+  .cs-header{background:var(--forest);padding:40px 48px;}
+  .cs-product-badge{display:inline-block;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;padding:4px 12px;background:rgba(196,180,154,0.15);color:var(--sand);margin-bottom:14px;}
+  .cs-eyebrow{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(196,180,154,0.45);font-family:'DM Mono',monospace;margin-bottom:12px;}
+  .cs-headline{font-family:'Playfair Display',serif;font-size:clamp(22px,3vw,32px);font-weight:900;color:var(--cream);line-height:1.15;margin-bottom:16px;}
+  .cs-headline em{font-style:italic;color:var(--sand-light);}
+  .cs-tags{display:flex;gap:8px;flex-wrap:wrap;}
+  .cs-tag{font-size:10px;padding:3px 10px;border:0.5px solid rgba(196,180,154,0.2);color:rgba(196,180,154,0.6);}
+
+  .cs-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--sand-light);}
+  .cs-stat{background:var(--cream-dark);padding:20px 24px;}
+  .cs-stat-val{font-family:'Playfair Display',serif;font-size:32px;font-weight:900;color:var(--forest);line-height:1;margin-bottom:4px;}
+  .cs-stat-label{font-size:11px;color:var(--text-body);font-weight:300;}
+
+  .cs-body{padding:40px 48px;background:var(--cream);}
+  .cs-section-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--sand-light);}
+  .cs-block{margin-bottom:32px;}
+  .cs-body p{font-size:15px;font-weight:300;line-height:1.8;color:var(--text-body);margin-bottom:12px;}
+  .cs-body strong{font-weight:500;color:var(--charcoal);}
+  .cs-quote{border-left:3px solid var(--forest);padding:16px 20px;margin:20px 0;background:var(--cream-dark);}
+  .cs-quote p{font-family:'Playfair Display',serif;font-size:16px;font-style:italic;color:var(--forest);margin:0;line-height:1.6;}
+  .cs-results-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0;}
+  .cs-result{background:var(--cream-dark);padding:16px 18px;}
+  .cs-result-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;}
+  .cs-result-val{font-size:14px;font-weight:400;color:var(--charcoal);}
+
+  .cs-cta-bar{background:var(--forest);padding:32px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;}
+  .cs-cta-text{font-family:'Playfair Display',serif;font-size:20px;font-weight:900;color:var(--cream);}
+  .cs-cta-text em{font-style:italic;color:var(--sand-light);}
+  .cs-cta-btn{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--forest);background:var(--cream);padding:13px 24px;text-decoration:none;border:none;cursor:pointer;transition:background 0.2s;}
+  .cs-cta-btn:hover{background:var(--sand-light);}
+
+  footer{background:var(--charcoal);padding:48px 64px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+  .footer-logo{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--sand);}
+  .footer-links{display:flex;gap:32px;list-style:none;}
+  .footer-links a{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(245,240,232,0.4);text-decoration:none;}
+  .footer-links a:hover{color:var(--sand);}
+  .footer-social{display:flex;gap:20px;}
+  .footer-social a{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,240,232,0.4);text-decoration:none;}
+  .footer-social a:hover{color:var(--sand);}
+  .footer-email{font-size:11px;color:rgba(245,240,232,0.35);}
+
+  @media(max-width:900px){
+    .results-hero,.cs-section{padding-left:28px;padding-right:28px;}
+    .cs-header,.cs-body,.cs-cta-bar{padding-left:28px;padding-right:28px;}
+    .cs-tabs{flex-wrap:wrap;}
+    .cs-tab{font-size:9px;padding:10px 8px;border-right:none;border-bottom:1px solid var(--sand-light);}
+    .cs-stats{grid-template-columns:1fr 1fr;}
+    .cs-results-grid{grid-template-columns:1fr;}
+    footer{flex-direction:column;gap:20px;padding:40px 28px;text-align:center;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">The Content Drop</a>
+  <ul class="nav-links">
+    <li><a href="shop.html">Shop</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="results.html" class="active">Results</a></li>
+    <li><a href="free.html">Free</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  <a href="captions.html" class="nav-cta">Get Your Captions — $45</a>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="shop.html">Shop</a>
+  <a href="blog.html">Blog</a>
+  <a href="results.html">Results</a>
+  <a href="free.html">Free</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<section class="results-hero">
+  <div class="results-eyebrow">Results</div>
+  <h1 class="results-headline">What happens when the<br><em>content is actually yours.</em></h1>
+  <p class="results-sub">Four businesses. Four products. Four different starting points. One thing in common — they stopped guessing and started showing up.</p>
+</section>
+
+<section class="cs-section">
+  <div class="cs-tabs">
+    <button class="cs-tab active" onclick="showCS('captions',this)">Captions — Sarah</button>
+    <button class="cs-tab" onclick="showCS('persona',this)">Persona — Jamie</button>
+    <button class="cs-tab" onclick="showCS('strategy',this)">Strategy — New launch</button>
+    <button class="cs-tab" onclick="showCS('ads',this)">Advertising — David</button>
+  </div>
+  <div class="cs-panes">
+
+    <!-- CAPTIONS -->
+    <div class="cs-pane active" id="cs-captions">
+      <div class="cs-header">
+        <div class="cs-product-badge">Custom Social Media Captions · $45</div>
+        <div class="cs-eyebrow">Case study · Cleaning business · Toronto</div>
+        <div class="cs-headline">She hadn't posted in four months.<br><em>Then she posted every week for a month straight.</em></div>
+        <div class="cs-tags"><span class="cs-tag">Cleaning business</span><span class="cs-tag">Instagram + Facebook</span><span class="cs-tag">Zero to consistent</span></div>
+      </div>
+      <div class="cs-stats">
+        <div class="cs-stat"><div class="cs-stat-val">4 mo</div><div class="cs-stat-label">Since her last post before ordering</div></div>
+        <div class="cs-stat"><div class="cs-stat-val">12</div><div class="cs-stat-label">Posts published in 30 days</div></div>
+        <div class="cs-stat"><div class="cs-stat-val">3</div><div class="cs-stat-label">Enquiries from social media</div></div>
+      </div>
+      <div class="cs-body">
+        <div class="cs-block">
+          <div class="cs-section-label">The situation</div>
+          <p>Sarah runs a residential cleaning business in Toronto. She'd started her Instagram two years ago with good intentions but posting had slowly dropped off. By the time she found The Content Drop she hadn't posted in four months.</p>
+          <p>It wasn't that she had nothing to say. Every time she sat down to write a caption she'd stare at it for ten minutes, close the app, and feel guilty for the rest of the day. The longer she left it the more impossible it felt to start again.</p>
+          <div class="cs-quote"><p>"I knew I should be posting. I just never knew what to say. And the longer I left it, the more impossible it felt to start again."</p></div>
+        </div>
+        <div class="cs-block">
+          <div class="cs-section-label">What she ordered</div>
+          <p>Sarah bought the Custom Social Media Captions drop for $45. She filled out her survey in six minutes — plain questions about her business, her customers, and her voice. Her Google Doc arrived 31 hours later.</p>
+          <p>24 captions — 12 for Instagram, 12 for Facebook — each one written specifically for her cleaning business, her North Toronto customers, and her warm, no-nonsense voice. She read the first one and said it sounded exactly like her.</p>
+        </div>
+        <div class="cs-block">
+          <div class="cs-section-label">Results — 30 days later</div>
+          <div class="cs-results-grid">
+            <div class="cs-result"><div class="cs-result-label">Consistency</div><div class="cs-result-val">Posted 3x per week for the first time ever</div></div>
+            <div class="cs-result"><div class="cs-result-label">Enquiries</div><div class="cs-result-val">3 DMs — 1 became a recurring client</div></div>
+            <div class="cs-result"><div class="cs-result-label">Revenue from that client</div><div class="cs-result-val">$300+ per month recurring</div></div>
+            <div class="cs-result"><div class="cs-result-label">Next step</div><div class="cs-result-val">Reordered captions for month two</div></div>
+          </div>
+          <p>The barrier was never motivation. It was the blank page. Once the words were written, Sarah posted consistently for the first time. One new recurring client paid for the drop more than six times over in month one alone.</p>
+        </div>
+      </div>
+      <div class="cs-cta-bar">
+        <div class="cs-cta-text">Ready to fill the blank page?<br><em>Get 24 custom captions for $45.</em></div>
+        <a href="captions.html" class="cs-cta-btn">Get started</a>
+      </div>
+    </div>
+
+    <!-- PERSONA -->
+    <div class="cs-pane" id="cs-persona">
+      <div class="cs-header">
+        <div class="cs-product-badge">Audience Persona Builder · $25</div>
+        <div class="cs-eyebrow">Case study · Personal training · Vancouver</div>
+        <div class="cs-headline">She thought she knew her customer.<br><em>She was marketing to the wrong person entirely.</em></div>
+        <div class="cs-tags"><span class="cs-tag">Personal trainer</span><span class="cs-tag">Instagram</span><span class="cs-tag">Messaging pivot</span></div>
+      </div>
+      <div class="cs-stats">
+        <div class="cs-stat"><div class="cs-stat-val">18 mo</div><div class="cs-stat-label">Marketing to the wrong audience</div></div>
+        <div class="cs-stat"><div class="cs-stat-val">2×</div><div class="cs-stat-label">Increase in consultation conversion</div></div>
+        <div class="cs-stat"><div class="cs-stat-val">$25</div><div class="cs-stat-label">Cost of the insight that changed everything</div></div>
+      </div>
+      <div class="cs-body">
+        <div class="cs-block">
+          <div class="cs-section-label">The situation</div>
+          <p>Jamie had been a personal trainer for three years and had built a modest Instagram following posting workouts, transformation content, and motivational clips. She was getting engagement but almost no enquiries — and the ones she did get weren't converting.</p>
+          <p>She assumed her ideal customer was 20-something women who wanted to get lean. That's who she'd been creating content for. But that wasn't who was actually booking sessions.</p>
+          <div class="cs-quote"><p>"I was putting out content I thought my ideal client wanted. But I'd never actually stopped to think about who my ideal client really was — not who I assumed she was."</p></div>
+        </div>
+        <div class="cs-block">
+          <div class="cs-section-label">What the persona builder revealed</div>
+          <p>Jamie ordered the Audience Persona Builder for $25. When her personas arrived, the primary customer wasn't the 22-year-old athlete she'd been imagining. It was Lisa — 38, two kids, returning to fitness after her second maternity leave, intimidated by gym culture, looking for someone who understood her life wasn't just about working out.</p>
+          <p>The persona also identified who to avoid — the price-shopper who wanted results in four weeks and would leave a bad review when life got in the way. Jamie recognised immediately that she'd been attracting a lot of those.</p>
+        </div>
+        <div class="cs-block">
+          <div class="cs-section-label">What changed</div>
+          <div class="cs-results-grid">
+            <div class="cs-result"><div class="cs-result-label">Messaging shift</div><div class="cs-result-val">Stopped posting workouts. Started posting real life.</div></div>
+            <div class="cs-result"><div class="cs-result-label">Conversion rate</div><div class="cs-result-val">2× higher on consultations within 60 days</div></div>
+            <div class="cs-result"><div class="cs-result-label">Client retention</div><div class="cs-result-val">Clients staying 3× longer on average</div></div>
+            <div class="cs-result"><div class="cs-result-label">Next step</div><div class="cs-result-val">Used personas to brief a captions drop</div></div>
+          </div>
+          <p>She didn't change her service. She didn't change her pricing. She changed who she was talking to — and how. That shift came from a $25 document and eight minutes on a survey.</p>
+        </div>
+      </div>
+      <div class="cs-cta-bar">
+        <div class="cs-cta-text">Know exactly who<br><em>you're talking to.</em></div>
+        <a href="persona.html" class="cs-cta-btn">Build my personas — $25</a>
+      </div>
+    </div>
+
+    <!-- STRATEGY -->
+    <div class="cs-pane" id="cs-strategy">
+      <div class="cs-header">
+        <div class="cs-product-badge">Social Media Strategy · 1 Month · $297</div>
+        <div class="cs-eyebrow">Case study · Wellness brand · Ontario</div>
+        <div class="cs-headline">A brand new business. Zero followers.<br><em>1,590 organic views in the first 24 hours.</em></div>
+        <div class="cs-tags"><span class="cs-tag">New business launch</span><span class="cs-tag">Facebook + Pinterest</span><span class="cs-tag">Zero ad spend</span></div>
+      </div>
+      <div class="cs-stats">
+        <div class="cs-stat"><div class="cs-stat-val">1,590</div><div class="cs-stat-label">Organic views — day one</div></div>
+        <div class="cs-stat"><div class="cs-stat-val">99.8%</div><div class="cs-stat-label">Non-follower reach</div></div>
+        <div class="cs-stat"><div class="cs-stat-val">$0</div><div class="cs-stat-label">Ad spend</div></div>
+      </div>
+      <div class="cs-body">
+        <div class="cs-block">
+          <div class="cs-section-label">The situation</div>
+          <p>A new wellness brand was launching its social media presence from scratch. No following, no ad budget, no prior brand recognition online. The founder had a strong product and a clear vision — but no content strategy, no plan for what to post, and no idea where to start.</p>
+          <div class="cs-quote"><p>"I didn't want to just start throwing content at the wall. I wanted a real plan — content pillars, a posting schedule, captions already written. Something I could actually follow."</p></div>
+        </div>
+        <div class="cs-block">
+          <div class="cs-section-label">What the strategy included</div>
+          <p>She ordered the 1-Month Social Media Strategy for $297. Her strategy document included four content pillars built specifically for her brand, a week-by-week posting calendar with timing guidance, 28 ready-to-post captions, visual direction for each post type, KPI guidance in plain English, and a step-by-step implementation checklist.</p>
+          <p>She followed it exactly. Posted on the days it specified. Used the captions it provided. Applied the visual direction for each post format.</p>
+        </div>
+        <div class="cs-block">
+          <div class="cs-section-label">Results — first 24 hours</div>
+          <div class="cs-results-grid">
+            <div class="cs-result"><div class="cs-result-label">Total views</div><div class="cs-result-val">1,590 across the first 5 posts</div></div>
+            <div class="cs-result"><div class="cs-result-label">Non-follower reach</div><div class="cs-result-val">99.8% — pure organic distribution</div></div>
+            <div class="cs-result"><div class="cs-result-label">Top post</div><div class="cs-result-val">350 views — educational pillar post</div></div>
+            <div class="cs-result"><div class="cs-result-label">Ad spend</div><div class="cs-result-val">$0 — entirely organic</div></div>
+          </div>
+          <p>The algorithm recognised that people were stopping and engaging with the content and began distributing it to new audiences on its own. That's what happens when content is built around the audience from the start.</p>
+        </div>
+      </div>
+      <div class="cs-cta-bar">
+        <div class="cs-cta-text">Ready to launch with<br><em>a real strategy behind you?</em></div>
+        <a href="strategy.html" class="cs-cta-btn">View strategy plans</a>
+      </div>
+    </div>
+
+    <!-- ADS -->
+    <div class="cs-pane" id="cs-ads">
+      <div class="cs-header">
+        <div class="cs-product-badge">Digital Advertising Strategy · Core · $1,200</div>
+        <div class="cs-eyebrow">Case study · Restaurant · Calgary</div>
+        <div class="cs-headline">He'd spent $800 boosting posts.<br><em>Not a single booking came from it.</em></div>
+        <div class="cs-tags"><span class="cs-tag">Restaurant</span><span class="cs-tag">Meta ads</span><span class="cs-tag">First real campaign</span></div>
+      </div>
+      <div class="cs-stats">
+        <div class="cs-stat"><div class="cs-stat-val">$800</div><div class="cs-stat-label">Wasted on boosted posts before ordering</div></div>
+        <div class="cs-stat"><div class="cs-stat-val">$12</div><div class="cs-stat-label">Cost per reservation — first real campaign</div></div>
+        <div class="cs-stat"><div class="cs-stat-val">4.2×</div><div class="cs-stat-label">Return on ad spend — month one</div></div>
+      </div>
+      <div class="cs-body">
+        <div class="cs-block">
+          <div class="cs-section-label">The situation</div>
+          <p>David owns a restaurant in Calgary. He'd been boosting Facebook posts for almost a year — spending $50-100 whenever he felt the page needed a push. He had no way of knowing if it was working. He assumed it was. It wasn't.</p>
+          <div class="cs-quote"><p>"I thought boosting posts was advertising. I had no idea I was just paying Facebook to show my posts to random people with no intention of ever coming in."</p></div>
+        </div>
+        <div class="cs-block">
+          <div class="cs-section-label">What the strategy covered</div>
+          <p>David ordered the Digital Advertising Strategy Core for $1,200. His strategy included a platform recommendation with clear reasoning, precise audience targeting parameters for Meta, fully written ad copy for four different ads, a budget allocation framework, a campaign setup guide with a 20-item pre-launch checklist, and KPI benchmarks so he'd know what good actually looked like.</p>
+          <p>Most importantly it explained clearly why boosting posts had never worked — and what to do instead.</p>
+        </div>
+        <div class="cs-block">
+          <div class="cs-section-label">Results — first campaign month</div>
+          <div class="cs-results-grid">
+            <div class="cs-result"><div class="cs-result-label">Cost per reservation</div><div class="cs-result-val">$12 — versus $0 from boosting</div></div>
+            <div class="cs-result"><div class="cs-result-label">Return on ad spend</div><div class="cs-result-val">4.2× in month one</div></div>
+            <div class="cs-result"><div class="cs-result-label">Budget efficiency</div><div class="cs-result-val">Same monthly spend, measurable results</div></div>
+            <div class="cs-result"><div class="cs-result-label">Next step</div><div class="cs-result-val">Upgraded to Enhanced tier for month two</div></div>
+          </div>
+          <p>He didn't spend more money. He spent the same money with a strategy behind it. That's the difference between advertising and boosting posts. One is a casino. The other is a system.</p>
+        </div>
+      </div>
+      <div class="cs-cta-bar">
+        <div class="cs-cta-text">Stop guessing.<br><em>Start advertising with a strategy.</em></div>
+        <a href="advertising.html" class="cs-cta-btn">View advertising plans</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <span class="footer-logo">The Content Drop</span>
+  <ul class="footer-links">
+    <li><a href="shop.html">Shop</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="results.html">Results</a></li>
+    <li><a href="free.html">Free</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="footer-social">
+    <a href="https://www.facebook.com/profile.php?id=61577504456264" target="_blank">Facebook</a>
+    <a href="https://pinterest.com/thecontentdrop" target="_blank">Pinterest</a>
+  </div>
+  <span class="footer-email">hello.thecontentdrop@gmail.com</span>
+</footer>
+
+<script>
+function toggleMenu(){
+  var m=document.getElementById('mobileMenu');
+  if(m){m.style.display=(m.style.display==='flex')?'none':'flex';}
+}
+function showCS(name, btn) {
+  document.querySelectorAll('.cs-pane').forEach(function(p){ p.classList.remove('active'); });
+  document.querySelectorAll('.cs-tab').forEach(function(b){ b.classList.remove('active'); });
+  document.getElementById('cs-'+name).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
+</body>
+</html>

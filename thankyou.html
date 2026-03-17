@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Thank You — The Content Drop</title>
+<meta name="description" content="Thank you for your purchase. Check your email for your survey link.">
+<meta name="keywords" content="the content drop">
+<meta property="og:title" content="Thank You — The Content Drop">
+<meta property="og:description" content="Thank you for your purchase. Check your email for your survey link.">
+<meta property="og:url" content="https://thecontentdrop.ca/thankyou.html">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Thank You — The Content Drop">
+<meta name="twitter:description" content="Thank you for your purchase. Check your email for your survey link.">
+<link rel="canonical" href="https://thecontentdrop.ca/thankyou.html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>You're In — The Content Drop</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--cream:#F5F0E8;--cream-dark:#EDE7D9;--forest:#1E3A2F;--forest-light:#2D5240;--sand:#C4B49A;--sand-light:#D4C8B0;--charcoal:#1A1A18;--text-body:#3A3A36;--accent:#8B6F4E;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'DM Sans',sans-serif;background:var(--forest);color:var(--cream);min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 24px;text-align:center;}
+
+  .ty-logo{font-family:'DM Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--sand);margin-bottom:64px;opacity:0;animation:fadeUp 0.6s ease 0.1s forwards;}
+
+  .ty-check{width:64px;height:64px;border:2px solid rgba(196,180,154,0.4);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 40px;opacity:0;animation:fadeUp 0.6s ease 0.3s forwards;}
+  .ty-check::after{content:'✓';font-family:'DM Mono',monospace;font-size:22px;color:var(--sand);}
+
+  .ty-eyebrow{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--sand);margin-bottom:20px;display:block;opacity:0;animation:fadeUp 0.6s ease 0.4s forwards;}
+
+  .ty-title{font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,64px);font-weight:900;color:var(--cream);line-height:1.05;margin-bottom:20px;opacity:0;animation:fadeUp 0.7s ease 0.5s forwards;}
+  .ty-title em{font-style:italic;color:var(--sand-light);}
+
+  .ty-sub{font-size:15px;font-weight:300;color:rgba(245,240,232,0.65);max-width:480px;margin:0 auto 64px;line-height:1.8;opacity:0;animation:fadeUp 0.7s ease 0.6s forwards;}
+
+  .what-happens{background:rgba(255,255,255,0.05);border:1px solid rgba(196,180,154,0.15);padding:48px;max-width:560px;width:100%;margin:0 auto 48px;opacity:0;animation:fadeUp 0.7s ease 0.7s forwards;}
+  .wh-title{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--sand);margin-bottom:32px;}
+  .wh-steps{display:flex;flex-direction:column;gap:0;}
+  .wh-step{display:flex;gap:24px;align-items:flex-start;padding:20px 0;border-bottom:1px solid rgba(196,180,154,0.1);text-align:left;}
+  .wh-step:last-child{border-bottom:none;}
+  .wh-num{font-family:'Playfair Display',serif;font-size:28px;font-weight:900;color:rgba(196,180,154,0.3);flex-shrink:0;line-height:1;width:32px;}
+  .wh-content{}
+  .wh-step-title{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--cream);margin-bottom:4px;}
+  .wh-step-body{font-size:13px;font-weight:300;color:rgba(245,240,232,0.55);line-height:1.6;}
+  .wh-step-timing{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--sand);margin-top:6px;}
+
+  .ty-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;opacity:0;animation:fadeUp 0.7s ease 0.9s forwards;}
+  .btn-light{font-family:'DM Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--forest);background:var(--cream);padding:16px 36px;text-decoration:none;transition:all 0.2s;}
+  .btn-light:hover{background:var(--sand-light);}
+  .btn-outline{font-family:'DM Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--cream);background:transparent;border:1px solid rgba(245,240,232,0.25);padding:16px 36px;text-decoration:none;transition:all 0.2s;}
+  .btn-outline:hover{border-color:var(--cream);}
+
+  @keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+
+  /* Mobile menu */
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+  .hamburger span { display: block; width: 22px; height: 2px; background: var(--forest); transition: all 0.3s; }
+  .mobile-menu { display: none; position: fixed; top: 61px; left: 0; right: 0; background: var(--forest); z-index: 99; padding: 24px 28px; flex-direction: column; gap: 0; }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cream); text-decoration: none; padding: 16px 0; border-bottom: 1px solid rgba(196,180,154,0.15); }
+  .mobile-menu a:last-child { border-bottom: none; }
+  @media (max-width: 900px) {
+    .hamburger { display: flex; }
+    .nav-cta { display: none; }
+  }
+
+
+  .footer-social { display: flex; gap: 20px; align-items: center; }
+  .footer-social a { color: var(--sand); opacity: 0.5; transition: opacity 0.2s; text-decoration: none; }
+  .footer-social a:hover { opacity: 1; }
+
+</style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1935587483876031');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1935587483876031&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<script>
+fbq('track', 'Purchase', {value: 45.00, currency: 'CAD'});
+</script>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4TWPFW6PSF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4TWPFW6PSF');
+</script>
+<!-- End Google Analytics -->
+</head>
+<body>
+
+<div class="ty-logo">The Content Drop</div>
+
+<div class="ty-check"></div>
+
+<span class="ty-eyebrow">Purchase Confirmed</span>
+<h1 class="ty-title">Your drop is<br><em>on its way.</em></h1>
+<p class="ty-sub">You made a great call. Check your inbox — here's exactly what happens next so you know what to expect.</p>
+
+<div class="what-happens">
+  <div class="wh-title">What Happens Next</div>
+  <div class="wh-steps">
+    <div class="wh-step">
+      <div class="wh-num">1</div>
+      <div class="wh-content">
+        <div class="wh-step-title">Check your email</div>
+        <p class="wh-step-body">Your private survey link is on its way to your inbox right now. Check your spam folder if you don't see it within the hour.</p>
+        <div class="wh-step-timing">Within 24 hours</div>
+      </div>
+    </div>
+    <div class="wh-step">
+      <div class="wh-num">2</div>
+      <div class="wh-content">
+        <div class="wh-step-title">Complete your survey</div>
+        <p class="wh-step-body">Takes about 5–10 minutes. The more detail you give about your business, audience, and tone — the more tailored your content will be.</p>
+        <div class="wh-step-timing">At your convenience · Link valid for 30 days</div>
+      </div>
+    </div>
+    <div class="wh-step">
+      <div class="wh-num">3</div>
+      <div class="wh-content">
+        <div class="wh-step-title">Receive your content</div>
+        <p class="wh-step-body">Your custom content lands in your inbox as a Google Doc — ready to open, copy, and post. No formatting needed.</p>
+        <div class="wh-step-timing">Within 48 hours of survey submission</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ty-actions">
+  <a href="shop.html" class="btn-light">Browse More Drops</a>
+  <a href="index.html" class="btn-outline">Back to Home</a>
+</div>
+<script>
+function toggleMenu(){
+  var m=document.getElementById('mobileMenu');
+  if(m){m.style.display=(m.style.display==='flex')?'none':'flex';}
+}
+document.querySelectorAll('.faq-q').forEach(function(q){
+  q.addEventListener('click',function(){
+    var item=q.parentElement;
+    var isOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});
+    if(!isOpen){item.classList.add('open');}
+  });
+});
+</script>
+</body>
+</html>

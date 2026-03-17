@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Shop — Custom Marketing Content for Small Business | The Content Drop</title>
+<meta name="description" content="Browse all Content Drop products — custom social media captions, marketing strategies, digital advertising strategies, and audience persona builders for small business owners.">
+<meta name="keywords" content="social media captions, marketing strategy, digital advertising strategy, audience persona, small business marketing">
+<meta property="og:title" content="Shop — Custom Marketing Content for Small Business | The Content Drop">
+<meta property="og:description" content="Browse all Content Drop products — custom social media captions, marketing strategies, digital advertising strategies, and audience persona builders for small business owners.">
+<meta property="og:url" content="https://thecontentdrop.ca/shop.html">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Shop — Custom Marketing Content for Small Business | The Content Drop">
+<meta name="twitter:description" content="Browse all Content Drop products — custom social media captions, marketing strategies, digital advertising strategies, and audience persona builders for small business owners.">
+<link rel="canonical" href="https://thecontentdrop.ca/shop.html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shop — The Content Drop</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F5F0E8;
+    --cream-dark: #EDE7D9;
+    --forest: #1E3A2F;
+    --forest-light: #2D5240;
+    --sand: #C4B49A;
+    --sand-light: #D4C8B0;
+    --charcoal: #1A1A18;
+    --text-body: #3A3A36;
+    --accent: #8B6F4E;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--charcoal); overflow-x: hidden; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 48px;
+    background: rgba(245,240,232,0.92); backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(196,180,154,0.3);
+  }
+  .nav-logo { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--forest); text-decoration: none; }
+  .nav-links { display: flex; gap: 36px; list-style: none; }
+  .nav-links a { font-size: 12px; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-body); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--forest); }
+  .nav-cta { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--cream); background: var(--forest); padding: 10px 22px; text-decoration: none; transition: background 0.2s; }
+  .nav-cta:hover { background: var(--forest-light); }
+
+  /* PAGE HEADER */
+  .page-header {
+    background: var(--forest);
+    padding: 160px 64px 80px;
+    text-align: center;
+  }
+  .page-eyebrow { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--sand); display: block; margin-bottom: 20px; }
+  .page-title { font-family: 'Playfair Display', serif; font-size: clamp(40px, 5vw, 64px); font-weight: 900; color: var(--cream); line-height: 1.05; margin-bottom: 20px; }
+  .page-title em { font-style: italic; color: var(--sand-light); }
+  .page-sub { font-size: 15px; font-weight: 300; color: rgba(245,240,232,0.65); max-width: 520px; margin: 0 auto; line-height: 1.7; }
+
+  /* FILTER TABS */
+  .filter-bar {
+    background: var(--cream-dark);
+    padding: 28px 64px;
+    display: flex;
+    gap: 8px;
+    border-bottom: 1px solid var(--sand-light);
+    flex-wrap: wrap;
+  }
+  .filter-btn {
+    font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+    padding: 10px 22px; border: 1px solid var(--sand-light); background: transparent;
+    color: var(--text-body); cursor: pointer; transition: all 0.2s;
+  }
+  .filter-btn:hover, .filter-btn.active { background: var(--forest); color: var(--cream); border-color: var(--forest); }
+
+  /* SHOP GRID */
+  .shop-section { padding: 80px 64px 120px; max-width: 1300px; margin: 0 auto; }
+
+  .category-label {
+    font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--sand); margin-bottom: 32px; padding-bottom: 16px;
+    border-bottom: 1px solid var(--sand-light);
+  }
+
+  .product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-bottom: 80px; }
+
+  .product-card {
+    background: var(--cream-dark);
+    padding: 48px 40px;
+    display: flex; flex-direction: column;
+    transition: background 0.3s;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    overflow: hidden;
+  }
+  .product-card:hover { background: var(--forest); }
+  .product-card:hover .product-name,
+  .product-card:hover .product-desc { color: var(--cream); }
+  .product-card:hover .product-price { color: var(--sand-light); }
+  .product-card:hover .product-tag { color: var(--sand); border-color: rgba(196,180,154,0.3); }
+  .product-card:hover .card-arrow { color: var(--cream); }
+
+  .product-tag {
+    font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--sand); border: 1px solid var(--sand-light); padding: 6px 14px;
+    display: inline-block; margin-bottom: 28px; width: fit-content;
+    transition: all 0.3s;
+  }
+  .product-tag.featured { background: var(--forest); color: var(--cream); border-color: var(--forest); }
+  .product-card:hover .product-tag.featured { background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.2); }
+
+  .product-name { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--forest); margin-bottom: 16px; line-height: 1.2; transition: color 0.3s; }
+  .product-desc { font-size: 13px; font-weight: 300; line-height: 1.7; color: var(--text-body); margin-bottom: 32px; flex: 1; transition: color 0.3s; }
+  .product-price { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 900; color: var(--forest); margin-bottom: 6px; transition: color 0.3s; }
+  .product-price-note { font-size: 12px; color: var(--accent); margin-bottom: 28px; transition: color 0.3s; }
+  .card-arrow { font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--forest); transition: color 0.3s; }
+
+  /* FOOTER */
+  footer { background: var(--charcoal); padding: 48px 64px; display: flex; justify-content: space-between; align-items: center; }
+  .footer-logo { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sand); }
+  .footer-links { display: flex; gap: 32px; list-style: none; }
+  .footer-links a { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(196,180,154,0.5); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--sand); }
+  .footer-email { font-size: 12px; color: rgba(196,180,154,0.4); }
+
+  @media (max-width: 900px) {
+    nav { padding: 18px 24px; }
+    .nav-links { display: none; }
+    .page-header, .shop-section, .filter-bar { padding-left: 28px; padding-right: 28px; }
+    .product-grid { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 24px; padding: 40px 28px; text-align: center; }
+    .footer-links { flex-wrap: wrap; justify-content: center; }
+  }
+
+  /* Mobile menu */
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+  .hamburger span { display: block; width: 22px; height: 2px; background: var(--forest); transition: all 0.3s; }
+  .mobile-menu { display: none; position: fixed; top: 61px; left: 0; right: 0; background: var(--forest); z-index: 99; padding: 24px 28px; flex-direction: column; gap: 0; }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cream); text-decoration: none; padding: 16px 0; border-bottom: 1px solid rgba(196,180,154,0.15); }
+  .mobile-menu a:last-child { border-bottom: none; }
+  @media (max-width: 900px) {
+    .hamburger { display: flex; }
+    .nav-cta { display: none; }
+  }
+
+
+  .footer-social { display: flex; gap: 20px; align-items: center; }
+  .footer-social a { color: var(--sand); opacity: 0.5; transition: opacity 0.2s; text-decoration: none; }
+  .footer-social a:hover { opacity: 1; }
+
+</style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1935587483876031');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1935587483876031&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4TWPFW6PSF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4TWPFW6PSF');
+</script>
+<!-- End Google Analytics -->
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">The Content Drop</a>
+  <ul class="nav-links">
+    <li><a href="shop.html" class="active">Shop</a></li>
+    <li><a href="results.html">Results</a></li>
+    <li><a href="free.html">Free</a></li>
+    <li><a href="results.html">Results</a>
+  <a href="free.html">Free</a>
+  <a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="captions.html" class="nav-cta">Get Captions — $45</a>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobileMenu" style="display:none;">
+  <a href="shop.html" onclick="toggleMenu()">Shop</a>
+  <a href="about.html" onclick="toggleMenu()">About</a>
+  <a href="contact.html" onclick="toggleMenu()">Contact</a>
+  <a href="https://buy.stripe.com/cNi14n635frj7h9fFtgMw00" style="color:#C4B49A;margin-top:8px;" onclick="toggleMenu()">Get Captions — $45</a>
+</div>
+
+<div class="page-header">
+  <span class="page-eyebrow">The Content Drop</span>
+  <h1 class="page-title">Custom marketing content.<br><em>Built for your business.</em></h1>
+  <p class="page-sub">Every drop is built from your survey — not a template, not a guess. Pick what you need today.</p>
+</div>
+
+<div class="filter-bar">
+  <button class="filter-btn active" onclick="filterProducts('all', this)">All Drops</button>
+  <button class="filter-btn" onclick="filterProducts('captions', this)">Social Captions</button>
+  <button class="filter-btn" onclick="filterProducts('strategy', this)">Marketing Strategy</button>
+  <button class="filter-btn" onclick="filterProducts('advertising', this)">Digital Advertising</button>
+  <button class="filter-btn" onclick="filterProducts('persona', this)">Audience Persona</button>
+</div>
+
+<div class="shop-section">
+
+  <!-- MOST POPULAR -->
+  <div class="category-label" data-cat="captions">Start Here</div>
+  <div class="product-grid" style="margin-bottom:80px;">
+    <a href="captions.html" class="product-card" data-cat="captions">
+      <span class="product-tag featured">Most Popular</span>
+      <div class="product-name">Custom Social Media Captions</div>
+      <p class="product-desc">24 original captions written for your business, audience, and voice. Delivered as a ready-to-post Google Doc within 48 hours of your survey submission.</p>
+      <div class="product-price">$45</div>
+      <div class="product-price-note">One-time · 48-hour delivery</div>
+      <span class="card-arrow">View Drop →</span>
+    </a>
+    <a href="persona.html" class="product-card" data-cat="persona">
+      <span class="product-tag">Foundation</span>
+      <div class="product-name">Audience Persona Builder</div>
+      <p class="product-desc">Know exactly who you're marketing to. A detailed customer profile built from your survey — demographics, motivations, pain points, and how to reach them.</p>
+      <div class="product-price">$25</div>
+      <div class="product-price-note">One-time · 48-hour delivery</div>
+      <span class="card-arrow">View Drop →</span>
+    </a>
+  </div>
+
+  <!-- STRATEGY -->
+  <div class="category-label" data-cat="strategy">Marketing Strategy</div>
+  <div class="product-grid" style="margin-bottom:80px;">
+    <a href="strategy.html" class="product-card" data-cat="strategy">
+      <span class="product-tag">1-Month Plan</span>
+      <div class="product-name">Social Media Marketing Strategy</div>
+      <p class="product-desc">A fully custom social media plan for one month. Content pillars, posting schedule, engagement tactics, and tracking guidance — all built from your survey.</p>
+      <div class="product-price">$297</div>
+      <div class="product-price-note">One-time · 48-hour delivery</div>
+      <span class="card-arrow">View Drop →</span>
+    </a>
+    <a href="strategy.html" class="product-card" data-cat="strategy">
+      <span class="product-tag">3-Month Plan</span>
+      <div class="product-name">Social Media Marketing Strategy</div>
+      <p class="product-desc">Three months of custom social media strategy. Deeper planning, more posts, and expanded guidance for sustained, measurable growth over a full quarter.</p>
+      <div class="product-price">$497</div>
+      <div class="product-price-note">One-time · 5-day delivery</div>
+      <span class="card-arrow">View Drop →</span>
+    </a>
+    <a href="strategy.html" class="product-card" data-cat="strategy">
+      <span class="product-tag">6-Month Plan</span>
+      <div class="product-name">Social Media Marketing Strategy</div>
+      <p class="product-desc">A six-month roadmap built entirely around your business. The most comprehensive strategy drop — for owners serious about long-term, consistent growth.</p>
+      <div class="product-price">$797</div>
+      <div class="product-price-note">One-time · 10-day delivery</div>
+      <span class="card-arrow">View Drop →</span>
+    </a>
+  </div>
+
+  <!-- ADVERTISING -->
+  <div class="category-label" data-cat="advertising">Digital Advertising</div>
+  <div class="product-grid">
+    <a href="advertising.html" class="product-card" data-cat="advertising">
+      <span class="product-tag">Core</span>
+      <div class="product-name">Digital Advertising Strategy</div>
+      <p class="product-desc">Ad channels, campaign structure, copy, creative guidance, targeting, and optimization instructions. Everything you need to launch your first campaign with confidence.</p>
+      <div class="product-price">$1,200</div>
+      <div class="product-price-note">One-time · 5-day delivery</div>
+      <span class="card-arrow">View Drop →</span>
+    </a>
+    <a href="advertising.html" class="product-card" data-cat="advertising">
+      <span class="product-tag">Enhanced</span>
+      <div class="product-name">Digital Advertising Strategy</div>
+      <p class="product-desc">Everything in Core plus advanced pacing, testing schedules, and KPI tracking templates. Built for business owners ready to scale their ad spend strategically.</p>
+      <div class="product-price">$1,700</div>
+      <div class="product-price-note">One-time · 7-day delivery</div>
+      <span class="card-arrow">View Drop →</span>
+    </a>
+    <a href="advertising.html" class="product-card" data-cat="advertising">
+      <span class="product-tag">Premium</span>
+      <div class="product-name">Digital Advertising Strategy</div>
+      <p class="product-desc">Everything in Enhanced plus a post-campaign review with actionable next-step recommendations based on your real results. The complete advertising package.</p>
+      <div class="product-price">$2,200</div>
+      <div class="product-price-note">One-time · 10-day delivery</div>
+      <span class="card-arrow">View Drop →</span>
+    </a>
+  </div>
+
+</div>
+
+<footer>
+  <span class="footer-logo">The Content Drop</span>
+  <ul class="footer-links">
+    <li><a href="shop.html">Shop</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="results.html">Results</a></li>
+    <li><a href="free.html">Free</a></li>
+    <li><a href="results.html">Results</a>
+  <a href="free.html">Free</a>
+  <a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="footer-social">
+    <a href="https://www.facebook.com/profile.php?id=61577504456264" target="_blank">Facebook</a>
+    <a href="https://pinterest.com/thecontentdrop" target="_blank">Pinterest</a>
+  </div>
+  <span class="footer-email">hello.thecontentdrop@gmail.com</span>
+</footer>
+<script>
+function toggleMenu(){
+  var m=document.getElementById('mobileMenu');
+  if(m){m.style.display=(m.style.display==='flex')?'none':'flex';}
+}
+function filterProducts(cat, btn) {
+  document.querySelectorAll('.filter-btn').forEach(function(b){ b.classList.remove('active'); });
+  btn.classList.add('active');
+  document.querySelectorAll('.product-card').forEach(function(card){
+    if(cat === 'all' || card.getAttribute('data-cat') === cat){
+      card.style.display = '';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+  document.querySelectorAll('.category-label').forEach(function(label){
+    if(cat === 'all' || label.getAttribute('data-cat') === cat){
+      label.style.display = '';
+    } else {
+      label.style.display = 'none';
+    }
+  });
+}
+document.querySelectorAll('.faq-q').forEach(function(q){
+  q.addEventListener('click',function(){
+    var item=q.parentElement;
+    var isOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});
+    if(!isOpen){item.classList.add('open');}
+  });
+});
+</script>
+</body>
+</html>
