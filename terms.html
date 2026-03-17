@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service — The Content Drop</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--cream:#F5F0E8;--cream-dark:#EDE7D9;--forest:#1E3A2F;--forest-light:#2D5240;--sand:#C4B49A;--sand-light:#D4C8B0;--charcoal:#1A1A18;--text-body:#3A3A36;--accent:#8B6F4E;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--charcoal);}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:20px 48px;background:rgba(245,240,232,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(196,180,154,0.3);}
+  .nav-logo{font-family:'DM Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--forest);text-decoration:none;}
+  .nav-links{display:flex;gap:36px;list-style:none;}
+  .nav-links a{font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-body);text-decoration:none;transition:color 0.2s;}
+  .nav-links a:hover{color:var(--forest);}
+  .nav-cta{font-family:'DM Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--cream);background:var(--forest);padding:10px 22px;text-decoration:none;}
+  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;}
+  .hamburger span{display:block;width:22px;height:2px;background:var(--forest);}
+  .mobile-menu{display:none;position:fixed;top:61px;left:0;right:0;background:var(--forest);z-index:99;padding:24px 28px;flex-direction:column;gap:0;}
+  .mobile-menu a{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--cream);text-decoration:none;padding:16px 0;border-bottom:1px solid rgba(196,180,154,0.15);}
+  @media(max-width:900px){.hamburger{display:flex;}.nav-links,.nav-cta{display:none;}}
+  .page-header{background:var(--forest);padding:140px 64px 80px;}
+  .page-eyebrow{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--sand);display:block;margin-bottom:20px;}
+  .page-title{font-family:'Playfair Display',serif;font-size:clamp(36px,4vw,52px);font-weight:900;color:var(--cream);line-height:1.05;}
+  .page-title em{font-style:italic;color:var(--sand-light);}
+  .content{max-width:760px;margin:0 auto;padding:72px 64px;}
+  .updated{font-family:'DM Mono',monospace;font-size:11px;color:var(--accent);margin-bottom:48px;letter-spacing:0.08em;}
+  .section{margin-bottom:48px;}
+  .section h2{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--forest);margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--sand-light);}
+  .section p{font-size:15px;font-weight:300;line-height:1.8;color:var(--text-body);margin-bottom:14px;}
+  .section p:last-child{margin-bottom:0;}
+  footer{background:var(--charcoal);padding:48px 64px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+  .footer-logo{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--sand);}
+  .footer-links{display:flex;gap:32px;list-style:none;}
+  .footer-links a{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(196,180,154,0.4);text-decoration:none;}
+  .footer-links a:hover{color:var(--sand);}
+  .footer-email{font-size:11px;color:rgba(196,180,154,0.35);}
+  @media(max-width:900px){.page-header,.content{padding-left:28px;padding-right:28px;}footer{flex-direction:column;gap:20px;padding:40px 28px;text-align:center;}.footer-links{flex-wrap:wrap;justify-content:center;}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">The Content Drop</a>
+  <ul class="nav-links">
+    <li><a href="shop.html">Shop</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="results.html">Results</a></li>
+    <li><a href="free.html">Free</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  <a href="captions.html" class="nav-cta">Get captions — $45</a>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="shop.html">Shop</a>
+  <a href="blog.html">Blog</a>
+  <a href="results.html">Results</a>
+  <a href="free.html">Free</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<div class="page-header">
+  <span class="page-eyebrow">Legal</span>
+  <h1 class="page-title">Terms of<br><em>Service.</em></h1>
+</div>
+
+<div class="content">
+  <div class="updated">Last updated: March 2026</div>
+
+  <div class="section">
+    <h2>1. What we provide</h2>
+    <p>The Content Drop provides custom digital marketing content including social media captions, audience personas, social media strategies, and digital advertising strategies. All deliverables are custom-built from information you provide through our survey process and delivered as Google Docs.</p>
+    <p>We do not provide graphic design, photography, videography, ad management, account management, or any ongoing services beyond what is included in your purchased drop.</p>
+  </div>
+
+  <div class="section">
+    <h2>2. No guarantees of results</h2>
+    <p>We provide tools, strategies, and content — not guarantees of business outcomes. Results from using our deliverables depend on many factors outside our control including how you implement the content, your industry, your audience, your posting consistency, and platform algorithm changes.</p>
+    <p>We do not guarantee any specific number of followers, leads, sales, engagement rates, or other measurable outcomes from using our products.</p>
+  </div>
+
+  <div class="section">
+    <h2>3. Your survey submissions</h2>
+    <p>By submitting a survey you confirm that all information provided is general in nature and that you own the rights to any brand information, copy, or materials you share with us. Do not submit confidential business information, client data, financial figures, passwords, or any information you would not be comfortable sharing with a third-party service provider.</p>
+    <p>We only need general information about your business, audience, voice, and goals. Use placeholders or approximate descriptions wherever specific private details are not necessary.</p>
+    <p>You confirm that any information submitted does not infringe on the intellectual property rights of any third party.</p>
+  </div>
+
+  <div class="section">
+    <h2>4. All sales are final</h2>
+    <p>Because all products are fully custom digital deliverables built specifically from your survey responses, all sales are final once your survey has been submitted. No refunds will be issued after survey submission.</p>
+    <p>If you have questions about what is included in any product, please contact us before purchasing at hello.thecontentdrop@gmail.com.</p>
+  </div>
+
+  <div class="section">
+    <h2>5. Delivery timelines</h2>
+    <p>We aim to deliver all products within the timeframes stated on each product page. These are targets, not guarantees. Delivery begins after your survey is submitted, not after purchase. Survey links are valid for 30 days from the date of purchase.</p>
+  </div>
+
+  <div class="section">
+    <h2>6. Intellectual property</h2>
+    <p>Upon delivery of your completed drop, you own the content delivered and may use it for any lawful commercial purpose including posting, editing, repurposing, and distributing across platforms.</p>
+    <p>The Content Drop retains the right to use anonymised, non-identifiable examples of our work for marketing and portfolio purposes.</p>
+  </div>
+
+  <div class="section">
+    <h2>7. Limitation of liability</h2>
+    <p>The Content Drop is not liable for any indirect, incidental, or consequential damages resulting from the use or inability to use our products. Our total liability for any claim arising from a purchase shall not exceed the amount paid for that specific product.</p>
+  </div>
+
+  <div class="section">
+    <h2>8. Contact</h2>
+    <p>Questions about these terms can be directed to hello.thecontentdrop@gmail.com.</p>
+  </div>
+</div>
+
+<footer>
+  <span class="footer-logo">The Content Drop</span>
+  <ul class="footer-links">
+    <li><a href="shop.html">Shop</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="results.html">Results</a></li>
+    <li><a href="free.html">Free</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="terms.html">Terms</a></li>
+    <li><a href="privacy.html">Privacy</a></li>
+  </ul>
+  <div class="footer-social">
+    <a href="https://www.facebook.com/profile.php?id=61577504456264" target="_blank">Facebook</a>
+    <a href="https://pinterest.com/thecontentdrop" target="_blank">Pinterest</a>
+  </div>
+  <span class="footer-email">hello.thecontentdrop@gmail.com</span>
+</footer>
+<script>function toggleMenu(){var m=document.getElementById('mobileMenu');if(m){m.style.display=(m.style.display==='flex')?'none':'flex';}}</script>
+</body>
+</html>
