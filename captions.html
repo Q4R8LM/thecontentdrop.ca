@@ -260,6 +260,17 @@
   .also-price{font-family:'DM Mono',monospace;font-size:12px;font-weight:500;color:var(--accent);transition:color 0.2s;}
   @media(max-width:900px){.also-section{padding:60px 28px;}.also-grid{grid-template-columns:1fr;}}
 
+  .industries-section{padding:80px 64px;background:var(--cream);}
+  .industries-inner{max-width:1100px;margin:0 auto;}
+  .industry-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;margin-top:40px;margin-bottom:28px;}
+  .industry-link{display:flex;flex-direction:column;justify-content:space-between;background:var(--cream-dark);padding:28px 24px;text-decoration:none;transition:background 0.2s;min-height:96px;}
+  .industry-link:hover{background:var(--forest);}
+  .industry-link:hover .industry-name,.industry-link:hover .industry-arrow{color:var(--cream);}
+  .industry-name{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--forest);line-height:1.2;}
+  .industry-arrow{font-family:'DM Mono',monospace;font-size:13px;color:var(--accent);margin-top:12px;transition:color 0.2s;}
+  .industries-note{font-size:13px;font-weight:300;color:var(--text-body);max-width:560px;line-height:1.7;}
+  @media(max-width:900px){.industries-section{padding:60px 28px;}.industry-grid{grid-template-columns:repeat(2,1fr);}}
+
   .doc-post-preview{padding:16px 20px;border-top:1px solid #EDE7D9;margin-top:8px;}
   .doc-post-num{font-size:9px;letter-spacing:0.12em;color:#C4B49A;margin-bottom:4px;font-family:'DM Mono',monospace;}
   .doc-post-title{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:#1E3A2F;margin-bottom:8px;}
@@ -571,6 +582,36 @@ src="https://www.facebook.com/tr?id=1935587483876031&ev=PageView&noscript=1"
       <div class="faq-q">What's your refund policy?</div>
       <div class="faq-a">All sales are final on custom digital products. That said, if there's ever an issue with your delivery — a missing caption, incorrect platform, or anything that doesn't match your order — reach out to Elizabeth directly and we'll fix it. Every deliverable is reviewed before it reaches you.</div>
     </div>
+  </div>
+</section>
+
+<section class="industries-section">
+  <div class="industries-inner">
+    <span class="section-eyebrow">By Industry</span>
+    <h2 class="section-title">Written for your specific business.</h2>
+    <div class="industry-grid">
+      <a href="captions-for-hair-salons.html" class="industry-link">
+        <span class="industry-name">Hair Salons</span>
+        <span class="industry-arrow">→</span>
+      </a>
+      <a href="captions-for-restaurants.html" class="industry-link">
+        <span class="industry-name">Restaurants</span>
+        <span class="industry-arrow">→</span>
+      </a>
+      <a href="captions-for-fitness-studios.html" class="industry-link">
+        <span class="industry-name">Fitness Studios</span>
+        <span class="industry-arrow">→</span>
+      </a>
+      <a href="captions-for-real-estate-agents.html" class="industry-link">
+        <span class="industry-name">Real Estate Agents</span>
+        <span class="industry-arrow">→</span>
+      </a>
+      <a href="captions-for-coaches.html" class="industry-link">
+        <span class="industry-name">Coaches &amp; Consultants</span>
+        <span class="industry-arrow">→</span>
+      </a>
+    </div>
+    <p class="industries-note">Don't see your industry? We write captions for any type of business — the survey is what makes everything specific to you.</p>
   </div>
 </section>
 
