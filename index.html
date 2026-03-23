@@ -14,826 +14,315 @@
 <meta name="twitter:description" content="Get 24 custom social media captions written for your business in 48 hours. No calls, no contracts, no templates. Answer a short survey and get content that actually sounds like you.">
 <link rel="canonical" href="https://thecontentdrop.ca/index.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Content Drop — Custom Social Media Captions</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Jost:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
   :root {
-    --cream: #F5F0E8;
-    --cream-dark: #EDE7D9;
-    --forest: #1E3A2F;
-    --forest-light: #2D5240;
-    --moss: #4A6741;
-    --sand: #C4B49A;
-    --sand-light: #D4C8B0;
-    --charcoal: #1A1A18;
-    --text-body: #3A3A36;
-    --accent: #8B6F4E;
+    --paper: #F4EDE2;
+    --paper-2: #EAE0D2;
+    --paper-3: #D9CDB9;
+    --ink: #0B0907;
+    --ink-2: #1C1610;
+    --ink-soft: #3D3225;
+    --sage: #2C4A33;
+    --sage-2: #496650;
+    --amber: #B8872A;
+    --amber-2: #D4A84A;
+    --warm: #8B755A;
+    --rule: #C4B49A;
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { scroll-behavior: smooth; }
-
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background-color: var(--cream);
-    color: var(--charcoal);
-    overflow-x: hidden;
-  }
+  body { font-family: 'Jost', sans-serif; background: var(--paper); color: var(--ink-soft); overflow-x: hidden; }
 
   /* ── NAV ── */
   nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 48px;
-    background: rgba(245, 240, 232, 0.92);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(196, 180, 154, 0.3);
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 18px 48px;
+    background: rgba(244, 237, 226, 0.93);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(196,180,154,0.35);
   }
+  .nav-logo { font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sage); text-decoration: none; }
+  .nav-links { display: flex; gap: 36px; list-style: none; }
+  .nav-links a { font-family: 'Jost', sans-serif; font-size: 13px; font-weight: 400; letter-spacing: 0.06em; color: var(--ink-soft); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--sage); }
+  .nav-cta { font-family: 'IBM Plex Mono', monospace; font-size: 10px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--paper); background: var(--ink); padding: 10px 22px; text-decoration: none; transition: background 0.2s; }
+  .nav-cta:hover { background: var(--ink-2); }
 
-  .nav-logo {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--forest);
-    text-decoration: none;
+  /* ── STICKY CTA BAR ── */
+  .sticky-bar {
+    position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
+    background: var(--ink);
+    padding: 14px 48px;
+    display: flex; justify-content: space-between; align-items: center; gap: 16px;
+    transform: translateY(100%);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    border-top: 1px solid rgba(200,181,154,0.15);
   }
-
-  .nav-links {
-    display: flex;
-    gap: 36px;
-    list-style: none;
-  }
-
-  .nav-links a {
-    font-size: 12px;
-    font-weight: 400;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--text-body);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
-  .nav-links a:hover { color: var(--forest); }
-
-  .nav-cta {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--cream);
-    background: var(--forest);
-    padding: 10px 22px;
-    border: none;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background 0.2s;
-  }
-
-  .nav-cta:hover { background: var(--forest-light); }
+  .sticky-bar.visible { transform: translateY(0); }
+  .sticky-bar-text { font-size: 13px; font-weight: 300; color: rgba(244,237,226,0.6); }
+  .sticky-bar-text strong { color: var(--paper); font-weight: 500; }
+  .sticky-bar-btn { font-family: 'IBM Plex Mono', monospace; font-size: 10px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink); background: var(--amber-2); padding: 12px 28px; text-decoration: none; white-space: nowrap; flex-shrink: 0; transition: opacity 0.2s; }
+  .sticky-bar-btn:hover { opacity: 0.85; }
+  @media (max-width: 600px) { .sticky-bar-text { display: none; } .sticky-bar { justify-content: center; } }
 
   /* ── HERO ── */
-  .hero {
-    min-height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding-top: 80px;
+  .hero { padding-top: 57px; background: var(--ink); }
+  .hero-stripe {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 13px 64px;
+    border-bottom: 1px solid rgba(200,181,154,0.12);
   }
-
-  .hero-left {
-    background: var(--forest);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 80px 64px 80px 64px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .hero-left::before {
-    content: '';
-    position: absolute;
-    top: -100px; right: -100px;
-    width: 400px; height: 400px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.03);
-    pointer-events: none;
-  }
-
-  .hero-eyebrow {
-    font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--sand);
-    margin-bottom: 28px;
-    opacity: 0;
-    animation: fadeUp 0.8s ease 0.2s forwards;
-  }
-
+  .hero-stripe-label { font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--amber-2); }
+  .hero-stripe-rule { font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(200,181,154,0.3); }
+  .hero-headline-wrap { padding: 72px 64px 56px; }
   .hero-headline {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(38px, 4vw, 58px);
-    font-weight: 900;
-    line-height: 1.05;
-    color: var(--cream);
-    margin-bottom: 28px;
-    opacity: 0;
-    animation: fadeUp 0.8s ease 0.4s forwards;
-  }
-
-  .hero-headline em {
-    font-style: italic;
-    color: var(--sand-light);
-  }
-
-  .hero-sub {
-    font-size: 15px;
-    font-weight: 300;
-    line-height: 1.7;
-    color: rgba(245, 240, 232, 0.7);
-    max-width: 400px;
-    margin-bottom: 48px;
-    opacity: 0;
-    animation: fadeUp 0.8s ease 0.6s forwards;
-  }
-
-  .hero-cta-group {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    opacity: 0;
-    animation: fadeUp 0.8s ease 0.8s forwards;
-  }
-
-  .btn-primary {
-    font-family: 'DM Mono', monospace;
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--forest);
-    background: var(--cream);
-    padding: 16px 36px;
-    border: none;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-
-  .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-  }
-
-  .hero-price-note {
-    font-size: 13px;
-    color: rgba(245, 240, 232, 0.5);
-    letter-spacing: 0.04em;
-  }
-
-  .hero-right {
-    background: var(--cream-dark);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 80px 64px;
-    position: relative;
-  }
-
-  .hero-card {
-    background: var(--cream);
-    border: 1px solid var(--sand-light);
-    padding: 48px 40px;
-    width: 100%;
-    max-width: 380px;
-    opacity: 0;
-    animation: fadeIn 1s ease 1s forwards;
-  }
-
-  .card-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 9px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--sand);
-    margin-bottom: 20px;
-  }
-
-  .card-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 22px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(72px, 11vw, 148px);
     font-weight: 700;
-    color: var(--forest);
-    margin-bottom: 28px;
-    line-height: 1.3;
+    line-height: 0.9;
+    color: var(--paper);
+    letter-spacing: -0.02em;
+    opacity: 0;
+    animation: fadeUp 0.9s ease 0.2s forwards;
   }
-
-  .card-items {
-    list-style: none;
-    margin-bottom: 36px;
+  .hero-headline em { font-style: italic; color: var(--amber-2); }
+  .hero-divider { height: 1px; background: rgba(200,181,154,0.2); margin: 0 64px; }
+  .hero-base {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 64px;
+    padding: 52px 64px 80px;
   }
-
-  .card-items li {
-    font-size: 13px;
-    font-weight: 300;
-    color: var(--text-body);
-    padding: 10px 0;
-    border-bottom: 1px solid var(--cream-dark);
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    line-height: 1.4;
+  .hero-sub {
+    font-size: 17px; font-weight: 300; line-height: 1.85;
+    color: rgba(244,237,226,0.6);
+    opacity: 0; animation: fadeUp 0.9s ease 0.5s forwards;
   }
-
-  .card-items li::before {
-    content: '→';
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    color: var(--forest);
-    flex-shrink: 0;
+  .hero-action { display: flex; flex-direction: column; gap: 28px; opacity: 0; animation: fadeUp 0.9s ease 0.7s forwards; }
+  .btn-primary {
+    font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 500;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--ink); background: var(--paper);
+    padding: 16px 36px; text-decoration: none; display: inline-block;
+    transition: transform 0.2s, box-shadow 0.2s; align-self: flex-start;
   }
-
-  .card-price-row {
-    display: flex;
-    align-items: baseline;
-    gap: 8px;
-    margin-bottom: 24px;
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,0.35); }
+  .hero-includes { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+  .hero-includes li {
+    font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.04em;
+    color: rgba(200,181,154,0.55); padding-left: 18px; position: relative; line-height: 1.5;
   }
+  .hero-includes li::before { content: '—'; position: absolute; left: 0; color: var(--amber); }
 
-  .card-price {
-    font-family: 'Playfair Display', serif;
-    font-size: 42px;
-    font-weight: 900;
-    color: var(--forest);
-  }
+  /* ── MARQUEE BAR ── */
+  .marquee { background: var(--paper-2); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 12px 0; overflow: hidden; }
+  .marquee-track { display: flex; width: max-content; animation: marquee 28s linear infinite; }
+  .marquee-track:hover { animation-play-state: paused; }
+  .marquee-item { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--warm); white-space: nowrap; padding: 0 48px; }
+  .marquee-item span { color: var(--sage); font-weight: 500; }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-  .card-price-label {
-    font-size: 13px;
-    color: var(--accent);
-    font-weight: 300;
-  }
+  /* ── SECTION COMMON ── */
+  .section-eyebrow { font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--amber); margin-bottom: 20px; display: block; }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(34px, 4vw, 52px); font-weight: 700; line-height: 1.08; color: var(--sage); margin-bottom: 60px; }
 
-  .btn-card {
-    width: 100%;
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--cream);
-    background: var(--forest);
-    padding: 16px;
-    border: none;
-    cursor: pointer;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    transition: background 0.2s;
-  }
+  /* ── TESTIMONIALS ── */
+  .testimonials { padding: 96px 64px; background: var(--ink); }
+  .testimonials-inner { max-width: 1200px; margin: 0 auto; }
+  .testimonials .section-eyebrow { color: var(--amber-2); }
+  .testimonials .section-title { color: var(--paper); margin-bottom: 64px; }
+  .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(200,181,154,0.1); }
+  .testimonial-card { background: var(--ink-2); padding: 44px 36px 36px; display: flex; flex-direction: column; justify-content: space-between; transition: background 0.25s; }
+  .testimonial-card:hover { background: #251e16; }
+  .testimonial-mark { font-family: 'Cormorant Garamond', serif; font-size: 96px; line-height: 0.8; color: var(--amber); margin-bottom: 16px; font-weight: 300; }
+  .testimonial-quote { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-style: italic; font-weight: 400; line-height: 1.75; color: rgba(244,237,226,0.85); margin-bottom: 32px; flex: 1; }
+  .testimonial-meta { border-top: 1px solid rgba(200,181,154,0.12); padding-top: 20px; }
+  .testimonial-name { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(200,181,154,0.5); margin-bottom: 10px; }
+  .testimonial-result { display: inline-block; font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--amber-2); background: rgba(184,135,42,0.12); padding: 5px 12px; }
 
-  .btn-card:hover { background: var(--forest-light); }
-
-  .card-footnote {
-    font-size: 11px;
-    color: var(--sand);
-    text-align: center;
-    margin-top: 14px;
-    font-style: italic;
-  }
+  /* ── SAMPLE SECTION ── */
+  .sample { padding: 96px 64px; background: var(--sage); }
+  .sample-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .sample .section-eyebrow { color: var(--amber-2); }
+  .sample-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(30px, 3.5vw, 46px); font-weight: 700; line-height: 1.1; color: var(--paper); margin-bottom: 24px; }
+  .sample-body { font-size: 16px; font-weight: 300; line-height: 1.85; color: rgba(244,237,226,0.65); margin-bottom: 36px; }
+  .sample-features { list-style: none; display: flex; flex-direction: column; gap: 13px; }
+  .sample-features li { font-size: 14px; font-weight: 300; color: rgba(244,237,226,0.8); display: flex; align-items: flex-start; gap: 14px; line-height: 1.5; }
+  .sample-features li::before { content: '→'; font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--amber-2); flex-shrink: 0; margin-top: 2px; }
+  .sample-cta { background: var(--paper); padding: 52px 44px; display: flex; flex-direction: column; gap: 22px; justify-content: center; }
+  .sample-cta-label { font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--amber); }
+  .sample-cta-body { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 400; line-height: 1.65; color: var(--ink-soft); }
+  .sample-cta-link { display: inline-block; font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sage); border-bottom: 1px solid var(--sage); padding-bottom: 3px; text-decoration: none; transition: opacity 0.2s; align-self: flex-start; }
+  .sample-cta-link:hover { opacity: 0.6; }
 
   /* ── HOW IT WORKS ── */
-  .how {
-    padding: 80px 64px;
-    background: var(--cream);
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .section-eyebrow {
-    font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--sand);
-    margin-bottom: 20px;
-    display: block;
-  }
-
-  .section-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(32px, 3.5vw, 48px);
-    font-weight: 900;
-    line-height: 1.1;
-    color: var(--forest);
-    margin-bottom: 64px;
-  }
-
-  .steps {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
-  }
-
-  .step {
-    background: var(--cream-dark);
-    padding: 48px 40px;
-    position: relative;
-    transition: background 0.3s;
-  }
-
-  .step:hover { background: var(--forest); }
-  .step:hover .step-num,
-  .step:hover .step-title,
-  .step:hover .step-body { color: var(--cream); }
-  .step:hover .step-num { color: var(--sand-light); }
-
+  .how { padding: 96px 64px; background: var(--paper); }
+  .how-inner { max-width: 1200px; margin: 0 auto; }
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--paper-3); margin-top: 24px; }
+  .step { background: var(--paper); padding: 52px 40px 44px; overflow: hidden; position: relative; transition: background 0.3s; }
+  .step:hover { background: var(--ink); }
   .step-num {
-    font-family: 'Playfair Display', serif;
-    font-size: 72px;
-    font-weight: 900;
-    color: var(--sand-light);
-    line-height: 1;
-    margin-bottom: 20px;
+    font-family: 'Cormorant Garamond', serif; font-size: 128px; font-weight: 700;
+    line-height: 0.85; color: var(--paper-3); margin-bottom: 8px;
     transition: color 0.3s;
-  }
-
-  .step-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--forest);
-    margin-bottom: 14px;
-    transition: color 0.3s;
-  }
-
-  .step-body {
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 1.7;
-    color: var(--text-body);
-    transition: color 0.3s;
-  }
-
-  /* ── WHY ── */
-  .why {
-    background: var(--forest);
-    padding: 80px 64px;
-  }
-
-  .why-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
-  }
-
-  .why-left .section-eyebrow { color: var(--sand); }
-
-  .why-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(32px, 3.5vw, 48px);
-    font-weight: 900;
-    line-height: 1.1;
-    color: var(--cream);
-    margin-bottom: 28px;
-  }
-
-  .why-body {
-    font-size: 15px;
-    font-weight: 300;
-    line-height: 1.8;
-    color: rgba(245, 240, 232, 0.7);
-    margin-bottom: 48px;
-  }
-
-  .why-list {
-    list-style: none;
-  }
-
-  .why-list li {
-    font-size: 14px;
-    font-weight: 300;
-    color: rgba(245, 240, 232, 0.85);
-    padding: 14px 0;
-    border-bottom: 1px solid rgba(196, 180, 154, 0.2);
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
-    line-height: 1.5;
-  }
-
-  .why-list li .check {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    color: var(--sand);
-    flex-shrink: 0;
-    margin-top: 2px;
-  }
-
-  .why-right {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-  }
-
-  .compare-card {
-    padding: 32px 36px;
-    background: rgba(255,255,255,0.04);
-    border-left: 3px solid transparent;
-  }
-
-  .compare-card.active {
-    background: rgba(255,255,255,0.08);
-    border-left-color: var(--sand);
-  }
-
-  .compare-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 9px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-  }
-
-  .compare-card.active .compare-label { color: var(--sand); }
-  .compare-card:not(.active) .compare-label { color: rgba(196, 180, 154, 0.4); }
-
-  .compare-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 8px;
-  }
-
-  .compare-card.active .compare-title { color: var(--cream); }
-  .compare-card:not(.active) .compare-title { color: rgba(245, 240, 232, 0.3); }
-
-  .compare-desc {
-    font-size: 13px;
-    font-weight: 300;
-    line-height: 1.6;
-  }
-
-  .compare-card.active .compare-desc { color: rgba(245, 240, 232, 0.65); }
-  .compare-card:not(.active) .compare-desc { color: rgba(245, 240, 232, 0.2); }
-
-  /* ── WHAT YOU GET ── */
-  .deliverable {
-    padding: 80px 64px;
-    background: var(--cream-dark);
-  }
-
-  .deliverable-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .deliverable-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
-    margin-top: 64px;
-  }
-
-  .deliverable-item {
-    background: var(--cream);
-    padding: 40px 36px;
-  }
-
-  .deliverable-icon {
-    font-family: 'DM Mono', monospace;
-    font-size: 20px;
-    color: var(--forest);
-    margin-bottom: 20px;
-  }
-
-  .deliverable-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--forest);
-    margin-bottom: 10px;
-  }
-
-  .deliverable-desc {
-    font-size: 13px;
-    font-weight: 300;
-    line-height: 1.7;
-    color: var(--text-body);
-  }
-
-  /* ── INDUSTRIES ── */
-  .industries {
-    padding: 80px 64px;
-    background: var(--cream);
-  }
-
-  .industries-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .industry-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2px;
-    margin-top: 48px;
-  }
-
-  .industry-pill {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--forest);
-    background: var(--cream-dark);
-    padding: 14px 28px;
-    border: 1px solid var(--sand-light);
-    cursor: default;
-    transition: all 0.2s;
-  }
-
-  .industry-pill:hover {
-    background: var(--forest);
-    color: var(--cream);
-    border-color: var(--forest);
-  }
-
-  /* ── FAQ ── */
-  .faq {
-    padding: 80px 64px;
-    background: var(--cream-dark);
-  }
-
-  .faq-inner {
-    max-width: 800px;
-    margin: 0 auto;
-  }
-
-  .faq-item {
-    border-bottom: 1px solid var(--sand-light);
-  }
-
-  .faq-q {
-    font-family: 'Playfair Display', serif;
-    font-size: 17px;
-    font-weight: 700;
-    color: var(--forest);
-    padding: 28px 0;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
     user-select: none;
   }
+  .step:hover .step-num { color: rgba(200,181,154,0.15); }
+  .step-title { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 700; color: var(--sage); margin-bottom: 14px; transition: color 0.3s; }
+  .step:hover .step-title { color: var(--amber-2); }
+  .step-body { font-size: 14px; font-weight: 300; line-height: 1.8; color: var(--ink-soft); transition: color 0.3s; }
+  .step:hover .step-body { color: rgba(244,237,226,0.7); }
 
-  .faq-q::after {
-    content: '+';
-    font-family: 'DM Mono', monospace;
-    font-size: 20px;
-    font-weight: 300;
-    color: var(--sand);
-    flex-shrink: 0;
-    transition: transform 0.3s;
-  }
+  /* ── WHY ── */
+  .why { background: var(--paper-2); padding: 96px 64px; border-top: 1px solid var(--paper-3); }
+  .why-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+  .why-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 3.5vw, 50px); font-weight: 700; line-height: 1.1; color: var(--sage); margin-bottom: 28px; }
+  .why-body { font-size: 15px; font-weight: 300; line-height: 1.9; color: var(--ink-soft); margin-bottom: 48px; }
+  .why-list { list-style: none; }
+  .why-list li { font-size: 14px; font-weight: 300; color: var(--ink-soft); padding: 14px 0; border-bottom: 1px solid var(--paper-3); display: flex; align-items: flex-start; gap: 16px; line-height: 1.5; }
+  .why-list li .check { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--sage); flex-shrink: 0; margin-top: 2px; }
+  .why-right { display: flex; flex-direction: column; gap: 2px; padding-top: 16px; }
+  .compare-card { padding: 32px 36px; background: var(--paper); border-left: 3px solid transparent; transition: all 0.2s; }
+  .compare-card.active { background: var(--ink); border-left-color: var(--amber); }
+  .compare-card:not(.active):hover { border-left-color: var(--paper-3); }
+  .compare-label { font-family: 'IBM Plex Mono', monospace; font-size: 8px; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 10px; }
+  .compare-card.active .compare-label { color: var(--amber-2); }
+  .compare-card:not(.active) .compare-label { color: var(--rule); }
+  .compare-title { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+  .compare-card.active .compare-title { color: var(--paper); }
+  .compare-card:not(.active) .compare-title { color: rgba(61,50,37,0.4); }
+  .compare-desc { font-size: 13px; font-weight: 300; line-height: 1.65; }
+  .compare-card.active .compare-desc { color: rgba(244,237,226,0.65); }
+  .compare-card:not(.active) .compare-desc { color: rgba(61,50,37,0.3); }
 
-  .faq-item.open .faq-q::after {
-    transform: rotate(45deg);
-  }
+  /* ── WHAT YOU GET ── */
+  .deliverable { padding: 96px 64px; background: var(--paper); }
+  .deliverable-inner { max-width: 1200px; margin: 0 auto; }
+  .deliverable-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--paper-3); margin-top: 24px; }
+  .deliverable-item { background: var(--paper); padding: 44px 36px; transition: background 0.25s; }
+  .deliverable-item:hover { background: var(--paper-2); }
+  .deliverable-num { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 700; line-height: 1; color: var(--paper-3); margin-bottom: 16px; }
+  .deliverable-title { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 700; color: var(--sage); margin-bottom: 10px; }
+  .deliverable-desc { font-size: 13px; font-weight: 300; line-height: 1.75; color: var(--ink-soft); }
 
-  .faq-a {
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 1.8;
-    color: var(--text-body);
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease, padding 0.3s ease;
-  }
+  /* ── INDUSTRIES ── */
+  .industries { padding: 80px 64px; background: var(--paper-2); border-top: 1px solid var(--paper-3); }
+  .industries-inner { max-width: 1200px; margin: 0 auto; }
+  .industry-grid { display: flex; flex-wrap: wrap; gap: 2px; margin-top: 40px; }
+  .industry-pill { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft); background: var(--paper); padding: 13px 24px; border: 1px solid var(--paper-3); cursor: default; transition: all 0.2s; }
+  .industry-pill:hover { background: var(--sage); color: var(--paper); border-color: var(--sage); }
 
-  .faq-item.open .faq-a {
-    max-height: 300px;
-    padding-bottom: 28px;
-  }
+  /* ── EMAIL CAPTURE STRIP ── */
+  .capture-strip { background: var(--ink-2); padding: 80px 64px; }
+  .capture-strip-inner { max-width: 640px; margin: 0 auto; text-align: center; }
+  .capture-strip-eyebrow { font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--amber-2); margin-bottom: 16px; display: block; }
+  .capture-strip-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 3.5vw, 40px); font-weight: 700; color: var(--paper); margin-bottom: 14px; line-height: 1.15; }
+  .capture-strip-sub { font-size: 14px; font-weight: 300; color: rgba(244,237,226,0.55); line-height: 1.75; margin-bottom: 36px; }
+  .capture-strip-form { display: flex; gap: 0; max-width: 440px; margin: 0 auto; }
+  .capture-strip-input { flex: 1; padding: 14px 18px; font-family: 'Jost', sans-serif; font-size: 14px; border: 1px solid rgba(200,181,154,0.2); border-right: none; background: rgba(255,255,255,0.06); color: var(--paper); outline: none; }
+  .capture-strip-input:focus { border-color: var(--amber); }
+  .capture-strip-input::placeholder { color: rgba(200,181,154,0.3); }
+  .capture-strip-btn { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink); background: var(--amber-2); padding: 14px 24px; border: none; cursor: pointer; white-space: nowrap; transition: opacity 0.2s; }
+  .capture-strip-btn:hover { opacity: 0.85; }
+  .capture-strip-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+  .capture-strip-meta { font-size: 11px; color: rgba(200,181,154,0.3); margin-top: 12px; }
+  .capture-strip-success { display: none; font-size: 14px; color: var(--amber-2); padding: 14px; background: rgba(184,135,42,0.1); border: 1px solid rgba(184,135,42,0.2); }
+
+  /* ── FAQ ── */
+  .faq { padding: 96px 64px; background: var(--paper); }
+  .faq-inner { max-width: 800px; margin: 0 auto; }
+  .faq-item { border-bottom: 1px solid var(--paper-3); }
+  .faq-q { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 600; color: var(--sage); padding: 28px 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 20px; user-select: none; transition: color 0.2s; }
+  .faq-q:hover { color: var(--ink); }
+  .faq-q::after { content: '+'; font-family: 'IBM Plex Mono', monospace; font-size: 18px; font-weight: 400; color: var(--amber); flex-shrink: 0; transition: transform 0.3s; }
+  .faq-item.open .faq-q::after { transform: rotate(45deg); }
+  .faq-a { font-size: 14px; font-weight: 300; line-height: 1.85; color: var(--ink-soft); max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s ease; }
+  .faq-item.open .faq-a { max-height: 300px; padding-bottom: 28px; }
 
   /* ── BOTTOM CTA ── */
-  .bottom-cta {
-    background: var(--forest);
-    padding: 80px 64px;
-    text-align: center;
-  }
-
-  .bottom-cta .section-eyebrow { color: var(--sand); text-align: center; display: block; }
-
-  .bottom-cta-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(36px, 5vw, 64px);
-    font-weight: 900;
-    color: var(--cream);
-    line-height: 1.05;
-    margin-bottom: 20px;
-  }
-
-  .bottom-cta-title em {
-    font-style: italic;
-    color: var(--sand-light);
-  }
-
-  .bottom-cta-sub {
-    font-size: 15px;
-    font-weight: 300;
-    color: rgba(245, 240, 232, 0.6);
-    margin-bottom: 52px;
-    max-width: 480px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.7;
-  }
-
-  .bottom-cta-group {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-  }
-
-  .btn-large {
-    font-family: 'DM Mono', monospace;
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--forest);
-    background: var(--cream);
-    padding: 20px 56px;
-    border: none;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-
-  .btn-large:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 32px rgba(0,0,0,0.25);
-  }
-
-  .bottom-note {
-    font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: rgba(196, 180, 154, 0.5);
-  }
+  .bottom-cta { background: var(--ink); padding: 100px 64px; text-align: center; position: relative; overflow: hidden; }
+  .bottom-cta::before { content: '"'; font-family: 'Cormorant Garamond', serif; font-size: 600px; line-height: 0.7; font-weight: 700; color: rgba(255,255,255,0.02); position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); pointer-events: none; user-select: none; }
+  .bottom-cta .section-eyebrow { color: var(--amber-2); text-align: center; display: block; position: relative; }
+  .bottom-cta-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(42px, 6vw, 80px); font-weight: 700; color: var(--paper); line-height: 1.0; margin-bottom: 24px; position: relative; }
+  .bottom-cta-title em { font-style: italic; color: var(--amber-2); }
+  .bottom-cta-sub { font-size: 15px; font-weight: 300; color: rgba(244,237,226,0.5); margin-bottom: 52px; max-width: 460px; margin-left: auto; margin-right: auto; line-height: 1.75; position: relative; }
+  .bottom-cta-group { display: flex; flex-direction: column; align-items: center; gap: 16px; position: relative; }
+  .btn-large { font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink); background: var(--amber-2); padding: 20px 56px; text-decoration: none; display: inline-block; transition: transform 0.2s, box-shadow 0.2s; }
+  .btn-large:hover { transform: translateY(-2px); box-shadow: 0 12px 36px rgba(184,135,42,0.3); }
+  .bottom-note { font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(200,181,154,0.3); }
 
   /* ── FOOTER ── */
-  footer {
-    background: var(--charcoal);
-    padding: 48px 64px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
+  footer { background: var(--ink-2); padding: 48px 64px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; border-top: 1px solid rgba(200,181,154,0.08); }
+  .footer-logo { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(200,181,154,0.4); }
+  .footer-links { display: flex; gap: 28px; list-style: none; }
+  .footer-links a { font-size: 12px; letter-spacing: 0.06em; color: rgba(200,181,154,0.35); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--amber-2); }
+  .footer-email { font-size: 12px; color: rgba(200,181,154,0.3); letter-spacing: 0.04em; }
+  .footer-social { display: flex; gap: 20px; }
+  .footer-social a { color: rgba(200,181,154,0.35); transition: color 0.2s; text-decoration: none; font-size: 12px; }
+  .footer-social a:hover { color: var(--amber-2); }
 
-  .footer-logo {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--sand);
-  }
-
-  .footer-links {
-    display: flex;
-    gap: 32px;
-    list-style: none;
-  }
-
-  .footer-links a {
-    font-size: 12px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: rgba(196, 180, 154, 0.5);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
-  .footer-links a:hover { color: var(--sand); }
-
-  .footer-email {
-    font-size: 12px;
-    color: rgba(196, 180, 154, 0.4);
-    letter-spacing: 0.06em;
-  }
+  /* ── SCROLL REVEAL ── */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
 
   /* ── ANIMATIONS ── */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(24px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
+  /* ── MOBILE NAV ── */
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+  .hamburger span { display: block; width: 22px; height: 2px; background: var(--sage); }
+  .mobile-menu { display: none; position: fixed; top: 57px; left: 0; right: 0; background: var(--ink); z-index: 99; padding: 20px 24px; flex-direction: column; gap: 0; }
+  .mobile-menu a { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--paper); text-decoration: none; padding: 16px 0; border-bottom: 1px solid rgba(200,181,154,0.1); }
+  .mobile-menu a:last-child { border-bottom: none; }
 
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
-    nav { padding: 18px 24px; }
-    .nav-links { display: none; }
-
-    .hero {
-      grid-template-columns: 1fr;
-      min-height: auto;
-    }
-
-    .hero-left, .hero-right {
-      padding: 64px 28px;
-    }
-
-    .how, .why, .deliverable, .industries, .faq, .bottom-cta {
-      padding: 80px 28px;
-    }
-
-    .steps, .deliverable-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .why-inner {
-      grid-template-columns: 1fr;
-      gap: 48px;
-    }
-
-    footer {
-      flex-direction: column;
-      gap: 24px;
-      padding: 40px 28px;
-      text-align: center;
-    }
-
+    nav { padding: 16px 24px; }
+    .hamburger { display: flex; }
+    .nav-links, .nav-cta { display: none; }
+    .hero-stripe { padding: 12px 24px; }
+    .hero-headline-wrap { padding: 48px 24px 40px; }
+    .hero-divider { margin: 0 24px; }
+    .hero-base { grid-template-columns: 1fr; gap: 40px; padding: 40px 24px 64px; }
+    .testimonials, .sample, .how, .why, .deliverable, .industries, .capture-strip, .faq, .bottom-cta { padding: 64px 24px; }
+    .testimonials-grid, .steps, .deliverable-grid { grid-template-columns: 1fr; }
+    .sample-inner, .why-inner { grid-template-columns: 1fr; gap: 48px; }
+    .capture-strip-form { flex-direction: column; }
+    .capture-strip-input { border-right: 1px solid rgba(200,181,154,0.2); border-bottom: none; }
+    .capture-strip-btn { width: 100%; text-align: center; }
+    footer { flex-direction: column; gap: 20px; padding: 40px 24px; text-align: center; }
     .footer-links { flex-wrap: wrap; justify-content: center; }
+    .sticky-bar { padding: 12px 20px; }
+    .bottom-cta::before { font-size: 300px; }
   }
-
-  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;}
-  .hamburger span{display:block;width:22px;height:2px;background:var(--forest);}
-  .mobile-menu{display:none;position:fixed;top:61px;left:0;right:0;background:var(--forest);z-index:99;padding:24px 28px;flex-direction:column;gap:0;}
-  .mobile-menu a{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--cream);text-decoration:none;padding:16px 0;border-bottom:1px solid rgba(196,180,154,0.15);}
-  .mobile-menu a:last-child{border-bottom:none;}
-  @media(max-width:900px){.hamburger{display:flex;}.nav-cta{display:none;}}
-
-  .footer-social { display: flex; gap: 20px; align-items: center; }
-  .footer-social a { color: var(--sand); opacity: 0.5; transition: opacity 0.2s; text-decoration: none; }
-  .footer-social a:hover { opacity: 1; }
-
 </style>
+
 <!-- Meta Pixel Code -->
 <script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1935587483876031');
-fbq('track', 'PageView');
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1935587483876031');fbq('track','PageView');
 </script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1935587483876031&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1935587483876031&ev=PageView&noscript=1"/></noscript>
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-4TWPFW6PSF"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-4TWPFW6PSF');
-</script>
-<!-- End Google Analytics -->
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4TWPFW6PSF');</script>
 </head>
 <body>
+
+<!-- STICKY BUY BAR -->
+<div class="sticky-bar" id="stickyBar">
+  <span class="sticky-bar-text"><strong>Custom Social Media Captions</strong> — 24 captions, 2 platforms, 48 hours</span>
+  <a href="https://buy.stripe.com/cNi14n635frj7h9fFtgMw00" class="sticky-bar-btn">Get My Captions — $45</a>
+</div>
 
 <!-- NAV -->
 <nav>
@@ -859,79 +348,121 @@ src="https://www.facebook.com/tr?id=1935587483876031&ev=PageView&noscript=1"
 </div>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="hero-left">
-    <span class="hero-eyebrow">The Content Drop</span>
+<section class="hero" id="hero">
+  <div class="hero-stripe">
+    <span class="hero-stripe-label">The Content Drop — Custom Social Media Content</span>
+    <span class="hero-stripe-rule">No calls &middot; No templates &middot; No subscription</span>
+  </div>
+  <div class="hero-headline-wrap">
     <h1 class="hero-headline">Stop guessing.<br><em>Start posting.</em></h1>
-    <p class="hero-sub">24 custom social media captions — written for your business, your audience, and your voice. No calls. No contracts. Delivered in 48 hours.</p>
-    <div class="hero-cta-group">
-      <a href="https://buy.stripe.com/cNi14n635frj7h9fFtgMw00" class="btn-primary">Get My Captions</a>
-      <span class="hero-price-note">One-time · $45 · No commitment · No upsells</span>
-    </div>
   </div>
-
-  <div class="hero-right">
-    <div class="hero-card" id="buy">
-      <div class="card-label">Most Popular Drop</div>
-      <div class="card-title">Custom Social Media Captions</div>
-      <ul class="card-items">
+  <div class="hero-divider"></div>
+  <div class="hero-base">
+    <p class="hero-sub">24 custom social media captions — written for your business, your audience, and your voice. Answer a 10-minute survey. Get your content in 48 hours. One-time purchase, nothing recurring.</p>
+    <div class="hero-action">
+      <a href="https://buy.stripe.com/cNi14n635frj7h9fFtgMw00" class="btn-primary">Get My Captions — $45</a>
+      <ul class="hero-includes">
         <li>24 original captions for your business</li>
-        <li>Written for 2 platforms of your choice — Instagram, Facebook, LinkedIn, TikTok, Pinterest or YouTube</li>
-        <li>Headline + body copy + CTA + hashtags</li>
-        <li>Visual pairing suggestions included</li>
-        <li>Delivered as a ready-to-post Google Doc</li>
+        <li>Written for 2 platforms of your choice</li>
+        <li>Hook + body + CTA + hashtags + visual suggestions</li>
+        <li>Reviewed by a human before delivery</li>
+        <li>Survey link within 24 hrs &middot; captions within 48 hrs</li>
       </ul>
-      <div class="card-price-row">
-        <span class="card-price">$45</span>
-        <span class="card-price-label">one-time purchase</span>
-      </div>
-      <a href="https://buy.stripe.com/cNi14n635frj7h9fFtgMw00" class="btn-card">Buy Now — Get Started</a>
-      <p class="card-footnote">Survey delivered within 24 hrs · Captions in 48 hrs</p>
     </div>
   </div>
 </section>
 
-<!-- SOCIAL PROOF BAR -->
-<section style="background:var(--cream-dark);padding:32px 64px;border-top:1px solid var(--sand-light);border-bottom:1px solid var(--sand-light);">
-  <div style="max-width:1200px;margin:0 auto;display:flex;justify-content:space-around;align-items:center;flex-wrap:wrap;gap:24px;">
-    <div style="text-align:center;">
-      <div style="font-family:'Playfair Display',serif;font-size:36px;font-weight:900;color:var(--forest);">$10,000</div>
-      <div style="font-size:12px;font-weight:300;color:var(--accent);margin-top:4px;">Revenue from one email · hair salon owner</div>
-    </div>
-    <div style="width:1px;height:48px;background:var(--sand-light);"></div>
-    <div style="text-align:center;">
-      <div style="font-family:'Playfair Display',serif;font-size:36px;font-weight:900;color:var(--forest);">1,590</div>
-      <div style="font-size:12px;font-weight:300;color:var(--accent);margin-top:4px;">Organic views in 24 hours · zero ad spend</div>
-    </div>
-    <div style="width:1px;height:48px;background:var(--sand-light);"></div>
-    <div style="text-align:center;">
-      <div style="font-family:'Playfair Display',serif;font-size:36px;font-weight:900;color:var(--forest);">48 hrs</div>
-      <div style="font-size:12px;font-weight:300;color:var(--accent);margin-top:4px;">From survey to ready-to-post content</div>
-    </div>
-    <div style="width:1px;height:48px;background:var(--sand-light);"></div>
-    <div style="text-align:center;">
-      <div style="font-family:'Playfair Display',serif;font-size:36px;font-weight:900;color:var(--forest);">$45</div>
-      <div style="font-size:12px;font-weight:300;color:var(--accent);margin-top:4px;">One-time · no subscription · no calls</div>
+<!-- MARQUEE BAR -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span class="marquee-item"><span>$10,000 revenue</span> &middot; one hair salon owner &nbsp;&nbsp;&nbsp;</span>
+    <span class="marquee-item"><span>1,590 organic views</span> &middot; day one &middot; $0 ad spend &nbsp;&nbsp;&nbsp;</span>
+    <span class="marquee-item"><span>2&times; consultations</span> &middot; personal trainer &middot; 60 days &nbsp;&nbsp;&nbsp;</span>
+    <span class="marquee-item"><span>48-hour delivery</span> &middot; every order &nbsp;&nbsp;&nbsp;</span>
+    <span class="marquee-item"><span>$45 one-time</span> &middot; no subscription &middot; no calls &nbsp;&nbsp;&nbsp;</span>
+    <!-- duplicate for seamless loop -->
+    <span class="marquee-item"><span>$10,000 revenue</span> &middot; one hair salon owner &nbsp;&nbsp;&nbsp;</span>
+    <span class="marquee-item"><span>1,590 organic views</span> &middot; day one &middot; $0 ad spend &nbsp;&nbsp;&nbsp;</span>
+    <span class="marquee-item"><span>2&times; consultations</span> &middot; personal trainer &middot; 60 days &nbsp;&nbsp;&nbsp;</span>
+    <span class="marquee-item"><span>48-hour delivery</span> &middot; every order &nbsp;&nbsp;&nbsp;</span>
+    <span class="marquee-item"><span>$45 one-time</span> &middot; no subscription &middot; no calls &nbsp;&nbsp;&nbsp;</span>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="testimonials-inner">
+    <span class="section-eyebrow reveal">Real results</span>
+    <h2 class="section-title reveal">What happens after<br>you fill out the survey.</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal">
+        <div class="testimonial-mark">"</div>
+        <div class="testimonial-quote">I just needed someone to write it the way I would say it. I know my clients — I just couldn't get it onto the page.</div>
+        <div class="testimonial-meta">
+          <div class="testimonial-name">Sarah · Hair salon owner · Ontario</div>
+          <div class="testimonial-result">$10,000 revenue from one email</div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-1">
+        <div class="testimonial-mark">"</div>
+        <div class="testimonial-quote">I was putting out content I thought my ideal client wanted. But I'd never actually stopped to think about who my ideal client really was.</div>
+        <div class="testimonial-meta">
+          <div class="testimonial-name">Jamie · Personal trainer · Vancouver</div>
+          <div class="testimonial-result">2&times; consultation conversion rate</div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-2">
+        <div class="testimonial-mark">"</div>
+        <div class="testimonial-quote">I didn't want to just start throwing content at the wall. I wanted a real plan — something I could actually follow from day one.</div>
+        <div class="testimonial-meta">
+          <div class="testimonial-name">Brittany · New business launch · Ontario</div>
+          <div class="testimonial-result">1,590 organic views · day one · $0 ad spend</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
+
+<!-- WHAT YOU RECEIVE -->
+<section class="sample">
+  <div class="sample-inner">
+    <div class="sample-left reveal">
+      <span class="section-eyebrow">What you receive</span>
+      <h2 class="sample-title">This is what lands in your inbox.</h2>
+      <p class="sample-body">Every caption includes a scroll-stopping hook, body copy written in your voice, a call to action, hashtags, and a visual suggestion. 24 of them. Built from your survey answers.</p>
+      <ul class="sample-features">
+        <li>Hook, body, CTA, hashtags — every time</li>
+        <li>Platform-specific format (Instagram, Facebook, TikTok, and more)</li>
+        <li>Visual pairing suggestions for each post</li>
+        <li>Delivered in a clean, copy-paste-ready Google Doc</li>
+        <li>Reviewed by a real person before it reaches you</li>
+      </ul>
+    </div>
+    <div class="sample-cta reveal reveal-delay-1">
+      <p class="sample-cta-label">Want to see exactly what you'd receive?</p>
+      <p class="sample-cta-body">Every product page includes a real output example — so you know exactly what lands in your inbox before you buy.</p>
+      <a href="shop.html" class="sample-cta-link">See the examples on each product →</a>
+    </div>
+  </div>
+</section>
+
 <!-- HOW IT WORKS -->
 <section class="how" id="how">
-  <div style="max-width:1200px; margin:0 auto;">
-    <span class="section-eyebrow">The Process</span>
-    <h2 class="section-title">Three steps.<br>Zero meetings.</h2>
+  <div class="how-inner">
+    <span class="section-eyebrow reveal">The Process</span>
+    <h2 class="section-title reveal">Three steps.<br>Zero meetings.</h2>
     <div class="steps">
-      <div class="step">
+      <div class="step reveal">
         <div class="step-num">01</div>
         <div class="step-title">Purchase your Drop</div>
         <p class="step-body">Choose the content package that fits where your business is right now. One-time, no subscription, no commitment.</p>
       </div>
-      <div class="step">
+      <div class="step reveal reveal-delay-1">
         <div class="step-num">02</div>
         <div class="step-title">Complete a short survey</div>
         <p class="step-body">You'll receive a private link by email within 24 hours. Answer questions about your brand, audience, tone, and goals. Takes about 5–10 minutes.</p>
       </div>
-      <div class="step">
+      <div class="step reveal reveal-delay-2">
         <div class="step-num">03</div>
         <div class="step-title">Receive your content</div>
         <p class="step-body">Within 48 hours of submitting your survey, your custom captions are delivered in a Google Doc — ready to copy, paste, and post.</p>
@@ -943,7 +474,7 @@ src="https://www.facebook.com/tr?id=1935587483876031&ev=PageView&noscript=1"
 <!-- WHY -->
 <section class="why">
   <div class="why-inner">
-    <div class="why-left">
+    <div class="why-left reveal">
       <span class="section-eyebrow">Why This Works</span>
       <h2 class="why-title">Built by a marketer.<br>Not a generator.</h2>
       <p class="why-body">Most business owners know they need to show up online. The problem isn't motivation — it's not knowing what to say. If you've tried content tools before and been disappointed, here's the difference: everything is built from your survey. Not a general prompt. Not a template with your name swapped in. Your answers, your business, your voice — reviewed by Elizabeth before it reaches you.</p>
@@ -955,7 +486,7 @@ src="https://www.facebook.com/tr?id=1935587483876031&ev=PageView&noscript=1"
         <li><span class="check">✓</span> You own everything — use it however, whenever</li>
       </ul>
     </div>
-    <div class="why-right">
+    <div class="why-right reveal reveal-delay-1">
       <div class="compare-card">
         <div class="compare-label">Option A</div>
         <div class="compare-title">Hire a marketing agency</div>
@@ -978,36 +509,36 @@ src="https://www.facebook.com/tr?id=1935587483876031&ev=PageView&noscript=1"
 <!-- WHAT YOU GET -->
 <section class="deliverable" id="what">
   <div class="deliverable-inner">
-    <span class="section-eyebrow">What's Included</span>
-    <h2 class="section-title">Everything you need.<br>Nothing you don't.</h2>
+    <span class="section-eyebrow reveal">What's Included</span>
+    <h2 class="section-title reveal">Everything you need.<br>Nothing you don't.</h2>
     <div class="deliverable-grid">
-      <div class="deliverable-item">
-        <div class="deliverable-icon">01 —</div>
+      <div class="deliverable-item reveal">
+        <div class="deliverable-num">01</div>
         <div class="deliverable-title">24 Original Captions</div>
         <p class="deliverable-desc">Written specifically for your business. Not a template. Not AI-generated filler. Built from your answers.</p>
       </div>
-      <div class="deliverable-item">
-        <div class="deliverable-icon">02 —</div>
+      <div class="deliverable-item reveal reveal-delay-1">
+        <div class="deliverable-num">02</div>
         <div class="deliverable-title">Platform-Tailored Format</div>
         <p class="deliverable-desc">Choose any two platforms — Instagram, Facebook, LinkedIn, TikTok, Pinterest, or YouTube. Each caption is written to match that platform's style.</p>
       </div>
-      <div class="deliverable-item">
-        <div class="deliverable-icon">03 —</div>
+      <div class="deliverable-item reveal reveal-delay-2">
+        <div class="deliverable-num">03</div>
         <div class="deliverable-title">Full Caption Structure</div>
         <p class="deliverable-desc">Every caption includes a hook, body copy, a call to action, optimized hashtags, and visual pairing suggestions.</p>
       </div>
-      <div class="deliverable-item">
-        <div class="deliverable-icon">04 —</div>
+      <div class="deliverable-item reveal">
+        <div class="deliverable-num">04</div>
         <div class="deliverable-title">Ready-to-Post Google Doc</div>
         <p class="deliverable-desc">Delivered clean and organized. Open it, pick a caption, and post. No reformatting or guesswork required.</p>
       </div>
-      <div class="deliverable-item">
-        <div class="deliverable-icon">05 —</div>
+      <div class="deliverable-item reveal reveal-delay-1">
+        <div class="deliverable-num">05</div>
         <div class="deliverable-title">Full Repurposing Rights</div>
         <p class="deliverable-desc">Adapt captions into reels, shorts, blog posts, email newsletters, or anything else. You own the content entirely.</p>
       </div>
-      <div class="deliverable-item">
-        <div class="deliverable-icon">06 —</div>
+      <div class="deliverable-item reveal reveal-delay-2">
+        <div class="deliverable-num">06</div>
         <div class="deliverable-title">48-Hour Delivery</div>
         <p class="deliverable-desc">From survey submission to inbox. No waiting weeks. No check-ins needed. Just done.</p>
       </div>
@@ -1018,27 +549,45 @@ src="https://www.facebook.com/tr?id=1935587483876031&ev=PageView&noscript=1"
 <!-- INDUSTRIES -->
 <section class="industries">
   <div class="industries-inner">
-    <span class="section-eyebrow">Industries Served</span>
-    <h2 class="section-title">Built for your industry.<br>Not a general template.</h2>
-    <div class="industry-grid">
+    <span class="section-eyebrow reveal">Industries Served</span>
+    <h2 class="section-title reveal">Built for your industry.<br>Not a general template.</h2>
+    <div class="industry-grid reveal">
       <div class="industry-pill">Cleaning Services</div>
       <div class="industry-pill">Event Planners</div>
       <div class="industry-pill">Pet Services</div>
       <div class="industry-pill">Real Estate</div>
       <div class="industry-pill">Retail</div>
-      <div class="industry-pill">Salons & Spas</div>
+      <div class="industry-pill">Salons &amp; Spas</div>
       <div class="industry-pill">Wedding Professionals</div>
+      <div class="industry-pill">Restaurants</div>
+      <div class="industry-pill">Health &amp; Wellness</div>
+      <div class="industry-pill">Fitness &amp; Personal Training</div>
+      <div class="industry-pill">Home Services</div>
       <div class="industry-pill">General Business</div>
     </div>
+  </div>
+</section>
+
+<!-- EMAIL CAPTURE STRIP -->
+<section class="capture-strip">
+  <div class="capture-strip-inner reveal">
+    <span class="capture-strip-eyebrow">Free Resource</span>
+    <h2 class="capture-strip-title">Not ready to buy yet?<br>Start with this.</h2>
+    <p class="capture-strip-sub">The Caption Formula Cheat Sheet — everything you need to write captions that stop the scroll, on one page. Hook formulas, CTA ideas, the anatomy of a great caption. Free.</p>
+    <form class="capture-strip-form" id="stripForm" onsubmit="submitStrip(event)">
+      <input type="email" class="capture-strip-input" placeholder="Your email address" required>
+      <button type="submit" class="capture-strip-btn" id="stripBtn">Send It Free →</button>
+    </form>
+    <div class="capture-strip-success" id="stripSuccess">Check your inbox — the cheat sheet is on its way.</div>
+    <p class="capture-strip-meta">One page &middot; No spam &middot; Unsubscribe any time</p>
   </div>
 </section>
 
 <!-- FAQ -->
 <section class="faq" id="faq">
   <div class="faq-inner">
-    <span class="section-eyebrow">Questions</span>
-    <h2 class="section-title" style="margin-bottom:48px;">Before you buy.</h2>
-
+    <span class="section-eyebrow reveal">Questions</span>
+    <h2 class="section-title reveal" style="margin-bottom:48px;">Before you buy.</h2>
     <div class="faq-item">
       <div class="faq-q">Is this actually custom or is it just AI?</div>
       <div class="faq-a">Your survey responses drive everything. AI is part of the workflow — but it's guided by your specific inputs, industry context, and marketing best practices reviewed before delivery. This is not generic prompt output. It's a system designed to produce content that actually fits your business.</div>
@@ -1073,7 +622,7 @@ src="https://www.facebook.com/tr?id=1935587483876031&ev=PageView&noscript=1"
   <p class="bottom-cta-sub">No agency. No calls. No templates. Just 24 custom captions built for your business — for $45.</p>
   <div class="bottom-cta-group">
     <a href="https://buy.stripe.com/cNi14n635frj7h9fFtgMw00" class="btn-large">Get My Custom Captions — $45</a>
-    <span class="bottom-note">One-time purchase · No subscription · No commitment</span>
+    <span class="bottom-note">One-time purchase &middot; No subscription &middot; No commitment</span>
   </div>
 </section>
 
@@ -1094,16 +643,17 @@ src="https://www.facebook.com/tr?id=1935587483876031&ev=PageView&noscript=1"
     <a href="https://www.facebook.com/profile.php?id=61577504456264" target="_blank">Facebook</a>
     <a href="https://pinterest.com/thecontentdrop" target="_blank">Pinterest</a>
   </div>
-  <span class="footer-email">hello@thecontentdrop.ca
-
-</span>
+  <span class="footer-email">hello@thecontentdrop.ca</span>
 </footer>
 
 <script>
+// Mobile menu
 function toggleMenu(){
   var m=document.getElementById('mobileMenu');
   if(m){m.style.display=(m.style.display==='flex')?'none':'flex';}
 }
+
+// FAQ accordion
 document.querySelectorAll('.faq-q').forEach(function(q){
   q.addEventListener('click',function(){
     var item=q.parentElement;
@@ -1112,6 +662,56 @@ document.querySelectorAll('.faq-q').forEach(function(q){
     if(!isOpen){item.classList.add('open');}
   });
 });
+
+// Sticky bar — show after scrolling past hero
+var stickyBar=document.getElementById('stickyBar');
+var hero=document.getElementById('hero');
+window.addEventListener('scroll',function(){
+  if(window.scrollY>hero.offsetHeight*0.7){
+    stickyBar.classList.add('visible');
+  } else {
+    stickyBar.classList.remove('visible');
+  }
+},{passive:true});
+
+// Scroll reveal
+var revealObserver=new IntersectionObserver(function(entries){
+  entries.forEach(function(entry){
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(function(el){revealObserver.observe(el);});
+
+// Email capture — strip form
+async function submitStrip(e){
+  e.preventDefault();
+  var email=document.querySelector('#stripForm input[type="email"]').value;
+  var btn=document.getElementById('stripBtn');
+  btn.textContent='Sending...';
+  btn.disabled=true;
+  try{
+    var res=await fetch('https://contentdrop-app-production.up.railway.app/subscribe',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({email:email})
+    });
+    if(res.ok){
+      document.getElementById('stripForm').style.display='none';
+      document.getElementById('stripSuccess').style.display='block';
+    } else {
+      btn.textContent='Send It Free →';
+      btn.disabled=false;
+      alert('Something went wrong — please try again.');
+    }
+  } catch(err){
+    btn.textContent='Send It Free →';
+    btn.disabled=false;
+    alert('Something went wrong — please try again.');
+  }
+}
 </script>
 </body>
 </html>
