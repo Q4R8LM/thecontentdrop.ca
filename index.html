@@ -12,6 +12,8 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="The Content Drop — Custom Social Media Captions for Small Business">
 <meta name="twitter:description" content="Get 24 custom social media captions written for your business in 48 hours. No calls, no contracts, no templates. Answer a short survey and get content that actually sounds like you.">
+<meta property="og:image" content="https://thecontentdrop.ca/og-image.png">
+<meta name="twitter:image" content="https://thecontentdrop.ca/og-image.png">
 <link rel="canonical" href="https://thecontentdrop.ca/">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -79,9 +81,6 @@ nav {
 .hero {
   min-height: 100vh; padding-top: 60px;
   background: var(--forest);
-  background-image:
-    radial-gradient(ellipse at 15% 85%, rgba(74,103,65,0.5) 0%, transparent 55%),
-    radial-gradient(ellipse at 85% 8%, rgba(45,82,64,0.35) 0%, transparent 50%);
   display: flex; flex-direction: column; justify-content: center;
   position: relative; overflow: hidden;
 }
@@ -96,15 +95,19 @@ nav {
 .btn-hero:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(0,0,0,0.3); }
 .hero-trust { font-size: 12px; font-weight: 300; color: var(--sand); letter-spacing: 0.04em; }
 
-/* Hero right — doc preview card */
-.hero-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(196,180,154,0.18); padding: 32px; opacity: 0; animation: fadeUp 0.9s ease 0.65s forwards; }
-.hero-card-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sand); margin-bottom: 20px; display: flex; justify-content: space-between; }
-.hero-card-label span { color: rgba(196,180,154,0.45); }
-.hero-caption { margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid rgba(196,180,154,0.12); }
-.hero-caption:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-.hc-platform { font-family: 'DM Mono', monospace; font-size: 8px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sand-2); margin-bottom: 7px; }
-.hc-text { font-size: 13px; font-weight: 300; line-height: 1.65; color: var(--sand-2); }
-.hc-text strong { font-weight: 500; color: var(--cream); }
+/* Hero right — product receipt card */
+.hero-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(196,180,154,0.18); opacity: 0; animation: fadeUp 0.9s ease 0.65s forwards; overflow: hidden; }
+.hero-card-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sand); padding: 18px 28px; display: flex; justify-content: space-between; border-bottom: 1px solid rgba(196,180,154,0.12); }
+.hero-card-label span { color: rgba(196,180,154,0.4); }
+.hero-receipt-rows { padding: 8px 0; }
+.hero-receipt-row { display: flex; align-items: flex-start; gap: 14px; padding: 14px 28px; border-bottom: 1px solid rgba(196,180,154,0.08); }
+.hero-receipt-row:last-child { border-bottom: none; }
+.hero-receipt-check { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--sand); flex-shrink: 0; margin-top: 1px; opacity: 0.6; }
+.hero-receipt-item { font-size: 13px; font-weight: 400; color: var(--cream); line-height: 1.4; }
+.hero-receipt-item span { display: block; font-size: 11px; font-weight: 300; color: rgba(196,180,154,0.5); margin-top: 2px; }
+.hero-card-footer { background: rgba(196,180,154,0.06); border-top: 1px solid rgba(196,180,154,0.12); padding: 16px 28px; display: flex; justify-content: space-between; align-items: center; }
+.hero-card-price { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 900; color: var(--cream); }
+.hero-card-delivery { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sand); text-align: right; line-height: 1.5; }
 
 .hero-scroll { position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px; opacity: 0; animation: fadeIn 0.8s ease 1.6s forwards; pointer-events: none; }
 .hero-scroll span { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sand); opacity: 0.5; }
@@ -322,6 +325,7 @@ fbq('init','1935587483876031');fbq('track','PageView');
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1935587483876031&ev=PageView&noscript=1"/></noscript>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-4TWPFW6PSF"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4TWPFW6PSF');</script>
+<link rel="icon" type="image/png" href="profilelogo.png">
 </head>
 <body>
 
@@ -369,22 +373,40 @@ fbq('init','1935587483876031');fbq('track','PageView');
       </div>
     </div>
 
-    <div class="hero-card" aria-hidden="true">
+    <div class="hero-card">
       <div class="hero-card-label">
-        <span>Sample Content Drop</span>
-        <span>3 of 24</span>
+        <span>What you receive</span>
+        <span>Custom Captions Drop</span>
       </div>
-      <div class="hero-caption">
-        <div class="hc-platform">Instagram · Caption 01</div>
-        <p class="hc-text"><strong>Hot take: your hair appointment is self-care, not a splurge.</strong> You work hard. Walking out of that chair feeling like yourself again isn't a luxury — it's maintenance. Book your next visit. Link in bio. ✂️</p>
+      <div class="hero-receipt-rows">
+        <div class="hero-receipt-row">
+          <div class="hero-receipt-check">✓</div>
+          <div class="hero-receipt-item">24 original social media captions<span>Written for your business, voice, and audience</span></div>
+        </div>
+        <div class="hero-receipt-row">
+          <div class="hero-receipt-check">✓</div>
+          <div class="hero-receipt-item">Written for 2 platforms you choose<span>Instagram, Facebook, TikTok, LinkedIn, Pinterest</span></div>
+        </div>
+        <div class="hero-receipt-row">
+          <div class="hero-receipt-check">✓</div>
+          <div class="hero-receipt-item">Built from your survey responses<span>Not a template — written around your actual business</span></div>
+        </div>
+        <div class="hero-receipt-row">
+          <div class="hero-receipt-check">✓</div>
+          <div class="hero-receipt-item">Media suggestion for every post<span>What to photograph or film to go with each caption</span></div>
+        </div>
+        <div class="hero-receipt-row">
+          <div class="hero-receipt-check">✓</div>
+          <div class="hero-receipt-item">Post timing tips included<span>Best days and times to publish each caption</span></div>
+        </div>
+        <div class="hero-receipt-row">
+          <div class="hero-receipt-check">✓</div>
+          <div class="hero-receipt-item">Delivered as a Google Doc<span>Open, copy, and post — no formatting needed</span></div>
+        </div>
       </div>
-      <div class="hero-caption">
-        <div class="hc-platform">Facebook · Caption 08</div>
-        <p class="hc-text"><strong>A client said something last week that stuck with me.</strong> "I forget how good I can look until I walk out of here." That's exactly why I do this. If it's been a while, this is your sign — DM us to book.</p>
-      </div>
-      <div class="hero-caption">
-        <div class="hc-platform">Instagram · Caption 17</div>
-        <p class="hc-text"><strong>New month. Finally time to try something different?</strong> Whether it's the colour you've been pinning or a fresh version of what you love — we're here for it. Comment "NEW" and we'll send you our availability. 👇</p>
+      <div class="hero-card-footer">
+        <div class="hero-card-price">$45</div>
+        <div class="hero-card-delivery">One-time payment<br>Delivered in 48 hours</div>
       </div>
     </div>
   </div>
@@ -710,7 +732,7 @@ fbq('init','1935587483876031');fbq('track','PageView');
   </ul>
   <div class="footer-right">
     <div class="footer-social">
-      <a href="https://www.facebook.com/thecontentdrop" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.facebook.com/profile.php?id=61577504456264" target="_blank" rel="noopener">Facebook</a>
       <a href="https://www.pinterest.com/thecontentdrop" target="_blank" rel="noopener">Pinterest</a>
     </div>
     <span class="footer-email">hello@thecontentdrop.ca</span>
@@ -749,8 +771,11 @@ document.querySelectorAll('[data-target]').forEach(function(el){ statObs.observe
 // ── STICKY BAR ──
 var hero = document.getElementById('hero');
 var bar = document.getElementById('stickyBar');
+var siteFooter = document.querySelector('footer');
 window.addEventListener('scroll', function(){
-  bar.classList.toggle('visible', window.scrollY > hero.offsetHeight * 0.65);
+  var pastHero = window.scrollY > hero.offsetHeight * 0.65;
+  var footerNear = siteFooter.getBoundingClientRect().top < window.innerHeight + 80;
+  bar.classList.toggle('visible', pastHero && !footerNear);
 }, {passive: true});
 
 // ── FAQ ──

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,700&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    width:1200px;
+    height:630px;
+    overflow:hidden;
+    background:#1E3A2F;
+    font-family:'DM Sans',sans-serif;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .frame{
+    width:1200px;
+    height:630px;
+    padding:72px 88px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    position:relative;
+  }
+  /* Corner marks */
+  .corner{position:absolute;width:20px;height:20px;border-color:#C4B49A;border-style:solid;opacity:0.3;}
+  .corner-tl{top:40px;left:40px;border-width:1px 0 0 1px;}
+  .corner-tr{top:40px;right:40px;border-width:1px 1px 0 0;}
+  .corner-bl{bottom:40px;left:40px;border-width:0 0 1px 1px;}
+  .corner-br{bottom:40px;right:40px;border-width:0 1px 1px 0;}
+
+  .top{display:flex;justify-content:space-between;align-items:flex-start;}
+  .wordmark{font-family:'DM Mono',monospace;font-size:13px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:#C4B49A;}
+  .tag{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(196,180,154,0.45);border:1px solid rgba(196,180,154,0.2);padding:8px 16px;}
+
+  .middle{flex:1;display:flex;flex-direction:column;justify-content:center;padding:32px 0;}
+  .eyebrow{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#C4B49A;margin-bottom:24px;opacity:0.7;}
+  h1{font-family:'Playfair Display',serif;font-size:72px;font-weight:900;color:#F5F0E8;line-height:1.0;margin-bottom:0;}
+  h1 em{font-style:italic;color:#D4C8B0;}
+
+  .bottom{display:flex;justify-content:space-between;align-items:flex-end;}
+  .details{display:flex;gap:32px;}
+  .detail{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(196,180,154,0.5);}
+  .detail::before{content:'→ ';opacity:0.5;}
+  .url{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(196,180,154,0.3);}
+
+  /* Decorative line */
+  .rule{height:1px;background:rgba(196,180,154,0.12);margin:24px 0 0;}
+</style>
+</head>
+<body>
+<div class="frame">
+  <div class="corner corner-tl"></div>
+  <div class="corner corner-tr"></div>
+  <div class="corner corner-bl"></div>
+  <div class="corner corner-br"></div>
+
+  <div class="top">
+    <div class="wordmark">The Content Drop</div>
+    <div class="tag">Done-for-you social media</div>
+  </div>
+
+  <div class="middle">
+    <div class="eyebrow">24 custom captions · 48 hours · $45</div>
+    <h1>Social media captions,<br><em>written for you.</em></h1>
+  </div>
+
+  <div class="rule"></div>
+
+  <div class="bottom" style="padding-top:20px;">
+    <div class="details">
+      <span class="detail">Written in your voice</span>
+      <span class="detail">No calls. No contracts.</span>
+      <span class="detail">One-time purchase</span>
+    </div>
+    <div class="url">thecontentdrop.ca</div>
+  </div>
+</div>
+</body>
+</html>

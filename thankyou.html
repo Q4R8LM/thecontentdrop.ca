@@ -12,16 +12,17 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Thank You — The Content Drop">
 <meta name="twitter:description" content="Thank you for your purchase. Check your email for your survey link.">
+<meta property="og:image" content="https://thecontentdrop.ca/og-image.png">
+<meta name="twitter:image" content="https://thecontentdrop.ca/og-image.png">
 <link rel="canonical" href="https://thecontentdrop.ca/thankyou.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>You're In — The Content Drop</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{--cream:#F5F0E8;--cream-dark:#EDE7D9;--forest:#1E3A2F;--forest-light:#2D5240;--sand:#C4B49A;--sand-light:#D4C8B0;--charcoal:#1A1A18;--text-body:#3A3A36;--accent:#8B6F4E;}
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-  body{font-family:'DM Sans',sans-serif;background:var(--forest);color:var(--cream);min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 24px;text-align:center;}
+  body{font-family:'DM Sans',sans-serif;background:var(--forest);color:var(--cream);min-height:100vh;display:flex;flex-direction:column;}
 
   .ty-logo{font-family:'DM Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--sand);margin-bottom:64px;opacity:0;animation:fadeUp 0.6s ease 0.1s forwards;}
 
@@ -71,6 +72,33 @@
   .footer-social a { color: var(--sand); opacity: 0.5; transition: opacity 0.2s; text-decoration: none; }
   .footer-social a:hover { opacity: 1; }
 
+  .ty-main{flex:1 0 auto;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px 24px 64px;text-align:center;}
+
+  .upsell{background:rgba(196,180,154,0.08);border-top:1px solid rgba(196,180,154,0.15);padding:64px 24px;text-align:center;}
+  .upsell-inner{max-width:560px;margin:0 auto;}
+  .upsell-eyebrow{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--sand);margin-bottom:20px;display:block;}
+  .upsell-title{font-family:'Playfair Display',serif;font-size:clamp(24px,3.5vw,36px);font-weight:900;color:var(--cream);line-height:1.1;margin-bottom:16px;}
+  .upsell-title em{font-style:italic;color:var(--sand-light);}
+  .upsell-body{font-size:14px;font-weight:300;color:rgba(245,240,232,0.6);line-height:1.8;margin-bottom:32px;max-width:440px;margin-left:auto;margin-right:auto;}
+  .upsell-details{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-bottom:32px;}
+  .upsell-detail{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--sand);opacity:0.7;}
+  .upsell-detail::before{content:'→ ';opacity:0.5;}
+  .btn-sand{font-family:'DM Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--forest);background:var(--sand);padding:16px 36px;text-decoration:none;transition:all 0.2s;display:inline-block;}
+  .btn-sand:hover{background:var(--sand-light);}
+  .upsell-note{font-size:11px;color:rgba(196,180,154,0.4);margin-top:12px;font-family:'DM Mono',monospace;letter-spacing:0.08em;}
+
+  footer{background:var(--charcoal);padding:40px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;}
+  .footer-logo{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--sand);}
+  .footer-links{display:flex;gap:20px;flex-wrap:wrap;list-style:none;}
+  .footer-links a{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(196,180,154,0.4);text-decoration:none;transition:color 0.2s;}
+  .footer-links a:hover{color:var(--sand);}
+  .footer-email{font-size:11px;color:rgba(196,180,154,0.4);font-family:'DM Mono',monospace;}
+  @media(max-width:768px){
+    footer{padding:28px 24px;flex-direction:column;text-align:center;}
+    .footer-links{justify-content:center;}
+    .footer-social{justify-content:center;}
+  }
+
 </style>
 <!-- Meta Pixel Code -->
 <script>
@@ -101,9 +129,11 @@ fbq('track', 'Purchase', {value: 45.00, currency: 'CAD'});
   gtag('config', 'G-4TWPFW6PSF');
 </script>
 <!-- End Google Analytics -->
+<link rel="icon" type="image/png" href="profilelogo.png">
 </head>
 <body>
 
+<div class="ty-main">
 <div class="ty-logo">The Content Drop</div>
 
 <div class="ty-check"></div>
@@ -120,7 +150,7 @@ fbq('track', 'Purchase', {value: 45.00, currency: 'CAD'});
       <div class="wh-content">
         <div class="wh-step-title">Check your email</div>
         <p class="wh-step-body">Your private survey link is on its way to your inbox right now. Check your spam folder if you don't see it within the hour.</p>
-        <div class="wh-step-timing">Within 24 hours</div>
+        <div class="wh-step-timing">Within minutes</div>
       </div>
     </div>
     <div class="wh-step">
@@ -146,6 +176,42 @@ fbq('track', 'Purchase', {value: 45.00, currency: 'CAD'});
   <a href="shop.html" class="btn-light">Browse More Drops</a>
   <a href="index.html" class="btn-outline">Back to Home</a>
 </div>
+</div><!-- /.ty-main -->
+
+<div class="upsell">
+  <div class="upsell-inner">
+    <span class="upsell-eyebrow">While you wait</span>
+    <h2 class="upsell-title">Know exactly who your<br><em>captions are written for.</em></h2>
+    <p class="upsell-body">Your captions are being crafted — but the best content speaks directly to a specific person. Add the Audience Persona drop and get a complete profile of your ideal customer: who they are, what they fear, what makes them buy.</p>
+    <div class="upsell-details">
+      <span class="upsell-detail">Your ideal customer, fully mapped</span>
+      <span class="upsell-detail">Delivered in 48 hours</span>
+      <span class="upsell-detail">$25 one-time</span>
+    </div>
+    <a href="https://buy.stripe.com/eVq4gzfDFfrjatlgJxgMw07" class="btn-sand" rel="noopener">Add Audience Persona — $25</a>
+    <div class="upsell-note">One-time · No subscription · No commitment</div>
+  </div>
+</div>
+
+<footer>
+  <span class="footer-logo">The Content Drop</span>
+  <ul class="footer-links">
+    <li><a href="shop.html">Shop</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="results.html">Results</a></li>
+    <li><a href="free.html">Free</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="terms.html">Terms</a></li>
+    <li><a href="privacy.html">Privacy</a></li>
+  </ul>
+  <div class="footer-social">
+    <a href="https://www.facebook.com/profile.php?id=61577504456264" target="_blank" rel="noopener">Facebook</a>
+    <a href="https://pinterest.com/thecontentdrop" target="_blank" rel="noopener">Pinterest</a>
+  </div>
+  <span class="footer-email">hello@thecontentdrop.ca</span>
+</footer>
+
 <script>
 function toggleMenu(){
   var m=document.getElementById('mobileMenu');
