@@ -1,185 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Free Resources — The Content Drop</title>
-<meta name="description" content="Free social media resources for small business owners. Download the caption formula cheat sheet and start writing captions that actually convert.">
-<link rel="canonical" href="https://thecontentdrop.ca/free.html">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-  :root{--cream:#F5F0E8;--cream-dark:#EDE7D9;--forest:#1E3A2F;--forest-light:#2D5240;--moss:#4A6741;--sand:#C4B49A;--sand-light:#D4C8B0;--charcoal:#1A1A18;--text-body:#3A3A36;--accent:#8B6F4E;}
-  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-  body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--charcoal);}
-  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:20px 48px;background:rgba(245,240,232,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(196,180,154,0.3);}
-  .nav-logo{font-family:'DM Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--forest);text-decoration:none;}
-  .nav-links{display:flex;gap:36px;list-style:none;}
-  .nav-links a{font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-body);text-decoration:none;transition:color 0.2s;}
-  .nav-links a:hover,.nav-links a.active{color:var(--forest);}
-  .nav-cta{font-family:'DM Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--cream);background:var(--forest);padding:10px 22px;text-decoration:none;}
-  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;}
-  .hamburger span{display:block;width:22px;height:2px;background:var(--forest);}
-  .mobile-menu{display:none;position:fixed;top:61px;left:0;right:0;background:var(--forest);z-index:99;padding:24px 28px;flex-direction:column;gap:0;}
-  .mobile-menu a{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--cream);text-decoration:none;padding:16px 0;border-bottom:1px solid rgba(196,180,154,0.15);}
-  @media(max-width:900px){.hamburger{display:flex;}.nav-links,.nav-cta{display:none;}}
+THE CONTENT DROP
 
-  /* Hero */
-  .free-hero{background:var(--forest);padding:140px 64px 80px;text-align:center;}
-  .free-eyebrow{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--sand);margin-bottom:20px;}
-  .free-headline{font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,60px);font-weight:900;color:var(--cream);line-height:1.05;margin-bottom:20px;}
-  .free-headline em{font-style:italic;color:var(--sand-light);}
-  .free-sub{font-size:16px;font-weight:300;color:rgba(245,240,232,0.6);max-width:480px;margin:0 auto;line-height:1.7;}
 
-  /* Download card */
-  .download-section{padding:80px 64px;max-width:1000px;margin:0 auto;}
-  .download-card{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--cream);border:1px solid var(--sand-light);}
-  .download-preview{background:var(--forest);padding:48px 40px;display:flex;flex-direction:column;justify-content:center;}
-  .download-preview-eyebrow{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(196,180,154,0.5);margin-bottom:16px;}
-  .download-preview-title{font-family:'Playfair Display',serif;font-size:28px;font-weight:900;color:var(--cream);line-height:1.1;margin-bottom:12px;}
-  .download-preview-title em{font-style:italic;color:var(--sand-light);}
-  .download-preview-sub{font-size:13px;font-weight:300;color:rgba(245,240,232,0.5);line-height:1.7;margin-bottom:24px;}
-  .download-preview-items{display:flex;flex-direction:column;gap:8px;}
-  .download-preview-item{font-size:12px;color:rgba(196,180,154,0.7);display:flex;gap:10px;align-items:flex-start;}
-  .download-preview-item::before{content:'→';color:var(--sand);flex-shrink:0;}
-  .download-body{padding:48px 40px;display:flex;flex-direction:column;justify-content:center;}
-  .download-tag{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--moss);background:rgba(74,103,65,0.1);padding:4px 12px;display:inline-block;margin-bottom:20px;}
-  .download-title{font-family:'Playfair Display',serif;font-size:24px;font-weight:900;color:var(--forest);line-height:1.1;margin-bottom:12px;}
-  .download-desc{font-size:14px;font-weight:300;color:var(--text-body);line-height:1.7;margin-bottom:28px;}
-  .download-btn{display:inline-block;background:var(--forest);color:var(--cream);padding:16px 32px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;transition:background 0.2s;text-align:center;}
-  .download-btn:hover{background:var(--forest-light);}
-  .download-meta{font-size:11px;color:var(--text-body);opacity:0.5;margin-top:12px;}
 
-  /* Coming soon */
-  .coming-section{padding:0 64px 80px;max-width:1000px;margin:0 auto;}
-  .coming-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--sand-light);}
-  .coming-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
-  .coming-card{background:var(--cream-dark);padding:28px 24px;border:1px solid var(--sand-light);}
-  .coming-card-tag{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;}
-  .coming-card-title{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--forest);margin-bottom:8px;}
-  .coming-card-desc{font-size:12px;font-weight:300;color:var(--text-body);line-height:1.6;}
-  .coming-badge{display:inline-block;font-family:'DM Mono',monospace;font-size:8px;letter-spacing:0.12em;text-transform:uppercase;padding:3px 8px;background:rgba(196,180,154,0.2);color:var(--accent);margin-top:12px;}
+FREE RESOURCES
+Tools to help you show up. No strings attached.
+Practical resources for small business owners who want to post more consistently and write better content.
+THE CONTENT DROP · FREE DOWNLOAD
+The Caption Formula
+Cheat Sheet.
+Everything you need to write captions that stop the scroll — on one page.
+The anatomy of every great caption 5 hook formulas that stop the scroll 6 CTAs that actually convert The rules worth remembering
+FREE DOWNLOAD · PDF
+The Caption Formula Cheat Sheet
+Save this and use it every time you sit down to write a social media post. Hook formulas, CTA ideas, the caption anatomy, and the rules that actually matter — all on one page. No fluff.
 
-  /* Footer */
-  footer{background:var(--charcoal);padding:48px 64px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
-  .footer-logo{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--sand);}
-  .footer-links{display:flex;gap:32px;list-style:none;}
-  .footer-links a{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(245,240,232,0.4);text-decoration:none;}
-  .footer-links a:hover{color:var(--sand);}
-  .footer-social{display:flex;gap:20px;}
-  .footer-social a{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,240,232,0.4);text-decoration:none;}
-  .footer-social a:hover{color:var(--sand);}
-  .footer-email{font-size:11px;color:rgba(245,240,232,0.35);}
-
-  @media(max-width:900px){
-    .free-hero,.download-section,.coming-section{padding-left:28px;padding-right:28px;}
-    .download-card{grid-template-columns:1fr;}
-    .coming-grid{grid-template-columns:1fr;}
-    footer{flex-direction:column;gap:20px;padding:40px 28px;text-align:center;}
-  }
-</style>
-</head>
-<body>
-
-<nav>
-  <a href="index.html" class="nav-logo">The Content Drop</a>
-  <ul class="nav-links">
-    <li><a href="shop.html">Shop</a></li>
-    <li><a href="blog.html">Blog</a></li>
-    <li><a href="results.html">Results</a></li>
-    <li><a href="free.html">Free</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-  <button class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
-  <a href="captions.html" class="nav-cta">Get Your Captions — $45</a>
-</nav>
-
-<div class="mobile-menu" id="mobileMenu">
-  <a href="shop.html">Shop</a>
-  <a href="blog.html">Blog</a>
-  <a href="results.html">Results</a>
-  <a href="free.html">Free</a>
-  <a href="about.html">About</a>
-  <a href="contact.html">Contact</a>
-</div>
-
-<section class="free-hero">
-  <div class="free-eyebrow">Free Resources</div>
-  <h1 class="free-headline">Tools to help you show up.<br><em>No strings attached.</em></h1>
-  <p class="free-sub">Practical resources for small business owners who want to post more consistently and write better content.</p>
-</section>
-
-<section class="download-section">
-  <div class="download-card">
-    <div class="download-preview">
-      <div class="download-preview-eyebrow">The Content Drop · Free Download</div>
-      <div class="download-preview-title">The Caption Formula<br><em>Cheat Sheet.</em></div>
-      <div class="download-preview-sub">Everything you need to write captions that stop the scroll — on one page.</div>
-      <div class="download-preview-items">
-        <div class="download-preview-item">The anatomy of every great caption</div>
-        <div class="download-preview-item">5 hook formulas that stop the scroll</div>
-        <div class="download-preview-item">6 CTAs that actually convert</div>
-        <div class="download-preview-item">The rules worth remembering</div>
-      </div>
-    </div>
-    <div class="download-body">
-      <div class="download-tag">Free Download · PDF</div>
-      <div class="download-title">The Caption Formula Cheat Sheet</div>
-      <div class="download-desc">Save this and use it every time you sit down to write a social media post. Hook formulas, CTA ideas, the caption anatomy, and the rules that actually matter — all on one page. No fluff.</div>
-      <a href="https://drive.google.com/uc?export=download&id=1qvY3Ma_TVC6_bYKFxzDQqmHcaIaQl7Yy" class="download-btn" download>Download Free — PDF</a>
-      <div class="download-meta">One page · Instant download · No email required</div>
-    </div>
-  </div>
-</section>
-
-<section class="coming-section">
-  <div class="coming-label">More coming soon</div>
-  <div class="coming-grid">
-    <div class="coming-card">
-      <div class="coming-card-tag">Free Download</div>
-      <div class="coming-card-title">30 Content Ideas for Small Business</div>
-      <div class="coming-card-desc">Never stare at a blank screen again. 30 post ideas that work across any industry — save it and come back whenever you're stuck.</div>
-      <div class="coming-badge">Coming soon</div>
-    </div>
-    <div class="coming-card">
-      <div class="coming-card-tag">Free Download</div>
-      <div class="coming-card-title">The Social Media Profile Audit Checklist</div>
-      <div class="coming-card-desc">Go through every element of your social profiles and score them. Bio, photo, link, pinned post, consistency. Fix the gaps before you spend on ads.</div>
-      <div class="coming-badge">Coming soon</div>
-    </div>
-    <div class="coming-card">
-      <div class="coming-card-tag">Free Download</div>
-      <div class="coming-card-title">The Content Pillar Worksheet</div>
-      <div class="coming-card-desc">Define your 3–5 content pillars with guided questions. The foundation of every consistent social media strategy — and a lot harder than it sounds.</div>
-      <div class="coming-badge">Coming soon</div>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <span class="footer-logo">The Content Drop</span>
-  <ul class="footer-links">
-    <li><a href="shop.html">Shop</a></li>
-    <li><a href="blog.html">Blog</a></li>
-    <li><a href="results.html">Results</a></li>
-    <li><a href="free.html">Free</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="contact.html">Contact</a></li>
-    <li><a href="terms.html">Terms</a></li>
-    <li><a href="privacy.html">Privacy</a></li>
-  </ul>
-  <div class="footer-social">
-    <a href="https://www.facebook.com/profile.php?id=61577504456264" target="_blank">Facebook</a>
-    <a href="https://pinterest.com/thecontentdrop" target="_blank">Pinterest</a>
-  </div>
-  <span class="footer-email">hello.thecontentdrop@gmail.com</span>
-</footer>
-
-<script>
-function toggleMenu(){
-  var m=document.getElementById('mobileMenu');
-  if(m){m.style.display=(m.style.display==='flex')?'none':'flex';}
-}
-</script>
-</body>
-</html>
+SEND ME THE CHEAT SHEET →
+Delivered by email · No spam · Unsubscribe any time
+MORE COMING SOON
+FREE DOWNLOAD
+30 Content Ideas for Small Business
+Never stare at a blank screen again. 30 post ideas that work across any industry — save it and come back whenever you're stuck.
+COMING SOON
+FREE DOWNLOAD
+The Social Media Profile Audit Checklist
+Go through every element of your social profiles and score them. Bio, photo, link, pinned post, consistency. Fix the gaps before you spend on ads.
+COMING SOON
+FREE DOWNLOAD
+The Content Pillar Worksheet
+Define your 3–5 content pillars with guided questions. The foundation of every consistent social media strategy — and a lot harder than it sounds.
+COMING SOON
+THE CONTENT DROP
+	•	SHOP
+	•	BLOG
+	•	RESULTS
+	•	FREE
+	•	ABOUT
+	•	CONTACT
+	•	TERMS
+	•	PRIVACY
+FACEBOOK
+PINTEREST
+hello@thecontentdrop.ca
