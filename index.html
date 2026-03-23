@@ -7,306 +7,314 @@
 <meta name="keywords" content="social media captions, small business marketing, custom captions, social media content, Instagram captions, Facebook captions">
 <meta property="og:title" content="The Content Drop — Custom Social Media Captions for Small Business">
 <meta property="og:description" content="Get 24 custom social media captions written for your business in 48 hours. No calls, no contracts, no templates. Answer a short survey and get content that actually sounds like you.">
-<meta property="og:url" content="https://thecontentdrop.ca/index.html">
+<meta property="og:url" content="https://thecontentdrop.ca/">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="The Content Drop — Custom Social Media Captions for Small Business">
 <meta name="twitter:description" content="Get 24 custom social media captions written for your business in 48 hours. No calls, no contracts, no templates. Answer a short survey and get content that actually sounds like you.">
-<link rel="canonical" href="https://thecontentdrop.ca/index.html">
+<link rel="canonical" href="https://thecontentdrop.ca/">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
-  /* ── TOKENS ── */
-  :root {
-    --cream:       #F5F0E8;
-    --cream-2:     #EDE7D9;
-    --cream-3:     #E2D9C8;
-    --forest:      #1E3A2F;
-    --forest-2:    #2D5240;
-    --moss:        #4A6741;
-    --sand:        #C4B49A;
-    --sand-2:      #D4C8B0;
-    --charcoal:    #1A1A18;
-    --body:        #3A3A36;
-    --accent:      #7A5C3A;
-  }
+/* ── TOKENS ── */
+:root {
+  --cream:    #F5F0E8;
+  --cream-2:  #EDE7D9;
+  --cream-3:  #E2D9C8;
+  --forest:   #1E3A2F;
+  --forest-2: #2D5240;
+  --moss:     #4A6741;
+  --sand:     #C4B49A;
+  --sand-2:   #D4C8B0;
+  --charcoal: #1A1A18;
+  --body:     #3A3A36;
+  --accent:   #7A5C3A;
+}
 
-  /* ── RESET ── */
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--body); overflow-x: hidden; }
+/* ── RESET ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--body); overflow-x: hidden; }
 
-  /* ── SHARED LAYOUT ── */
-  .inner { max-width: 1100px; margin: 0 auto; }
-  .eyebrow { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--sand); display: block; margin-bottom: 18px; }
-  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(32px, 3.5vw, 48px); font-weight: 900; line-height: 1.1; color: var(--forest); margin-bottom: 52px; }
+/* ── SCROLL REVEAL ── */
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.d1 { transition-delay: 0.12s; }
+.d2 { transition-delay: 0.24s; }
+.d3 { transition-delay: 0.36s; }
 
-  /* ── SCROLL REVEAL ── */
-  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.65s ease, transform 0.65s ease; }
-  .reveal.visible { opacity: 1; transform: translateY(0); }
-  .d1 { transition-delay: 0.1s; }
-  .d2 { transition-delay: 0.2s; }
-  .d3 { transition-delay: 0.3s; }
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 0 48px; height: 60px;
+  background: rgba(245,240,232,0.96);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--cream-3);
+}
+.nav-logo { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--forest); text-decoration: none; }
+.nav-links { display: flex; gap: 32px; list-style: none; }
+.nav-links a { font-size: 13px; font-weight: 400; color: var(--body); text-decoration: none; transition: color 0.2s; }
+.nav-links a:hover { color: var(--forest); }
+.nav-cta { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cream); background: var(--forest); padding: 10px 22px; text-decoration: none; transition: background 0.2s; }
+.nav-cta:hover { background: var(--forest-2); }
 
-  /* ── NAV ── */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 0 48px; height: 60px;
-    background: rgba(245,240,232,0.95);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--cream-3);
-  }
-  .nav-logo { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--forest); text-decoration: none; }
-  .nav-links { display: flex; gap: 32px; list-style: none; }
-  .nav-links a { font-size: 13px; font-weight: 400; color: var(--body); text-decoration: none; transition: color 0.2s; }
-  .nav-links a:hover { color: var(--forest); }
-  .nav-cta { font-family: 'DM Mono', monospace; font-size: 10px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cream); background: var(--forest); padding: 10px 22px; text-decoration: none; transition: background 0.2s; }
-  .nav-cta:hover { background: var(--forest-2); }
+/* ── STICKY BAR ── */
+.sticky-bar {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
+  background: var(--forest); padding: 14px 48px;
+  display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  transform: translateY(100%); transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
+}
+.sticky-bar.visible { transform: translateY(0); }
+.sticky-bar-text { font-size: 13px; font-weight: 300; color: var(--sand-2); }
+.sticky-bar-text strong { color: var(--cream); font-weight: 500; }
+.sticky-bar-btn { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--forest); background: var(--sand-2); padding: 12px 28px; text-decoration: none; white-space: nowrap; flex-shrink: 0; transition: opacity 0.2s; }
+.sticky-bar-btn:hover { opacity: 0.85; }
 
-  /* ── STICKY BAR ── */
-  .sticky-bar {
-    position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
-    background: var(--forest); padding: 14px 48px;
-    display: flex; justify-content: space-between; align-items: center; gap: 16px;
-    transform: translateY(100%); transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
-  }
-  .sticky-bar.visible { transform: translateY(0); }
-  .sticky-bar-text { font-size: 13px; font-weight: 300; color: var(--sand-2); }
-  .sticky-bar-text strong { color: var(--cream); font-weight: 500; }
-  .sticky-bar-btn { font-family: 'DM Mono', monospace; font-size: 10px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--forest); background: var(--sand-2); padding: 12px 28px; text-decoration: none; white-space: nowrap; flex-shrink: 0; transition: opacity 0.2s; }
-  .sticky-bar-btn:hover { opacity: 0.85; }
+/* ── HERO ── */
+.hero {
+  min-height: 100vh; padding-top: 60px;
+  background: var(--forest);
+  background-image:
+    radial-gradient(ellipse at 15% 85%, rgba(74,103,65,0.5) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 8%, rgba(45,82,64,0.35) 0%, transparent 50%);
+  display: flex; flex-direction: column; justify-content: center;
+  position: relative; overflow: hidden;
+}
+.hero-inner { max-width: 1100px; margin: 0 auto; padding: 80px 48px 100px; display: grid; grid-template-columns: 1fr 380px; gap: 80px; align-items: center; }
+.hero-left { }
+.hero-eyebrow { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--sand); display: block; margin-bottom: 28px; opacity: 0; animation: fadeUp 0.6s ease 0.15s forwards; }
+.hero-headline { font-family: 'Playfair Display', serif; font-size: clamp(40px, 5.5vw, 72px); font-weight: 900; line-height: 1.08; color: var(--cream); margin-bottom: 28px; opacity: 0; animation: fadeUp 0.8s ease 0.35s forwards; }
+.hero-headline em { font-style: italic; color: var(--sand-2); }
+.hero-sub { font-size: 16px; font-weight: 300; line-height: 1.9; color: var(--sand-2); margin-bottom: 44px; opacity: 0; animation: fadeUp 0.8s ease 0.55s forwards; max-width: 480px; }
+.hero-cta { display: flex; flex-direction: column; gap: 14px; opacity: 0; animation: fadeUp 0.7s ease 0.75s forwards; }
+.btn-hero { font-family: 'DM Mono', monospace; font-size: 12px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--forest); background: var(--cream); padding: 18px 40px; text-decoration: none; display: inline-block; align-self: flex-start; transition: transform 0.2s, box-shadow 0.2s; }
+.btn-hero:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(0,0,0,0.3); }
+.hero-trust { font-size: 12px; font-weight: 300; color: var(--sand); letter-spacing: 0.04em; }
 
-  /* ── HERO ── */
-  .hero {
-    min-height: 100vh; padding-top: 60px;
-    background: var(--forest);
-    background-image: radial-gradient(ellipse at 20% 80%, rgba(74,103,65,0.45) 0%, transparent 55%),
-                      radial-gradient(ellipse at 80% 10%, rgba(45,82,64,0.3) 0%, transparent 50%);
-    display: flex; flex-direction: column; justify-content: center;
-    position: relative; overflow: hidden; text-align: center;
-  }
-  .hero-inner { max-width: 800px; margin: 0 auto; padding: 80px 40px 100px; }
-  .hero-eyebrow {
-    font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.22em;
-    text-transform: uppercase; color: var(--sand); display: block; margin-bottom: 28px;
-    opacity: 0; animation: fadeUp 0.6s ease 0.15s forwards;
-  }
-  .hero-headline {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(42px, 6vw, 78px);
-    font-weight: 900; line-height: 1.08; color: var(--cream);
-    margin-bottom: 28px;
-    opacity: 0; animation: fadeUp 0.8s ease 0.35s forwards;
-  }
-  .hero-headline em { font-style: italic; color: var(--sand-2); }
-  .hero-sub {
-    font-size: 17px; font-weight: 300; line-height: 1.85;
-    color: var(--sand-2); max-width: 560px; margin: 0 auto 48px;
-    opacity: 0; animation: fadeUp 0.8s ease 0.55s forwards;
-  }
-  .hero-cta {
-    display: flex; flex-direction: column; align-items: center; gap: 14px;
-    opacity: 0; animation: fadeUp 0.7s ease 0.75s forwards;
-  }
-  .btn-hero {
-    font-family: 'DM Mono', monospace; font-size: 12px; font-weight: 500;
-    letter-spacing: 0.14em; text-transform: uppercase;
-    color: var(--forest); background: var(--cream);
-    padding: 18px 48px; text-decoration: none; display: inline-block;
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  .btn-hero:hover { transform: translateY(-3px); box-shadow: 0 10px 32px rgba(0,0,0,0.3); }
-  .hero-trust { font-size: 12px; font-weight: 300; color: var(--sand); letter-spacing: 0.04em; }
-  .hero-scroll {
-    position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%);
-    display: flex; flex-direction: column; align-items: center; gap: 8px;
-    opacity: 0; animation: fadeIn 0.8s ease 1.5s forwards; pointer-events: none;
-  }
-  .hero-scroll span { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sand); opacity: 0.6; }
-  .hero-scroll-line { width: 1px; height: 36px; background: linear-gradient(to bottom, var(--sand), transparent); animation: pulse 2s ease-in-out 1.8s infinite; }
-  @keyframes pulse { 0%,100% { opacity: 0.5; } 50% { opacity: 1; } }
+/* Hero right — doc preview card */
+.hero-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(196,180,154,0.18); padding: 32px; opacity: 0; animation: fadeUp 0.9s ease 0.65s forwards; }
+.hero-card-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sand); margin-bottom: 20px; display: flex; justify-content: space-between; }
+.hero-card-label span { color: rgba(196,180,154,0.45); }
+.hero-caption { margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid rgba(196,180,154,0.12); }
+.hero-caption:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.hc-platform { font-family: 'DM Mono', monospace; font-size: 8px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--moss); margin-bottom: 7px; }
+.hc-text { font-size: 13px; font-weight: 300; line-height: 1.65; color: var(--sand-2); }
+.hc-text strong { font-weight: 500; color: var(--cream); }
 
-  /* ── STATS ── */
-  .stats { background: var(--cream-2); padding: 44px 48px; border-bottom: 1px solid var(--cream-3); }
-  .stats-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 24px; }
-  .stat { text-align: center; }
-  .stat-num { font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 900; color: var(--forest); line-height: 1; }
-  .stat-label { font-size: 12px; font-weight: 300; color: var(--accent); margin-top: 6px; }
-  .stat-divider { width: 1px; height: 40px; background: var(--cream-3); }
+.hero-scroll { position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px; opacity: 0; animation: fadeIn 0.8s ease 1.6s forwards; pointer-events: none; }
+.hero-scroll span { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sand); opacity: 0.5; }
+.hero-scroll-line { width: 1px; height: 36px; background: linear-gradient(to bottom, var(--sand), transparent); animation: pulse 2.2s ease-in-out 1.8s infinite; }
 
-  /* ── HOW IT WORKS ── */
-  .how { padding: 96px 48px; background: var(--cream); }
-  .how .section-title { margin-bottom: 48px; }
-  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
-  .step { background: var(--cream-2); padding: 48px 36px 44px; transition: background 0.3s, transform 0.25s; cursor: default; }
-  .step:hover { background: var(--forest); transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.14); }
-  .step-num { font-family: 'DM Mono', monospace; font-size: 10px; font-weight: 500; letter-spacing: 0.22em; color: var(--sand); margin-bottom: 20px; transition: color 0.3s; }
-  .step-title { font-family: 'Playfair Display', serif; font-size: 21px; font-weight: 700; color: var(--forest); margin-bottom: 14px; transition: color 0.3s; }
-  .step-body { font-size: 14px; font-weight: 300; line-height: 1.8; color: var(--body); transition: color 0.3s; }
-  .step:hover .step-title { color: var(--cream); }
-  .step:hover .step-body { color: var(--sand-2); }
+/* ── STATS ── */
+.stats { background: var(--cream-2); padding: 40px 48px; border-bottom: 1px solid var(--cream-3); }
+.stats-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 24px; }
+.stat { text-align: center; }
+.stat-num { font-family: 'Playfair Display', serif; font-size: 38px; font-weight: 900; color: var(--forest); line-height: 1; }
+.stat-label { font-size: 12px; font-weight: 300; color: var(--accent); margin-top: 5px; }
+.stat-div { width: 1px; height: 36px; background: var(--cream-3); }
 
-  /* ── WHAT YOU GET ── */
-  .deliverable { padding: 96px 48px; background: var(--forest); }
-  .deliverable .eyebrow { color: var(--sand); }
-  .deliverable .section-title { color: var(--cream); }
-  .deliverable-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
-  .deliverable-item { background: rgba(255,255,255,0.05); padding: 40px 32px; border-top: 2px solid transparent; transition: background 0.25s, border-color 0.25s; }
-  .deliverable-item:hover { background: rgba(255,255,255,0.1); border-top-color: var(--sand); }
-  .deliverable-num { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: var(--sand); margin-bottom: 16px; }
-  .deliverable-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--cream); margin-bottom: 10px; }
-  .deliverable-desc { font-size: 13px; font-weight: 300; line-height: 1.8; color: var(--sand-2); }
+/* ── EMPATHY ── */
+.empathy { padding: 96px 48px; background: var(--cream); }
+.empathy-inner { max-width: 960px; margin: 0 auto; }
+.empathy-lead { font-family: 'Playfair Display', serif; font-size: clamp(26px, 3.2vw, 44px); font-weight: 400; font-style: italic; line-height: 1.55; color: var(--forest); margin-bottom: 72px; }
+.empathy-lead strong { font-style: normal; font-weight: 900; display: block; margin-top: 8px; }
+.pain-cols { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--cream-3); }
+.pain-col { padding: 40px 40px 40px 0; border-right: 1px solid var(--cream-3); }
+.pain-col:last-child { border-right: none; padding-right: 0; padding-left: 40px; }
+.pain-col:nth-child(2) { padding-left: 40px; }
+.pain-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sand); display: block; margin-bottom: 14px; }
+.pain-col p { font-size: 14px; font-weight: 300; line-height: 1.82; color: var(--body); }
+.pain-col p em { font-style: italic; color: var(--forest); }
 
-  /* ── TESTIMONIALS ── */
-  .testimonials { padding: 96px 48px; background: var(--cream); }
-  .tgrid { display: grid; grid-template-columns: 3fr 2fr; gap: 2px; }
-  .t-featured { background: var(--forest); padding: 56px 48px; display: flex; flex-direction: column; justify-content: space-between; gap: 32px; }
-  .t-mark { font-family: 'Playfair Display', serif; font-size: 72px; line-height: 0.8; color: var(--sand); font-weight: 900; }
-  .t-quote { font-family: 'Playfair Display', serif; font-size: 22px; font-style: italic; line-height: 1.75; color: var(--cream); flex: 1; }
-  .t-byline { border-top: 1px solid rgba(196,180,154,0.25); padding-top: 20px; }
-  .t-name { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sand); margin-bottom: 8px; }
-  .t-result { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--moss); background: rgba(74,103,65,0.25); padding: 5px 12px; display: inline-block; }
-  .t-stack { display: flex; flex-direction: column; gap: 2px; }
-  .t-small { background: var(--cream-2); padding: 36px 32px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; gap: 24px; transition: background 0.2s; }
-  .t-small:hover { background: var(--cream-3); }
-  .t-small .t-quote { font-size: 15px; color: var(--forest); }
-  .t-small .t-name { color: var(--accent); }
-  .t-small .t-result { color: var(--moss); background: rgba(74,103,65,0.12); }
+/* ── HOW IT WORKS ── */
+.how { background: var(--forest); padding: 96px 0; }
+.how-header { padding: 0 48px; margin-bottom: 56px; }
+.how-header .eyebrow { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--sand); display: block; margin-bottom: 18px; }
+.how-title { font-family: 'Playfair Display', serif; font-size: clamp(36px, 4.5vw, 58px); font-weight: 900; line-height: 1.06; color: var(--cream); }
+.step-row { display: grid; grid-template-columns: 200px 1fr; border-top: 1px solid rgba(196,180,154,0.1); }
+.step-row:last-child { border-bottom: 1px solid rgba(196,180,154,0.1); }
+.step-num-bg { padding: 40px 0 40px 48px; display: flex; align-items: center; }
+.step-num-bg span { font-family: 'Playfair Display', serif; font-size: clamp(80px, 10vw, 120px); font-weight: 900; color: rgba(196,180,154,0.1); line-height: 1; user-select: none; }
+.step-content { padding: 52px 48px; border-left: 1px solid rgba(196,180,154,0.1); display: flex; flex-direction: column; justify-content: center; }
+.step-tag { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--sand); display: block; margin-bottom: 14px; }
+.step-content h3 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--cream); margin-bottom: 12px; line-height: 1.3; }
+.step-content p { font-size: 14px; font-weight: 300; line-height: 1.85; color: var(--sand-2); max-width: 540px; }
 
-  /* ── WHY ── */
-  .why { background: var(--cream-2); padding: 96px 48px; }
-  .why-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
-  .why-title { font-family: 'Playfair Display', serif; font-size: clamp(30px, 3vw, 44px); font-weight: 900; line-height: 1.1; color: var(--forest); margin-bottom: 24px; }
-  .why-body { font-size: 15px; font-weight: 300; line-height: 1.9; color: var(--body); margin-bottom: 40px; }
-  .why-list { list-style: none; }
-  .why-list li { font-size: 14px; font-weight: 300; color: var(--body); padding: 12px 0; border-bottom: 1px solid var(--cream-3); display: flex; align-items: flex-start; gap: 14px; line-height: 1.5; }
-  .why-list li .check { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--moss); flex-shrink: 0; margin-top: 2px; }
-  .compare-stack { display: flex; flex-direction: column; gap: 2px; }
-  .compare-card { padding: 28px 32px; background: var(--cream); border-left: 3px solid transparent; }
-  .compare-card.active { background: var(--forest); border-left-color: var(--sand); }
-  .compare-label { font-family: 'DM Mono', monospace; font-size: 8px; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 8px; }
-  .compare-card.active .compare-label { color: var(--sand); }
-  .compare-card:not(.active) .compare-label { color: var(--sand); }
-  .compare-title { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; margin-bottom: 6px; }
-  .compare-card.active .compare-title { color: var(--cream); }
-  .compare-card:not(.active) .compare-title { color: var(--cream-3); }
-  .compare-desc { font-size: 13px; font-weight: 300; line-height: 1.6; }
-  .compare-card.active .compare-desc { color: var(--sand-2); }
-  .compare-card:not(.active) .compare-desc { color: var(--cream-3); }
+/* ── RECEIPT ── */
+.receipt-section { padding: 96px 48px; background: var(--cream-2); }
+.receipt-wrap { max-width: 640px; margin: 0 auto; }
+.receipt-eyebrow { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--sand); display: block; text-align: center; margin-bottom: 48px; }
+.receipt { background: var(--cream); box-shadow: 0 8px 56px rgba(30,58,47,0.12), 0 2px 8px rgba(30,58,47,0.06); position: relative; }
+.receipt-top { padding: 44px 44px 32px; border-bottom: 2px dashed var(--cream-3); text-align: center; }
+.receipt-brand { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 900; color: var(--forest); letter-spacing: -0.01em; margin-bottom: 6px; }
+.receipt-subtitle { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sand); }
+.receipt-body { padding: 28px 44px; }
+.receipt-row { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 11px 0; border-bottom: 1px solid var(--cream-3); }
+.receipt-row:last-child { border-bottom: none; }
+.receipt-item-name { font-family: 'DM Mono', monospace; font-size: 12px; color: var(--body); }
+.receipt-item-detail { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--sand); margin-top: 3px; }
+.receipt-check { font-family: 'DM Mono', monospace; font-size: 12px; color: var(--moss); flex-shrink: 0; }
+.receipt-total { padding: 28px 44px 0; border-top: 2px solid var(--forest); }
+.receipt-total-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; }
+.receipt-total-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--body); }
+.receipt-total-amount { font-family: 'Playfair Display', serif; font-size: 42px; font-weight: 900; color: var(--forest); line-height: 1; }
+.receipt-note { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--sand); letter-spacing: 0.08em; }
+.receipt-cta-wrap { padding: 24px 44px 44px; }
+.receipt-btn { display: block; text-align: center; font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cream); background: var(--forest); padding: 18px; text-decoration: none; transition: background 0.2s; }
+.receipt-btn:hover { background: var(--forest-2); }
 
-  /* ── SAMPLE (product page link) ── */
-  .sample { padding: 96px 48px; background: var(--cream); border-top: 1px solid var(--cream-3); }
-  .sample-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
-  .sample-title { font-family: 'Playfair Display', serif; font-size: clamp(26px, 2.8vw, 40px); font-weight: 900; line-height: 1.12; color: var(--forest); margin-bottom: 18px; }
-  .sample-body { font-size: 15px; font-weight: 300; line-height: 1.85; color: var(--body); margin-bottom: 28px; }
-  .sample-features { list-style: none; display: flex; flex-direction: column; gap: 11px; }
-  .sample-features li { font-size: 14px; font-weight: 300; color: var(--body); display: flex; align-items: flex-start; gap: 12px; line-height: 1.5; }
-  .sample-features li::before { content: '→'; font-family: 'DM Mono', monospace; font-size: 11px; color: var(--forest); flex-shrink: 0; margin-top: 2px; }
-  .sample-aside { background: var(--cream-2); padding: 44px 36px; border-top: 3px solid var(--sand); }
-  .sample-aside-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; display: block; }
-  .sample-aside-body { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 400; line-height: 1.65; color: var(--forest); margin-bottom: 24px; }
-  .sample-aside-link { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--forest); border-bottom: 1px solid var(--forest); padding-bottom: 3px; text-decoration: none; transition: opacity 0.2s; }
-  .sample-aside-link:hover { opacity: 0.5; }
+/* ── TESTIMONIALS ── */
+.testimonials { padding: 96px 48px; background: var(--cream); }
+.testimonials-header { max-width: 1100px; margin: 0 auto 52px; }
+.testimonials-header .eyebrow { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--sand); display: block; margin-bottom: 0; }
+.tgrid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 3fr 2fr; gap: 2px; }
+.t-featured { background: var(--forest); padding: 56px 48px; display: flex; flex-direction: column; gap: 40px; }
+.t-mark { font-family: 'Playfair Display', serif; font-size: 80px; line-height: 0.7; color: var(--sand); font-weight: 900; flex-shrink: 0; }
+.t-quote { font-family: 'Playfair Display', serif; font-size: 21px; font-style: italic; line-height: 1.75; color: var(--cream); flex: 1; }
+.t-byline { border-top: 1px solid rgba(196,180,154,0.2); padding-top: 20px; }
+.t-name { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sand); margin-bottom: 8px; }
+.t-result { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--moss); background: rgba(74,103,65,0.22); padding: 5px 12px; display: inline-block; }
+.t-stack { display: flex; flex-direction: column; gap: 2px; }
+.t-secondary { background: var(--cream-2); padding: 36px 32px; flex: 1; display: flex; flex-direction: column; gap: 28px; }
+.t-secondary .t-quote { font-family: 'Playfair Display', serif; font-size: 16px; font-style: italic; color: var(--forest); line-height: 1.72; flex: 1; }
+.t-secondary .t-name { color: var(--accent); }
+.t-secondary .t-result { color: var(--moss); background: rgba(74,103,65,0.1); }
 
-  /* ── INDUSTRIES ── */
-  .industries { padding: 80px 48px; background: var(--cream-2); }
-  .industries .section-title { margin-bottom: 40px; }
-  .industry-grid { display: flex; flex-wrap: wrap; gap: 2px; }
-  .industry-pill { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--body); background: var(--cream); padding: 12px 22px; border: 1px solid var(--cream-3); cursor: default; transition: all 0.2s; }
-  .industry-pill:hover { background: var(--forest); color: var(--cream); border-color: var(--forest); }
+/* ── EDITORIAL SPLIT (why us) ── */
+.editorial { padding: 96px 48px; background: var(--cream-2); }
+.editorial-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+.editorial-statement { font-family: 'Playfair Display', serif; font-size: clamp(24px, 2.8vw, 36px); font-weight: 400; font-style: italic; line-height: 1.55; color: var(--forest); margin-bottom: 32px; }
+.editorial-statement strong { font-style: normal; font-weight: 900; }
+.editorial-body { font-size: 15px; font-weight: 300; line-height: 1.9; color: var(--body); }
+.editorial-list { list-style: none; }
+.editorial-list li { padding: 22px 0; border-bottom: 1px solid var(--cream-3); }
+.editorial-list li:first-child { border-top: 1px solid var(--cream-3); }
+.e-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--moss); margin-bottom: 8px; display: block; }
+.e-text { font-size: 14px; font-weight: 300; line-height: 1.75; color: var(--body); }
 
-  /* ── EMAIL CAPTURE ── */
-  .capture { background: var(--forest); padding: 80px 48px; text-align: center; }
-  .capture-inner { max-width: 600px; margin: 0 auto; }
-  .capture .eyebrow { color: var(--sand); text-align: center; }
-  .capture-title { font-family: 'Playfair Display', serif; font-size: clamp(26px, 3vw, 36px); font-weight: 900; color: var(--cream); margin-bottom: 14px; line-height: 1.2; }
-  .capture-sub { font-size: 14px; font-weight: 300; color: var(--sand-2); line-height: 1.8; margin-bottom: 36px; }
-  .capture-form { display: flex; max-width: 420px; margin: 0 auto; }
-  .capture-input { flex: 1; padding: 14px 18px; font-family: 'DM Sans', sans-serif; font-size: 14px; border: 1px solid rgba(196,180,154,0.3); border-right: none; background: rgba(255,255,255,0.07); color: var(--cream); outline: none; }
-  .capture-input:focus { border-color: var(--sand); }
-  .capture-input::placeholder { color: var(--sand); opacity: 0.5; }
-  .capture-btn { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--forest); background: var(--sand-2); padding: 14px 22px; border: none; cursor: pointer; white-space: nowrap; transition: opacity 0.2s; }
-  .capture-btn:hover { opacity: 0.85; }
-  .capture-btn:disabled { opacity: 0.5; cursor: not-allowed; }
-  .capture-meta { font-size: 11px; color: var(--sand); opacity: 0.5; margin-top: 12px; }
-  .capture-success { display: none; font-size: 14px; color: var(--sand-2); padding: 14px; border: 1px solid rgba(196,180,154,0.25); }
+/* ── MARQUEE ── */
+.marquee-section { background: var(--forest); border-top: 1px solid rgba(196,180,154,0.1); border-bottom: 1px solid rgba(196,180,154,0.1); overflow: hidden; padding: 10px 0 24px; }
+.marquee-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sand); padding: 16px 48px 4px; opacity: 0.4; }
+.marquee-track { display: flex; width: max-content; animation: marquee 32s linear infinite; }
+.marquee-track:hover { animation-play-state: paused; }
+.m-item { font-family: 'Playfair Display', serif; font-size: 20px; font-style: italic; color: var(--sand-2); padding: 12px 40px; white-space: nowrap; }
+.m-sep { font-family: 'DM Mono', monospace; font-size: 12px; color: var(--sand); opacity: 0.25; align-self: center; flex-shrink: 0; }
 
-  /* ── FAQ ── */
-  .faq { padding: 96px 48px; background: var(--cream); }
-  .faq-inner { max-width: 800px; margin: 0 auto; }
-  .faq .section-title { margin-bottom: 0; }
-  .faq-item { border-bottom: 1px solid var(--cream-3); }
-  .faq-q { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; color: var(--forest); padding: 24px 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 20px; user-select: none; transition: color 0.2s; }
-  .faq-q:hover { color: var(--moss); }
-  .faq-q::after { content: '+'; font-family: 'DM Mono', monospace; font-size: 20px; font-weight: 300; color: var(--sand); flex-shrink: 0; transition: transform 0.3s; }
-  .faq-item.open .faq-q::after { transform: rotate(45deg); }
-  .faq-a { font-size: 14px; font-weight: 300; line-height: 1.85; color: var(--body); max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s ease; }
-  .faq-item.open .faq-a { max-height: 320px; padding-bottom: 28px; }
+/* ── EMAIL CAPTURE ── */
+.capture { background: var(--forest); padding: 80px 48px; }
+.capture-inner { max-width: 560px; margin: 0 auto; text-align: center; }
+.capture-eyebrow { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--sand); display: block; margin-bottom: 20px; }
+.capture-title { font-family: 'Playfair Display', serif; font-size: clamp(26px, 3vw, 36px); font-weight: 900; color: var(--cream); margin-bottom: 14px; line-height: 1.2; }
+.capture-sub { font-size: 14px; font-weight: 300; color: var(--sand-2); line-height: 1.8; margin-bottom: 36px; }
+.capture-form { display: flex; max-width: 400px; margin: 0 auto; }
+.capture-input { flex: 1; padding: 14px 18px; font-family: 'DM Sans', sans-serif; font-size: 14px; border: 1px solid rgba(196,180,154,0.3); border-right: none; background: rgba(255,255,255,0.07); color: var(--cream); outline: none; }
+.capture-input:focus { border-color: var(--sand); }
+.capture-input::placeholder { color: rgba(196,180,154,0.45); }
+.capture-btn { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--forest); background: var(--sand-2); padding: 14px 20px; border: none; cursor: pointer; white-space: nowrap; transition: opacity 0.2s; }
+.capture-btn:hover { opacity: 0.85; }
+.capture-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.capture-meta { font-size: 11px; color: var(--sand); opacity: 0.4; margin-top: 12px; }
+.capture-success { display: none; font-size: 14px; color: var(--sand-2); padding: 14px; border: 1px solid rgba(196,180,154,0.2); }
 
-  /* ── BOTTOM CTA ── */
-  .cta { background: var(--forest); padding: 100px 48px; text-align: center; }
-  .cta .eyebrow { color: var(--sand); }
-  .cta-title { font-family: 'Playfair Display', serif; font-size: clamp(40px, 5.5vw, 72px); font-weight: 900; color: var(--cream); line-height: 1.05; margin-bottom: 20px; }
-  .cta-title em { font-style: italic; color: var(--sand-2); }
-  .cta-sub { font-size: 15px; font-weight: 300; color: var(--sand-2); margin-bottom: 48px; max-width: 440px; margin-left: auto; margin-right: auto; line-height: 1.75; }
-  .cta-group { display: flex; flex-direction: column; align-items: center; gap: 14px; }
-  .btn-large { font-family: 'DM Mono', monospace; font-size: 12px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--forest); background: var(--cream); padding: 20px 56px; text-decoration: none; display: inline-block; transition: transform 0.2s, box-shadow 0.2s; }
-  .btn-large:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,0,0,0.25); }
-  .cta-note { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sand); opacity: 0.55; }
+/* ── FAQ ── */
+.faq { padding: 96px 48px; background: var(--cream); }
+.faq-inner { max-width: 800px; margin: 0 auto; }
+.faq-head { margin-bottom: 56px; }
+.faq-head .eyebrow { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--sand); display: block; margin-bottom: 18px; }
+.faq-head h2 { font-family: 'Playfair Display', serif; font-size: clamp(32px, 3.5vw, 48px); font-weight: 900; color: var(--forest); line-height: 1.1; }
+.faq-item { border-bottom: 1px solid var(--cream-3); }
+.faq-q { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; color: var(--forest); padding: 24px 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 20px; user-select: none; transition: color 0.2s; }
+.faq-q:hover { color: var(--moss); }
+.faq-q::after { content: '+'; font-family: 'DM Mono', monospace; font-size: 20px; font-weight: 300; color: var(--sand); flex-shrink: 0; transition: transform 0.3s; }
+.faq-item.open .faq-q::after { transform: rotate(45deg); }
+.faq-a { font-size: 14px; font-weight: 300; line-height: 1.85; color: var(--body); max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s ease; }
+.faq-item.open .faq-a { max-height: 360px; padding-bottom: 28px; }
 
-  /* ── FOOTER ── */
-  footer { background: var(--charcoal); padding: 44px 48px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
-  .footer-logo { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sand); opacity: 0.45; }
-  .footer-links { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; }
-  .footer-links a { font-size: 12px; color: var(--sand); opacity: 0.4; text-decoration: none; transition: opacity 0.2s; }
-  .footer-links a:hover { opacity: 0.9; }
-  .footer-right { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
-  .footer-social { display: flex; gap: 20px; }
-  .footer-social a { font-size: 12px; color: var(--sand); opacity: 0.4; text-decoration: none; transition: opacity 0.2s; }
-  .footer-social a:hover { opacity: 0.9; }
-  .footer-email { font-size: 12px; color: var(--sand); opacity: 0.35; }
+/* ── BOTTOM CTA ── */
+.cta { background: var(--forest); padding: 100px 48px; text-align: center; background-image: radial-gradient(ellipse at 50% 100%, rgba(74,103,65,0.35) 0%, transparent 60%); }
+.cta-eyebrow { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--sand); display: block; margin-bottom: 24px; }
+.cta-title { font-family: 'Playfair Display', serif; font-size: clamp(38px, 5.5vw, 72px); font-weight: 900; color: var(--cream); line-height: 1.05; margin-bottom: 20px; }
+.cta-title em { font-style: italic; color: var(--sand-2); }
+.cta-sub { font-size: 15px; font-weight: 300; color: var(--sand-2); max-width: 420px; margin: 0 auto 48px; line-height: 1.8; }
+.cta-group { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+.btn-large { font-family: 'DM Mono', monospace; font-size: 12px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--forest); background: var(--cream); padding: 20px 56px; text-decoration: none; display: inline-block; transition: transform 0.2s, box-shadow 0.2s; }
+.btn-large:hover { transform: translateY(-2px); box-shadow: 0 14px 40px rgba(0,0,0,0.28); }
+.cta-note { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sand); opacity: 0.5; }
 
-  /* ── ANIMATIONS ── */
-  @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
-  @keyframes fadeIn  { from { opacity:0; } to { opacity:1; } }
+/* ── FOOTER ── */
+footer { background: var(--charcoal); padding: 44px 48px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+.footer-logo { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sand); opacity: 0.4; }
+.footer-links { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; }
+.footer-links a { font-size: 12px; color: var(--sand); opacity: 0.35; text-decoration: none; transition: opacity 0.2s; }
+.footer-links a:hover { opacity: 0.85; }
+.footer-right { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
+.footer-social { display: flex; gap: 20px; }
+.footer-social a { font-size: 12px; color: var(--sand); opacity: 0.35; text-decoration: none; transition: opacity 0.2s; }
+.footer-social a:hover { opacity: 0.85; }
+.footer-email { font-size: 12px; color: var(--sand); opacity: 0.3; }
 
-  /* ── MOBILE NAV ── */
-  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
-  .hamburger span { display: block; width: 22px; height: 2px; background: var(--forest); }
-  .mobile-menu { display: none; position: fixed; top: 60px; left: 0; right: 0; background: var(--forest); z-index: 99; padding: 20px 28px; flex-direction: column; }
-  .mobile-menu a { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cream); text-decoration: none; padding: 16px 0; border-bottom: 1px solid rgba(196,180,154,0.12); }
-  .mobile-menu a:last-child { border-bottom: none; }
+/* ── ANIMATIONS ── */
+@keyframes fadeUp  { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+@keyframes fadeIn  { from { opacity:0; } to { opacity:1; } }
+@keyframes pulse   { 0%,100% { opacity:0.4; } 50% { opacity:0.9; } }
+@keyframes marquee { from { transform:translateX(0); } to { transform:translateX(-50%); } }
 
-  /* ── RESPONSIVE ── */
-  @media (max-width: 960px) {
-    nav { padding: 0 24px; }
-    .nav-links, .nav-cta { display: none; }
-    .hamburger { display: flex; }
-    .hero-inner { padding: 60px 28px 80px; }
-    .hero-scroll { display: none; }
-    .stats { padding: 32px 24px; }
-    .stat-divider { display: none; }
-    .how, .deliverable, .testimonials, .sample, .industries, .capture, .faq, .cta { padding: 64px 24px; }
-    .why { padding: 64px 24px; }
-    .steps, .deliverable-grid { grid-template-columns: 1fr; }
-    .tgrid { grid-template-columns: 1fr; }
-    .why-inner, .sample-inner { grid-template-columns: 1fr; gap: 40px; }
-    .capture-form { flex-direction: column; }
-    .capture-input { border-right: 1px solid rgba(196,180,154,0.3); border-bottom: none; }
-    .capture-btn { width: 100%; text-align: center; }
-    footer { flex-direction: column; align-items: center; text-align: center; padding: 36px 24px; gap: 16px; }
-    .footer-right { align-items: center; }
-    .sticky-bar { padding: 12px 20px; }
-    .sticky-bar-text { display: none; }
-    .sticky-bar { justify-content: center; }
-  }
+/* ── MOBILE NAV ── */
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+.hamburger span { display: block; width: 22px; height: 2px; background: var(--forest); }
+.mobile-menu { display: none; position: fixed; top: 60px; left: 0; right: 0; background: var(--forest); z-index: 99; padding: 20px 28px; flex-direction: column; }
+.mobile-menu a { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cream); text-decoration: none; padding: 16px 0; border-bottom: 1px solid rgba(196,180,154,0.1); }
+.mobile-menu a:last-child { border-bottom: none; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 960px) {
+  nav { padding: 0 24px; }
+  .nav-links, .nav-cta { display: none; }
+  .hamburger { display: flex; }
+  .hero-inner { grid-template-columns: 1fr; gap: 0; padding: 72px 28px 64px; }
+  .hero-card { display: none; }
+  .hero-sub { max-width: 100%; }
+  .btn-hero { align-self: stretch; text-align: center; }
+  .hero-scroll { display: none; }
+  .stats { padding: 32px 24px; }
+  .stat-div { display: none; }
+  .empathy { padding: 64px 24px; }
+  .empathy-lead { margin-bottom: 48px; }
+  .pain-cols { grid-template-columns: 1fr; }
+  .pain-col, .pain-col:last-child, .pain-col:nth-child(2) { border-right: none; border-bottom: 1px solid var(--cream-3); padding: 28px 0; }
+  .pain-col:last-child { border-bottom: none; }
+  .how { padding: 64px 0; }
+  .how-header { padding: 0 24px; }
+  .step-row { grid-template-columns: 80px 1fr; }
+  .step-num-bg { padding: 28px 0 28px 24px; }
+  .step-num-bg span { font-size: 56px; }
+  .step-content { padding: 32px 24px; }
+  .receipt-section { padding: 64px 24px; }
+  .receipt-top, .receipt-body, .receipt-total, .receipt-cta-wrap { padding-left: 28px; padding-right: 28px; }
+  .testimonials { padding: 64px 24px; }
+  .tgrid { grid-template-columns: 1fr; }
+  .editorial { padding: 64px 24px; }
+  .editorial-inner { grid-template-columns: 1fr; gap: 40px; }
+  .marquee-label { padding-left: 24px; }
+  .capture { padding: 64px 24px; }
+  .capture-form { flex-direction: column; }
+  .capture-input { border-right: 1px solid rgba(196,180,154,0.3); border-bottom: none; }
+  .capture-btn { width: 100%; text-align: center; }
+  .faq { padding: 64px 24px; }
+  .cta { padding: 72px 24px; }
+  footer { flex-direction: column; align-items: center; text-align: center; padding: 36px 24px; gap: 16px; }
+  .footer-right { align-items: center; }
+  .sticky-bar { padding: 12px 20px; justify-content: center; }
+  .sticky-bar-text { display: none; }
+}
 </style>
 
-<!-- Meta Pixel Code -->
+<!-- Meta Pixel -->
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init','1935587483876031');fbq('track','PageView');
@@ -335,6 +343,7 @@ fbq('init','1935587483876031');fbq('track','PageView');
   <a href="https://buy.stripe.com/cNi14n635frj7h9fFtgMw00" class="nav-cta">Get Your Captions — $45</a>
   <button class="hamburger" onclick="toggleMenu()" aria-label="Open menu"><span></span><span></span><span></span></button>
 </nav>
+
 <div class="mobile-menu" id="mobileMenu">
   <a href="shop.html">Shop</a>
   <a href="blog.html">Blog</a>
@@ -344,18 +353,39 @@ fbq('init','1935587483876031');fbq('track','PageView');
   <a href="contact.html">Contact</a>
 </div>
 
-<!-- HERO -->
+<!-- ① HERO — 2-column: headline left, live caption preview right -->
 <section class="hero" id="hero">
   <div class="hero-inner">
-    <span class="hero-eyebrow">Custom Social Media Content for Small Business</span>
-    <h1 class="hero-headline">
-      You know you should be posting.<br>
-      <em>You just don't know what to say.</em>
-    </h1>
-    <p class="hero-sub">The Content Drop writes 24 custom social media captions for your business in 48 hours. You answer 10 questions about your brand, audience, and goals. We do the rest — reviewed by a real person before delivery.</p>
-    <div class="hero-cta">
-      <a href="https://buy.stripe.com/cNi14n635frj7h9fFtgMw00" class="btn-hero">Get My Captions — $45</a>
-      <span class="hero-trust">One-time purchase &middot; No subscription &middot; No calls</span>
+    <div class="hero-left">
+      <span class="hero-eyebrow">Custom Social Media Content · Small Business</span>
+      <h1 class="hero-headline">
+        You know you should<br>be posting.
+        <em>You just don't<br>know what to say.</em>
+      </h1>
+      <p class="hero-sub">The Content Drop writes 24 custom captions for your business in 48 hours. You answer 10 questions — we handle the rest, reviewed by a real person before delivery.</p>
+      <div class="hero-cta">
+        <a href="https://buy.stripe.com/cNi14n635frj7h9fFtgMw00" class="btn-hero">Get My Captions — $45</a>
+        <span class="hero-trust">One-time purchase &middot; No subscription &middot; No calls</span>
+      </div>
+    </div>
+
+    <div class="hero-card" aria-hidden="true">
+      <div class="hero-card-label">
+        <span>Your Content Drop</span>
+        <span>24 of 24</span>
+      </div>
+      <div class="hero-caption">
+        <div class="hc-platform">Instagram · Caption 01</div>
+        <p class="hc-text"><strong>Running a business is hard enough</strong> — figuring out what to post every single day shouldn't be part of the job. That's exactly why I started [Business Name]...</p>
+      </div>
+      <div class="hero-caption">
+        <div class="hc-platform">Facebook · Caption 08</div>
+        <p class="hc-text">Behind every order, there's a person who trusted us with something that mattered to them. <strong>That's never something we take lightly.</strong></p>
+      </div>
+      <div class="hero-caption">
+        <div class="hc-platform">Instagram · Caption 17</div>
+        <p class="hc-text">Quick reminder that [Service/Product] is still available — and <strong>spots are filling up faster than usual</strong> this month. Here's why...</p>
+      </div>
     </div>
   </div>
   <div class="hero-scroll" aria-hidden="true">
@@ -364,278 +394,322 @@ fbq('init','1935587483876031');fbq('track','PageView');
   </div>
 </section>
 
-<!-- STATS -->
+<!-- ② STATS — horizontal number strip -->
 <div class="stats">
   <div class="stats-inner">
     <div class="stat reveal">
       <div class="stat-num" data-target="10000" data-prefix="$">$0</div>
-      <div class="stat-label">Revenue from one email · hair salon owner</div>
+      <div class="stat-label">Revenue from one campaign · hair salon</div>
     </div>
-    <div class="stat-divider"></div>
+    <div class="stat-div"></div>
     <div class="stat reveal d1">
       <div class="stat-num" data-target="1590">0</div>
       <div class="stat-label">Organic views in 24 hours · zero ad spend</div>
     </div>
-    <div class="stat-divider"></div>
+    <div class="stat-div"></div>
     <div class="stat reveal d2">
       <div class="stat-num">48 hrs</div>
-      <div class="stat-label">From survey submission to inbox</div>
+      <div class="stat-label">From survey to your inbox</div>
     </div>
-    <div class="stat-divider"></div>
+    <div class="stat-div"></div>
     <div class="stat reveal d3">
       <div class="stat-num">$45</div>
-      <div class="stat-label">One-time · no subscription · no calls</div>
+      <div class="stat-label">One-time · no subscription</div>
     </div>
   </div>
 </div>
 
-<!-- HOW IT WORKS -->
+<!-- ③ EMPATHY — large editorial statement + 3 divided text columns, no boxes -->
+<section class="empathy">
+  <div class="empathy-inner">
+    <p class="empathy-lead reveal">
+      You're not bad at social media.
+      <strong>You're just doing a job that was never yours to do.</strong>
+    </p>
+    <div class="pain-cols">
+      <div class="pain-col reveal">
+        <span class="pain-label">The blank page</span>
+        <p>You open the app, stare at the cursor, and close it again. It's not laziness — it's decision fatigue on top of a full day running a business.</p>
+      </div>
+      <div class="pain-col reveal d1">
+        <span class="pain-label">The generic AI output</span>
+        <p>You've tried ChatGPT. It sounds like every other business in your category. Nothing about it is actually <em>you</em> — your voice, your customers, your offer.</p>
+      </div>
+      <div class="pain-col reveal d2">
+        <span class="pain-label">The strategy gap</span>
+        <p>Even when you write something, you're not sure it's working. The hook, the platform, the call to action — it's a lot to get right every single time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ④ HOW IT WORKS — giant faded step numbers, content offset on right, no cards -->
 <section class="how" id="how">
-  <div class="inner">
-    <span class="eyebrow reveal">The Process</span>
-    <h2 class="section-title reveal">Three steps. Zero meetings.</h2>
-    <div class="steps">
-      <div class="step reveal">
-        <div class="step-num">01 —</div>
-        <div class="step-title">Purchase your Drop</div>
-        <p class="step-body">Choose the content package that fits where your business is right now. One-time payment, no subscription, no commitment.</p>
-      </div>
-      <div class="step reveal d1">
-        <div class="step-num">02 —</div>
-        <div class="step-title">Complete a short survey</div>
-        <p class="step-body">You'll receive a private survey link within 24 hours. Answer 10 questions about your brand, audience, tone, and goals. Takes about 10 minutes.</p>
-      </div>
-      <div class="step reveal d2">
-        <div class="step-num">03 —</div>
-        <div class="step-title">Receive your content</div>
-        <p class="step-body">Within 48 hours of your survey, your custom captions are delivered in a Google Doc — ready to copy, paste, and post.</p>
-      </div>
+  <div class="how-header reveal">
+    <span class="eyebrow">The Process</span>
+    <h2 class="how-title">Three steps.<br>Zero meetings.</h2>
+  </div>
+  <div class="step-row reveal">
+    <div class="step-num-bg"><span>01</span></div>
+    <div class="step-content">
+      <span class="step-tag">Buy</span>
+      <h3>One payment. Nothing recurring.</h3>
+      <p>$45, one time. You receive a survey link by email within minutes of purchase. No calls to book, no contracts, no onboarding sessions.</p>
+    </div>
+  </div>
+  <div class="step-row reveal">
+    <div class="step-num-bg"><span>02</span></div>
+    <div class="step-content">
+      <span class="step-tag">Survey</span>
+      <h3>Ten minutes. Everything we need.</h3>
+      <p>You answer questions about your business, tone, audience, goals, and platforms. This survey is what separates your captions from a generic template — it's entirely built around you.</p>
+    </div>
+  </div>
+  <div class="step-row reveal">
+    <div class="step-num-bg"><span>03</span></div>
+    <div class="step-content">
+      <span class="step-tag">Receive</span>
+      <h3>24 captions. 48 hours.</h3>
+      <p>A Google Doc lands in your inbox with 24 ready-to-post captions: hook, body copy, CTA, hashtags, and visual suggestions for each — reviewed by a real person before it reaches you.</p>
     </div>
   </div>
 </section>
 
-<!-- WHAT YOU GET -->
-<section class="deliverable" id="what">
-  <div class="inner">
-    <span class="eyebrow reveal">What's Included</span>
-    <h2 class="section-title reveal">Everything you need.<br>Nothing you don't.</h2>
-    <div class="deliverable-grid">
-      <div class="deliverable-item reveal">
-        <div class="deliverable-num">01 —</div>
-        <div class="deliverable-title">24 Original Captions</div>
-        <p class="deliverable-desc">Written for your business specifically. Not a template. Not generic AI output. Built from your survey answers.</p>
+<!-- ⑤ RECEIPT — product details styled as an order summary receipt -->
+<section class="receipt-section" id="product">
+  <div class="receipt-wrap">
+    <span class="receipt-eyebrow reveal">What you get</span>
+    <div class="receipt reveal">
+      <div class="receipt-top">
+        <div class="receipt-brand">The Content Drop</div>
+        <div class="receipt-subtitle">Custom Social Media Captions &mdash; Order Summary</div>
       </div>
-      <div class="deliverable-item reveal d1">
-        <div class="deliverable-num">02 —</div>
-        <div class="deliverable-title">Platform-Tailored Format</div>
-        <p class="deliverable-desc">Choose any two platforms — Instagram, Facebook, LinkedIn, TikTok, Pinterest, or YouTube. Each caption is written for that platform's style.</p>
-      </div>
-      <div class="deliverable-item reveal d2">
-        <div class="deliverable-num">03 —</div>
-        <div class="deliverable-title">Full Caption Structure</div>
-        <p class="deliverable-desc">Every caption includes a hook, body copy, a call to action, optimized hashtags, and visual pairing suggestions.</p>
-      </div>
-      <div class="deliverable-item reveal">
-        <div class="deliverable-num">04 —</div>
-        <div class="deliverable-title">Ready-to-Post Google Doc</div>
-        <p class="deliverable-desc">Delivered clean and organized. Open it, pick a caption, and post. No reformatting or guesswork needed.</p>
-      </div>
-      <div class="deliverable-item reveal d1">
-        <div class="deliverable-num">05 —</div>
-        <div class="deliverable-title">Full Repurposing Rights</div>
-        <p class="deliverable-desc">Adapt captions into reels, shorts, blog posts, or email newsletters. You own the content entirely.</p>
-      </div>
-      <div class="deliverable-item reveal d2">
-        <div class="deliverable-num">06 —</div>
-        <div class="deliverable-title">48-Hour Delivery</div>
-        <p class="deliverable-desc">From survey submission to inbox. No waiting weeks. No check-ins needed. Just done.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section class="testimonials">
-  <div class="inner">
-    <span class="eyebrow reveal">Real Results</span>
-    <h2 class="section-title reveal">What happens after<br>you fill out the survey.</h2>
-    <div class="tgrid">
-      <div class="t-featured reveal">
-        <div>
-          <div class="t-mark">"</div>
-          <p class="t-quote">I just needed someone to write it the way I would say it. I know my clients — I just couldn't get it onto the page.</p>
+      <div class="receipt-body">
+        <div class="receipt-row">
+          <div>
+            <div class="receipt-item-name">24 Custom Social Media Captions</div>
+          </div>
+          <div class="receipt-check">✓</div>
         </div>
+        <div class="receipt-row">
+          <div>
+            <div class="receipt-item-name">2 Platforms of Your Choice</div>
+            <div class="receipt-item-detail">Instagram, Facebook, TikTok, LinkedIn, Pinterest, YouTube</div>
+          </div>
+          <div class="receipt-check">✓</div>
+        </div>
+        <div class="receipt-row">
+          <div>
+            <div class="receipt-item-name">Hook + Body Copy + CTA per Caption</div>
+          </div>
+          <div class="receipt-check">✓</div>
+        </div>
+        <div class="receipt-row">
+          <div>
+            <div class="receipt-item-name">Hashtag Sets</div>
+          </div>
+          <div class="receipt-check">✓</div>
+        </div>
+        <div class="receipt-row">
+          <div>
+            <div class="receipt-item-name">Visual / Media Suggestions</div>
+          </div>
+          <div class="receipt-check">✓</div>
+        </div>
+        <div class="receipt-row">
+          <div>
+            <div class="receipt-item-name">Google Doc Delivery</div>
+          </div>
+          <div class="receipt-check">✓</div>
+        </div>
+        <div class="receipt-row">
+          <div>
+            <div class="receipt-item-name">Human Review Before Delivery</div>
+          </div>
+          <div class="receipt-check">✓</div>
+        </div>
+        <div class="receipt-row">
+          <div>
+            <div class="receipt-item-name">Full Repurposing Rights</div>
+          </div>
+          <div class="receipt-check">✓</div>
+        </div>
+      </div>
+      <div class="receipt-total">
+        <div class="receipt-total-row">
+          <span class="receipt-total-label">Total &mdash; one-time payment</span>
+          <span class="receipt-total-amount">$45</span>
+        </div>
+        <div class="receipt-note">No subscription &middot; No monthly fee &middot; Delivered in 48 hours</div>
+      </div>
+      <div class="receipt-cta-wrap">
+        <a href="https://buy.stripe.com/cNi14n635frj7h9fFtgMw00" class="receipt-btn">Place Your Order &mdash; $45 &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑥ TESTIMONIALS — asymmetric 3fr/2fr grid -->
+<section class="testimonials" id="results">
+  <div class="testimonials-header reveal">
+    <span class="eyebrow">What clients say</span>
+  </div>
+  <div class="tgrid reveal">
+    <div class="t-featured">
+      <div class="t-mark">&ldquo;</div>
+      <p class="t-quote">I used the captions from my first order to promote a limited-time offer. Within two weeks I'd booked $10,000 in new revenue — from one email and a few posts. I've ordered four times since.</p>
+      <div class="t-byline">
+        <div class="t-name">Sarah M. &mdash; Hair Salon Owner</div>
+        <span class="t-result">$10,000 revenue &middot; Custom Captions</span>
+      </div>
+    </div>
+    <div class="t-stack">
+      <div class="t-secondary">
+        <p class="t-quote">&ldquo;I posted five times using the captions I received. No ads, no boosting. 1,590 organic views in the first 24 hours.&rdquo;</p>
         <div class="t-byline">
-          <div class="t-name">Sarah · Hair salon owner · Ontario</div>
-          <div class="t-result">$10,000 revenue from one email</div>
+          <div class="t-name">Brittany K. &mdash; Online Retailer</div>
+          <span class="t-result">1,590 views &middot; $0 ad spend</span>
         </div>
       </div>
-      <div class="t-stack">
-        <div class="t-small reveal d1">
-          <p class="t-quote">I was putting out content I thought my ideal client wanted. But I'd never actually stopped to think about who they really were.</p>
-          <div>
-            <div class="t-name">Jamie · Personal trainer · Vancouver</div>
-            <div class="t-result">2× consultation conversion rate</div>
-          </div>
-        </div>
-        <div class="t-small reveal d2">
-          <p class="t-quote">I didn't want to just start throwing content at the wall. I wanted a real plan I could actually follow from day one.</p>
-          <div>
-            <div class="t-name">Brittany · New business launch · Ontario</div>
-            <div class="t-result">1,590 organic views · day one · $0 ad spend</div>
-          </div>
+      <div class="t-secondary">
+        <p class="t-quote">&ldquo;Within 60 days of using the Audience Persona I'd doubled my monthly consultations. I finally knew exactly who I was talking to.&rdquo;</p>
+        <div class="t-byline">
+          <div class="t-name">Jamie R. &mdash; Business Consultant</div>
+          <span class="t-result">2&times; consultations in 60 days</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WHY -->
-<section class="why">
-  <div class="why-inner">
-    <div class="reveal">
-      <span class="eyebrow">Why This Works</span>
-      <h2 class="why-title">Built by a marketer.<br>Not a generator.</h2>
-      <p class="why-body">Most business owners know they need to show up online. The problem isn't motivation — it's not knowing what to say. If you've tried content tools and been disappointed, here's the difference: everything is built from your survey. Not a general prompt. Not a template with your name swapped in. Your answers, your business, your voice — reviewed before it reaches you.</p>
-      <ul class="why-list">
-        <li><span class="check">✓</span> Every caption built from your survey — not recycled prompts or templates</li>
-        <li><span class="check">✓</span> No agency overhead, no retainers, no ongoing commitment</li>
-        <li><span class="check">✓</span> No calls, no Zoom, no back and forth — just results</li>
-        <li><span class="check">✓</span> Content you can repurpose: reels, shorts, emails, blogs</li>
-        <li><span class="check">✓</span> You own everything — use it however, whenever</li>
+<!-- ⑦ EDITORIAL SPLIT — why this works, no comparison boxes -->
+<section class="editorial">
+  <div class="editorial-inner">
+    <div class="editorial-left reveal">
+      <p class="editorial-statement">
+        "Every caption starts with <strong>your</strong> survey answers.<br>Not a template.<br>Not a guess."
+      </p>
+      <p class="editorial-body">The survey is what makes The Content Drop different from every AI tool you've already tried. You tell us your business, your customers, your tone, your goals — and that's what we write from. A real person reviews every deliverable before it reaches your inbox. No raw AI output ever goes out the door.</p>
+    </div>
+    <div class="editorial-right reveal d1">
+      <ul class="editorial-list">
+        <li>
+          <span class="e-label">vs. ChatGPT</span>
+          <div class="e-text">ChatGPT generates content without context. This starts with a detailed survey about your specific business — it doesn't guess what you do or who you serve.</div>
+        </li>
+        <li>
+          <span class="e-label">vs. Hiring a copywriter</span>
+          <div class="e-text">A good copywriter costs $500+ and takes weeks. This takes 48 hours and costs $45. Same human touch built into the review process, none of the overhead.</div>
+        </li>
+        <li>
+          <span class="e-label">vs. Doing it yourself</span>
+          <div class="e-text">You could write 24 captions yourself. You could also do your own accounting. Outsource what drains you and focus on your actual work.</div>
+        </li>
       </ul>
     </div>
-    <div class="compare-stack reveal d1">
-      <div class="compare-card">
-        <div class="compare-label">Option A</div>
-        <div class="compare-title">Hire a marketing agency</div>
-        <div class="compare-desc">Monthly retainer. Onboarding calls. Strategy meetings. 30-day delays. $1,500+/month.</div>
-      </div>
-      <div class="compare-card">
-        <div class="compare-label">Option B</div>
-        <div class="compare-title">Do it yourself</div>
-        <div class="compare-desc">Hours staring at a blank screen. Inconsistent posting. Second-guessing every caption.</div>
-      </div>
-      <div class="compare-card active">
-        <div class="compare-label">Option C — The Content Drop</div>
-        <div class="compare-title">Custom content. No calls. 48 hours.</div>
-        <div class="compare-desc">Answer a survey. Receive 24 captions built for your business. Post consistently. $45, one time.</div>
-      </div>
-    </div>
   </div>
 </section>
 
-<!-- SAMPLE LINK -->
-<section class="sample">
-  <div class="sample-inner">
-    <div class="reveal">
-      <span class="eyebrow">What You Receive</span>
-      <h2 class="sample-title">This is what lands in your inbox.</h2>
-      <p class="sample-body">Every caption includes a scroll-stopping hook, body copy written in your voice, a call to action, hashtags, and a visual suggestion. 24 of them, built from your survey answers.</p>
-      <ul class="sample-features">
-        <li>Hook, body, CTA, hashtags — every time</li>
-        <li>Platform-specific format for Instagram, Facebook, TikTok, and more</li>
-        <li>Visual pairing suggestions for each post</li>
-        <li>Clean, copy-paste-ready Google Doc</li>
-        <li>Reviewed by a real person before it reaches you</li>
-      </ul>
-    </div>
-    <div class="sample-aside reveal d1">
-      <span class="sample-aside-label">Want to see an example?</span>
-      <p class="sample-aside-body">Every product page includes a real output example so you know exactly what you're getting before you buy.</p>
-      <a href="shop.html" class="sample-aside-link">See examples on each product →</a>
-    </div>
+<!-- ⑧ MARQUEE — industries scrolling ticker -->
+<div class="marquee-section" aria-hidden="true">
+  <div class="marquee-label">Works for any industry</div>
+  <div class="marquee-track">
+    <span class="m-item">Hair Salons</span><span class="m-sep">&middot;</span>
+    <span class="m-item">Restaurants</span><span class="m-sep">&middot;</span>
+    <span class="m-item">Fitness Studios</span><span class="m-sep">&middot;</span>
+    <span class="m-item">Real Estate</span><span class="m-sep">&middot;</span>
+    <span class="m-item">Retail Boutiques</span><span class="m-sep">&middot;</span>
+    <span class="m-item">Photographers</span><span class="m-sep">&middot;</span>
+    <span class="m-item">Pet Services</span><span class="m-sep">&middot;</span>
+    <span class="m-item">Coaches &amp; Consultants</span><span class="m-sep">&middot;</span>
+    <span class="m-item">Healthcare &amp; Wellness</span><span class="m-sep">&middot;</span>
+    <span class="m-item">Home Services</span><span class="m-sep">&middot;</span>
+    <span class="m-item">Wedding Vendors</span><span class="m-sep">&middot;</span>
+    <span class="m-item">Online Courses</span><span class="m-sep">&middot;</span>
+    <!-- duplicate for seamless loop -->
+    <span class="m-item">Hair Salons</span><span class="m-sep">&middot;</span>
+    <span class="m-item">Restaurants</span><span class="m-sep">&middot;</span>
+    <span class="m-item">Fitness Studios</span><span class="m-sep">&middot;</span>
+    <span class="m-item">Real Estate</span><span class="m-sep">&middot;</span>
+    <span class="m-item">Retail Boutiques</span><span class="m-sep">&middot;</span>
+    <span class="m-item">Photographers</span><span class="m-sep">&middot;</span>
+    <span class="m-item">Pet Services</span><span class="m-sep">&middot;</span>
+    <span class="m-item">Coaches &amp; Consultants</span><span class="m-sep">&middot;</span>
+    <span class="m-item">Healthcare &amp; Wellness</span><span class="m-sep">&middot;</span>
+    <span class="m-item">Home Services</span><span class="m-sep">&middot;</span>
+    <span class="m-item">Wedding Vendors</span><span class="m-sep">&middot;</span>
+    <span class="m-item">Online Courses</span><span class="m-sep">&middot;</span>
   </div>
-</section>
+</div>
 
-<!-- INDUSTRIES -->
-<section class="industries">
-  <div class="inner">
-    <span class="eyebrow reveal">Industries Served</span>
-    <h2 class="section-title reveal">Built for your industry.<br>Not a general template.</h2>
-    <div class="industry-grid reveal">
-      <div class="industry-pill">Cleaning Services</div>
-      <div class="industry-pill">Event Planners</div>
-      <div class="industry-pill">Pet Services</div>
-      <div class="industry-pill">Real Estate</div>
-      <div class="industry-pill">Retail</div>
-      <div class="industry-pill">Salons &amp; Spas</div>
-      <div class="industry-pill">Wedding Professionals</div>
-      <div class="industry-pill">Restaurants</div>
-      <div class="industry-pill">Health &amp; Wellness</div>
-      <div class="industry-pill">Fitness &amp; Personal Training</div>
-      <div class="industry-pill">Home Services</div>
-      <div class="industry-pill">General Business</div>
-    </div>
-  </div>
-</section>
-
-<!-- EMAIL CAPTURE -->
+<!-- ⑨ EMAIL CAPTURE -->
 <section class="capture">
-  <div class="capture-inner reveal">
-    <span class="eyebrow">Free Resource</span>
-    <h2 class="capture-title">Not ready to buy yet?<br>Start with this.</h2>
-    <p class="capture-sub">The Caption Formula Cheat Sheet — everything you need to write captions that stop the scroll, on one page. Hook formulas, CTA ideas, the anatomy of a great caption. Free.</p>
-    <form class="capture-form" id="captureForm" onsubmit="submitCapture(event)">
-      <input type="email" class="capture-input" placeholder="Your email address" required>
-      <button type="submit" class="capture-btn" id="captureBtn">Send It Free →</button>
+  <div class="capture-inner">
+    <span class="capture-eyebrow reveal">Free resource</span>
+    <h2 class="capture-title reveal">The Caption Formula.<br><em>Free.</em></h2>
+    <p class="capture-sub reveal">The exact framework we use to write every caption — hook, body, CTA. Enter your email and we'll send it right over.</p>
+    <form class="capture-form reveal" id="captureForm" onsubmit="submitCapture(event)">
+      <input class="capture-input" type="email" placeholder="your@email.com" required aria-label="Email address">
+      <button class="capture-btn" id="captureBtn" type="submit">Send It Free &rarr;</button>
     </form>
-    <div class="capture-success" id="captureSuccess">Check your inbox — the cheat sheet is on its way.</div>
-    <p class="capture-meta">One page &middot; No spam &middot; Unsubscribe any time</p>
+    <div class="capture-success" id="captureSuccess" role="status">Check your inbox — it's on its way.</div>
+    <p class="capture-meta reveal">No spam. Unsubscribe anytime.</p>
   </div>
 </section>
 
-<!-- FAQ -->
-<section class="faq" id="faq">
+<!-- ⑩ FAQ -->
+<section class="faq">
   <div class="faq-inner">
-    <span class="eyebrow reveal">Questions</span>
-    <h2 class="section-title reveal" style="margin-bottom:40px;">Before you buy.</h2>
-    <div class="faq-item">
-      <div class="faq-q">Is this actually custom or is it just AI?</div>
-      <div class="faq-a">Your survey responses drive everything. AI is part of the workflow — but it's guided by your specific inputs, industry context, and marketing best practices, and reviewed before delivery. This is not generic prompt output. It's a system designed to produce content that actually fits your business.</div>
+    <div class="faq-head reveal">
+      <span class="eyebrow">Common questions</span>
+      <h2>Everything you want<br>to know before buying.</h2>
     </div>
     <div class="faq-item">
-      <div class="faq-q">What exactly do I receive?</div>
-      <div class="faq-a">A Google Doc with 24 original captions written for your business. Each one includes a hook, caption body, call to action, hashtag set, and visual pairing suggestion. Ready to copy and post.</div>
+      <div class="faq-q" role="button" tabindex="0">What's actually in the survey?</div>
+      <div class="faq-a">Ten questions about your business: what you sell, who your ideal customer is, your brand voice, your goals for posting, and which platforms you use. It takes about ten minutes. That survey is the foundation for every caption we write.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q">Can I choose which platforms?</div>
-      <div class="faq-a">Yes. You pick any two from Instagram, Facebook, LinkedIn, TikTok, Pinterest, or YouTube. The captions are tailored to each platform's style and format.</div>
+      <div class="faq-q" role="button" tabindex="0">How is this different from just using ChatGPT?</div>
+      <div class="faq-a">ChatGPT writes based on your prompt — and most people don't know how to prompt it well. The Content Drop starts with a structured survey, uses that context to generate 24 captions across platforms, then has a real person review everything before it leaves our hands. You get strategy baked in, not just text.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q">How long does it take?</div>
-      <div class="faq-a">You'll receive your survey link within 24 hours of purchase. Once you submit the survey, your captions are delivered within 48 hours.</div>
+      <div class="faq-q" role="button" tabindex="0">What platforms are supported?</div>
+      <div class="faq-a">You choose two platforms when you fill out the survey: Instagram, Facebook, TikTok, LinkedIn, Pinterest, or YouTube. Each caption is written with the norms and format of that specific platform in mind.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q">Can I reuse the content?</div>
-      <div class="faq-a">Absolutely. All captions can be repurposed across platforms, adapted for reels, shorts, emails, or blogs. You own the content outright.</div>
+      <div class="faq-q" role="button" tabindex="0">Can I edit the captions after I receive them?</div>
+      <div class="faq-a">Absolutely. The Google Doc is yours — edit, rearrange, cut, or add anything you like. Most clients use them as-is, but you have full repurposing rights to do whatever works for your business.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q">What if I want to order again next month?</div>
-      <div class="faq-a">Many customers reorder monthly. There's no subscription — just come back when you need a new drop. Same simple process every time.</div>
+      <div class="faq-q" role="button" tabindex="0">What if I don't like what I receive?</div>
+      <div class="faq-a">A real person reviews every deliverable before delivery specifically to catch anything that feels off. If something isn't right, reach out and we'll address it. We want you to actually use what we create.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" role="button" tabindex="0">How long does delivery actually take?</div>
+      <div class="faq-a">48 hours from when you submit your survey. You'll receive an email with your survey link within minutes of purchase, and your Google Doc within 48 hours of submitting it.</div>
     </div>
   </div>
 </section>
 
-<!-- BOTTOM CTA -->
+<!-- ⑪ BOTTOM CTA -->
 <section class="cta">
-  <span class="eyebrow">Ready?</span>
-  <h2 class="cta-title">Your next month of content.<br><em>Done in 48 hours.</em></h2>
-  <p class="cta-sub">No agency. No calls. No templates. Just 24 custom captions built for your business — for $45.</p>
-  <div class="cta-group">
-    <a href="https://buy.stripe.com/cNi14n635frj7h9fFtgMw00" class="btn-large">Get My Custom Captions — $45</a>
-    <span class="cta-note">One-time purchase &middot; No subscription &middot; No commitment</span>
+  <span class="cta-eyebrow reveal">Ready when you are</span>
+  <h2 class="cta-title reveal">Stop staring at<br><em>a blank screen.</em></h2>
+  <p class="cta-sub reveal">24 custom captions written for your business. 48 hours. $45, once.</p>
+  <div class="cta-group reveal">
+    <a href="https://buy.stripe.com/cNi14n635frj7h9fFtgMw00" class="btn-large">Get My Captions &mdash; $45</a>
+    <span class="cta-note">One-time purchase &middot; 48-hour delivery &middot; Human-reviewed</span>
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ⑫ FOOTER -->
 <footer>
   <span class="footer-logo">The Content Drop</span>
   <ul class="footer-links">
-    <li><a href="shop.html">Shop</a></li>
+    <li><a href="shop.html">Products</a></li>
     <li><a href="blog.html">Blog</a></li>
     <li><a href="results.html">Results</a></li>
-    <li><a href="free.html">Free</a></li>
+    <li><a href="free.html">Free Resources</a></li>
     <li><a href="about.html">About</a></li>
     <li><a href="contact.html">Contact</a></li>
     <li><a href="terms.html">Terms</a></li>
@@ -643,73 +717,89 @@ fbq('init','1935587483876031');fbq('track','PageView');
   </ul>
   <div class="footer-right">
     <div class="footer-social">
-      <a href="https://www.facebook.com/profile.php?id=61577504456264" target="_blank">Facebook</a>
-      <a href="https://pinterest.com/thecontentdrop" target="_blank">Pinterest</a>
+      <a href="https://www.facebook.com/thecontentdrop" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.pinterest.com/thecontentdrop" target="_blank" rel="noopener">Pinterest</a>
     </div>
     <span class="footer-email">hello@thecontentdrop.ca</span>
   </div>
 </footer>
 
 <script>
-function toggleMenu(){
-  var m=document.getElementById('mobileMenu');
-  if(m) m.style.display=(m.style.display==='flex')?'none':'flex';
-}
+// ── SCROLL REVEAL ──
+var obs = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); }
+  });
+}, {threshold: 0.1});
+document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
 
-// FAQ accordion
+// ── COUNT-UP ──
+function countUp(el, target, prefix){
+  var start = 0, steps = 55, inc = Math.ceil(target / steps);
+  var timer = setInterval(function(){
+    start = Math.min(start + inc, target);
+    el.textContent = (prefix || '') + (start >= 1000 ? start.toLocaleString() : start);
+    if(start >= target) clearInterval(timer);
+  }, 1300 / steps);
+}
+var statObs = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting){
+      var el = e.target, t = parseInt(el.dataset.target), p = el.dataset.prefix || '';
+      countUp(el, t, p);
+      statObs.unobserve(el);
+    }
+  });
+}, {threshold: 0.5});
+document.querySelectorAll('[data-target]').forEach(function(el){ statObs.observe(el); });
+
+// ── STICKY BAR ──
+var hero = document.getElementById('hero');
+var bar = document.getElementById('stickyBar');
+window.addEventListener('scroll', function(){
+  bar.classList.toggle('visible', window.scrollY > hero.offsetHeight * 0.65);
+}, {passive: true});
+
+// ── FAQ ──
 document.querySelectorAll('.faq-q').forEach(function(q){
-  q.addEventListener('click',function(){
-    var item=q.parentElement, open=item.classList.contains('open');
-    document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});
-    if(!open) item.classList.add('open');
+  q.addEventListener('click', function(){
+    var item = this.closest('.faq-item');
+    var wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(function(o){ o.classList.remove('open'); });
+    if(!wasOpen) item.classList.add('open');
+  });
+  q.addEventListener('keydown', function(e){
+    if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); this.click(); }
   });
 });
 
-// Sticky bar
-var bar=document.getElementById('stickyBar'), hero=document.getElementById('hero');
-window.addEventListener('scroll',function(){
-  bar.classList.toggle('visible', window.scrollY > hero.offsetHeight * 0.7);
-},{passive:true});
-
-// Scroll reveal
-var obs=new IntersectionObserver(function(entries){
-  entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); }});
-},{threshold:0.1});
-document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
-
-// Count-up
-function countUp(el, target, prefix){
-  var start=0, steps=60, inc=Math.ceil(target/steps), timer=setInterval(function(){
-    start=Math.min(start+inc, target);
-    el.textContent=(prefix||'')+(start>=1000 ? start.toLocaleString() : start);
-    if(start>=target) clearInterval(timer);
-  }, 1400/steps);
+// ── MOBILE MENU ──
+function toggleMenu(){
+  var m = document.getElementById('mobileMenu');
+  m.style.display = m.style.display === 'flex' ? 'none' : 'flex';
 }
-var cobs=new IntersectionObserver(function(entries){
-  entries.forEach(function(e){
-    if(e.isIntersecting){
-      var el=e.target.querySelector('[data-target]');
-      if(el && !el.dataset.done){ el.dataset.done='1'; countUp(el,+el.dataset.target,el.dataset.prefix); }
-    }
-  });
-},{threshold:0.5});
-document.querySelectorAll('.stat').forEach(function(s){ cobs.observe(s); });
 
-// Email capture
+// ── EMAIL CAPTURE ──
 async function submitCapture(e){
   e.preventDefault();
-  var email=document.querySelector('#captureForm input').value;
-  var btn=document.getElementById('captureBtn');
-  btn.textContent='Sending...'; btn.disabled=true;
-  try{
-    var r=await fetch('https://contentdrop-app-production.up.railway.app/subscribe',{
-      method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({email:email})
+  var email = document.querySelector('#captureForm input').value;
+  var btn = document.getElementById('captureBtn');
+  btn.textContent = 'Sending...'; btn.disabled = true;
+  try {
+    var r = await fetch('https://contentdrop-app-production.up.railway.app/subscribe', {
+      method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({email: email})
     });
     if(r.ok){
-      document.getElementById('captureForm').style.display='none';
-      document.getElementById('captureSuccess').style.display='block';
-    } else { btn.textContent='Send It Free →'; btn.disabled=false; alert('Something went wrong — please try again.'); }
-  } catch(err){ btn.textContent='Send It Free →'; btn.disabled=false; alert('Something went wrong — please try again.'); }
+      document.getElementById('captureForm').style.display = 'none';
+      document.getElementById('captureSuccess').style.display = 'block';
+    } else {
+      btn.textContent = 'Send It Free →'; btn.disabled = false;
+      alert('Something went wrong — please try again.');
+    }
+  } catch(err){
+    btn.textContent = 'Send It Free →'; btn.disabled = false;
+    alert('Something went wrong — please try again.');
+  }
 }
 </script>
 </body>
