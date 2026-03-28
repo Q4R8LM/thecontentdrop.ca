@@ -61,7 +61,7 @@ const BOARDS = [
 // ── SETUP ────────────────────────────────────────────────────────────────────
 
 function setup() {
-  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const ss = getSpreadsheet();
 
   // ── Content sheet ──
   let content = ss.getSheetByName(SHEETS.CONTENT) || ss.insertSheet(SHEETS.CONTENT);
@@ -184,6 +184,15 @@ function setupTriggers() {
   // Monthly analytics — last Sunday of the month at 8am (runs weekly, only logs if end of month)
   ScriptApp.newTrigger('weeklyAnalytics')
     .timeBased().onWeekDay(ScriptApp.WeekDay.SUNDAY).atHour(8).create();
+
+  // Customer delivery — check for Pending rows every 5 minutes
+  ScriptApp.newTrigger('processPendingDeliveries')
+    .timeBased().everyMinutes(5).create();
+
+  // Customer delivery approval — fires when owner changes Status to "Approved"
+  ScriptApp.newTrigger('onEditDeliveries')
+    .forSpreadsheet(SpreadsheetApp.openById('1zIZa5OSUSLHFRWcYY59YdZZAjB5ng2uoBW1YNryEOVI'))
+    .onEdit().create();
 }
 
 // ── CUSTOM MENU ──────────────────────────────────────────────────────────────
@@ -199,13 +208,21 @@ function onOpen() {
     .addItem('List Uploaded Image URLs', 'listImageUrls')
     .addSeparator()
     .addItem('Run Weekly Analytics', 'weeklyAnalytics')
+    .addSeparator()
+    .addItem('Process Pending Deliveries', 'processPendingDeliveries')
     .addToUi();
 }
 
 // ── CONFIG HELPERS ────────────────────────────────────────────────────────────
 
+const SPREADSHEET_ID = '1zIZa5OSUSLHFRWcYY59YdZZAjB5ng2uoBW1YNryEOVI';
+
+function getSpreadsheet() {
+  return SpreadsheetApp.openById(SPREADSHEET_ID);
+}
+
 function getConfig(key) {
-  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(SHEETS.CONFIG);
+  const sheet = getSpreadsheet().getSheetByName(SHEETS.CONFIG);
   const data = sheet.getDataRange().getValues();
   for (let i = 1; i < data.length; i++) {
     if (data[i][0] === key) return data[i][1] ? String(data[i][1]).trim() : '';
@@ -214,7 +231,7 @@ function getConfig(key) {
 }
 
 function setConfig(key, value) {
-  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(SHEETS.CONFIG);
+  const sheet = getSpreadsheet().getSheetByName(SHEETS.CONFIG);
   const data = sheet.getDataRange().getValues();
   for (let i = 1; i < data.length; i++) {
     if (data[i][0] === key) { sheet.getRange(i + 1, 2).setValue(value); return; }
@@ -351,8 +368,8 @@ Include at least 4 pins that reference specific industries (hair salons, restaur
     else throw new Error('Could not parse Pinterest pins JSON: ' + e.message);
   }
 
-  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(SHEETS.CONTENT);
-  const canvaSheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(SHEETS.CANVA);
+  const sheet = getSpreadsheet().getSheetByName(SHEETS.CONTENT);
+  const canvaSheet = getSpreadsheet().getSheetByName(SHEETS.CANVA);
   const startDate = getNextMonday();
   const weekOf = Utilities.formatDate(startDate, Session.getScriptTimeZone(), 'yyyy-MM');
   const slotDays = [0, 2, 3, 5, 6]; // Mon, Wed, Thu, Sat, Sun
@@ -439,8 +456,8 @@ Voice: Direct, dry wit, professional. No exclamation marks unless truly earned. 
     else throw new Error('Could not parse Facebook posts JSON: ' + e.message);
   }
 
-  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(SHEETS.CONTENT);
-  const canvaSheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(SHEETS.CANVA);
+  const sheet = getSpreadsheet().getSheetByName(SHEETS.CONTENT);
+  const canvaSheet = getSpreadsheet().getSheetByName(SHEETS.CANVA);
   const startDate = getNextMonday();
   const monthOf = Utilities.formatDate(startDate, Session.getScriptTimeZone(), 'yyyy-MM');
   const now = new Date();
@@ -472,7 +489,7 @@ function generateBlogPosts() {
   Logger.log('Generating blog posts...');
 
   // Collect existing titles to avoid duplicates
-  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(SHEETS.CONTENT);
+  const sheet = getSpreadsheet().getSheetByName(SHEETS.CONTENT);
   const data = sheet.getDataRange().getValues();
   const existing = data.filter(r => r[COL.TYPE - 1] === 'Blog').map(r => r[COL.TITLE - 1]);
 
@@ -724,7 +741,7 @@ function onEdit(e) {
 
 // Hourly fallback — catches any Approved rows where onEdit may have missed
 function processApprovedRows() {
-  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(SHEETS.CONTENT);
+  const sheet = getSpreadsheet().getSheetByName(SHEETS.CONTENT);
   const data  = sheet.getDataRange().getValues();
   for (let i = 1; i < data.length; i++) {
     if (data[i][COL.STATUS - 1] === 'Approved' && !data[i][COL.PUB_AT - 1]) {
@@ -737,7 +754,7 @@ function processApprovedRows() {
 // ── PUBLISH DISPATCHER ────────────────────────────────────────────────────────
 
 function publishRow(rowNum) {
-  const sheet   = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(SHEETS.CONTENT);
+  const sheet   = getSpreadsheet().getSheetByName(SHEETS.CONTENT);
   const row     = sheet.getRange(rowNum, 1, 1, 15).getValues()[0];
   const type    = row[COL.TYPE     - 1];
   const pillar  = row[COL.PILLAR   - 1];
@@ -1123,7 +1140,7 @@ function weeklyAnalytics() {
   }
 
   // Write to Analytics sheet
-  const aSheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(SHEETS.ANALYTICS);
+  const aSheet = getSpreadsheet().getSheetByName(SHEETS.ANALYTICS);
   aSheet.appendRow([weekOf, '', pinImp, pinSaves, pinClicks, fbReach, fbEng, '', '']);
 
   // Claude strategy recommendation
@@ -1145,7 +1162,7 @@ Write a brief performance note (under 150 words):
 Be specific and practical. No fluff.`;
 
     const rec = callClaude(prompt, 400);
-    const sSheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(SHEETS.STRATEGY);
+    const sSheet = getSpreadsheet().getSheetByName(SHEETS.STRATEGY);
     sSheet.appendRow([weekOf, '', '', rec, '']);
   } catch(e) { Logger.log('Strategy rec failed: ' + e.message); }
 }
@@ -1153,8 +1170,8 @@ Be specific and practical. No fluff.`;
 // ── CLAUDE API ────────────────────────────────────────────────────────────────
 
 function callClaude(prompt, maxTokens) {
-  const key = getConfig('CLAUDE_API_KEY');
-  if (!key) throw new Error('CLAUDE_API_KEY missing from Config sheet.');
+  const key = PropertiesService.getScriptProperties().getProperty('CLAUDE_API_KEY') || getConfig('CLAUDE_API_KEY');
+  if (!key) throw new Error('CLAUDE_API_KEY missing. Add it to Script Properties in the Apps Script editor.');
 
   const res = UrlFetchApp.fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST',
@@ -1242,7 +1259,7 @@ const DCOL = {
 // ── SETUP ─────────────────────────────────────────────────────────────────────
 
 function setupDeliverySheet() {
-  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const ss = getSpreadsheet();
   let sheet = ss.getSheetByName(DELIVERIES_SHEET);
   if (!sheet) sheet = ss.insertSheet(DELIVERIES_SHEET);
   if (sheet.getLastRow() === 0) {
@@ -1269,7 +1286,7 @@ function setupDeliverySheet() {
 
     // Status dropdown
     const statusRule = SpreadsheetApp.newDataValidation()
-      .requireValueInList(['Pending', 'Generating', 'Delivered', 'Failed'], true).build();
+      .requireValueInList(['Pending', 'Generating', 'Ready for Review', 'Approved', 'Delivered', 'Failed'], true).build();
     sheet.getRange(2, DCOL.STATUS, 1000, 1).setDataValidation(statusRule);
 
     // Platform dropdowns
@@ -1285,17 +1302,37 @@ function setupDeliverySheet() {
 // ── TRIGGER: run from spreadsheet, with cursor in the customer's row ──────────
 
 function deliverSelectedRow() {
-  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(DELIVERIES_SHEET);
+  const sheet = getSpreadsheet().getSheetByName(DELIVERIES_SHEET);
   if (!sheet) { Logger.log('Run setupDeliverySheet() first.'); return; }
   const row = sheet.getActiveCell().getRow();
   if (row <= 1) { Logger.log('Select a data row (not the header).'); return; }
   processDelivery(row);
 }
 
+// ── AUTO TRIGGER: runs every 5 minutes, picks up any Pending rows ─────────────
+
+function processPendingDeliveries() {
+  const ss = SpreadsheetApp.openById('1zIZa5OSUSLHFRWcYY59YdZZAjB5ng2uoBW1YNryEOVI');
+  const sheet = ss.getSheetByName(DELIVERIES_SHEET);
+  if (!sheet) return;
+  const data = sheet.getDataRange().getValues();
+  for (var i = 1; i < data.length; i++) {
+    if (String(data[i][DCOL.STATUS - 1]).trim() === 'Pending') {
+      Logger.log('Found Pending row ' + (i + 1) + ' — processing...');
+      try {
+        processDelivery(i + 1);
+      } catch(e) {
+        Logger.log('Delivery failed for row ' + (i + 1) + ': ' + e.message);
+      }
+      Utilities.sleep(2000); // brief pause between deliveries
+    }
+  }
+}
+
 // ── CORE DELIVERY ─────────────────────────────────────────────────────────────
 
 function processDelivery(rowIndex) {
-  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const ss = SpreadsheetApp.openById('1zIZa5OSUSLHFRWcYY59YdZZAjB5ng2uoBW1YNryEOVI');
   const sheet = ss.getSheetByName(DELIVERIES_SHEET);
   const row = sheet.getRange(rowIndex, 1, 1, 17).getValues()[0];
 
@@ -1328,19 +1365,60 @@ function processDelivery(rowIndex) {
     Logger.log('Filling template doc...');
     const docUrl = fillCaptionTemplate_(data, captions);
 
-    Logger.log('Emailing customer: ' + data.email);
-    emailCaptionsToCustomer_(data, docUrl);
-
-    sheet.getRange(rowIndex, DCOL.STATUS).setValue('Delivered');
+    // Do NOT email the customer yet — owner must review the doc first.
+    // Change Status to "Approved" in the sheet to trigger delivery.
+    sheet.getRange(rowIndex, DCOL.STATUS).setValue('Ready for Review');
     sheet.getRange(rowIndex, DCOL.DOC_URL).setValue(docUrl);
-    sheet.getRange(rowIndex, DCOL.DELIVERED_AT).setValue(new Date());
-    Logger.log('Done. Doc: ' + docUrl);
+    Logger.log('Doc ready for review: ' + docUrl);
 
   } catch(e) {
     sheet.getRange(rowIndex, DCOL.STATUS).setValue('Failed');
     sheet.getRange(rowIndex, DCOL.ERROR).setValue(e.message);
     Logger.log('FAILED: ' + e.message);
     throw e;
+  }
+}
+
+// ── APPROVE & DELIVER: change Status to "Approved" to trigger this ─────────────
+
+function onEditDeliveries(e) {
+  if (!e) return;
+  const sheet = e.range.getSheet();
+  if (sheet.getName() !== DELIVERIES_SHEET) return;
+  if (e.range.getColumn() !== DCOL.STATUS) return;
+  if (e.value !== 'Approved') return;
+  const rowIndex = e.range.getRow();
+  if (rowIndex <= 1) return;
+  approveDelivery(rowIndex);
+}
+
+function approveDelivery(rowIndex) {
+  const ss = SpreadsheetApp.openById('1zIZa5OSUSLHFRWcYY59YdZZAjB5ng2uoBW1YNryEOVI');
+  const sheet = ss.getSheetByName(DELIVERIES_SHEET);
+  const row = sheet.getRange(rowIndex, 1, 1, 17).getValues()[0];
+
+  const data = {
+    name:    String(row[DCOL.NAME - 1]).trim(),
+    email:   String(row[DCOL.EMAIL - 1]).trim(),
+    business: String(row[DCOL.BUSINESS - 1]).trim()
+  };
+  const docUrl = String(row[DCOL.DOC_URL - 1]).trim();
+
+  if (!data.email || !docUrl) {
+    Logger.log('Row ' + rowIndex + ' is missing email or doc URL. Aborting.');
+    return;
+  }
+
+  try {
+    Logger.log('Sending captions to customer: ' + data.email);
+    emailCaptionsToCustomer_(data, docUrl);
+    sheet.getRange(rowIndex, DCOL.STATUS).setValue('Delivered');
+    sheet.getRange(rowIndex, DCOL.DELIVERED_AT).setValue(new Date());
+    Logger.log('Delivered to ' + data.email);
+  } catch(e) {
+    sheet.getRange(rowIndex, DCOL.STATUS).setValue('Failed');
+    sheet.getRange(rowIndex, DCOL.ERROR).setValue(e.message);
+    Logger.log('Delivery failed: ' + e.message);
   }
 }
 
