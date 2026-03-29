@@ -293,7 +293,7 @@ function generatePinterestPins() {
 
   const prompt = `You are a content strategist for The Content Drop (thecontentdrop.ca). The business sells custom social media captions to small business owners: 24 captions written for your specific business, delivered in 48 hours, $45 one-time. The customer fills out a 10-question survey about their brand and audience, a marketer generates and reviews the captions before delivery.
 
-Generate exactly 3 Pinterest pins for testing purposes.
+Generate exactly 20 Pinterest pins spread across 4 weeks of the month.
 
 Return ONLY a valid JSON array — no other text, no markdown, no code fences. Each object:
 {
@@ -306,8 +306,8 @@ Return ONLY a valid JSON array — no other text, no markdown, no code fences. E
   "description": "pin description 150-200 chars, naturally includes a search keyword, ends with thecontentdrop.ca",
   "pillar": one of ["Education", "Tip", "Industry", "Motivational", "Product", "Social Proof"],
   "board": one of ["content ideas for small businesses", "how to write social media captions", "social media tips for small businesses", "Done for you marketing for small businesses", "Marketing strategy for small businesses", "facebook marketing for small business", "Instagram marketing tips"],
-  "week": integer 1,
-  "slot": integer 1-3
+  "week": integer 1-4,
+  "slot": integer 1-5
 }
 
 The 6 fields form THREE pairs. Each pair is ONE complete sentence split in two for visual impact. Write each pair as a single sentence first, then split it.
@@ -403,7 +403,7 @@ function generateFacebookPosts() {
 
   const prompt = `You are a content strategist for The Content Drop (thecontentdrop.ca). Custom social media captions for small business owners: 24 captions, $45, 48 hours. Customer fills a survey, a marketer generates and reviews before delivery.
 
-Generate exactly 2 Facebook posts for testing purposes.
+Generate exactly 16 Facebook posts spread across 4 weeks of the month (4 posts per week).
 
 Return ONLY a valid JSON array — no other text, no markdown, no code fences. Each object:
 {
@@ -411,7 +411,7 @@ Return ONLY a valid JSON array — no other text, no markdown, no code fences. E
   "body": "Full Facebook post. 60-100 words MAXIMUM. Hook first line. Line breaks for readability. Conversational, not salesy. Ends with question or CTA.",
   "cta": "call to action text only",
   "pillar": one of ["Education", "Tip", "Industry", "Motivational", "Product", "Social Proof"],
-  "week": integer 1,
+  "week": integer 1-4,
   "day": integer 1-7 (1=Mon, 2=Tue, 3=Wed, 4=Thu, 5=Fri, 6=Sat, 7=Sun),
   "headline1": "FOR TIP POSTS ONLY — first line of the graphic headline (e.g. 'Your audience has seen your post')",
   "headline2": "FOR TIP POSTS ONLY — short italic accent word or phrase (e.g. 'once.')",
@@ -423,7 +423,7 @@ Return ONLY a valid JSON array — no other text, no markdown, no code fences. E
 
 For non-Tip posts, set headline1, headline2, supporting1, supporting2, punchline1, punchline2 to empty strings.
 
-For this test generate 2 posts: one Tip post (day 4, Thursday) and one Education post (day 1, Monday). Both in week 1.
+Post on Mon/Tue/Thu/Sat each week. Include 1 Tip post per week (use Thursday). Vary pillars across the month.
 
 The Tip post uses a fixed graphic template with exactly 6 fields. Write all 6 as one cohesive piece of copy — they must work together as a single flowing thought, not 6 separate sentences. The structure is:
 
@@ -446,7 +446,7 @@ Write copy where the insight builds across all 6 lines and punchline2 is the pay
 
 Voice: Direct, dry wit, professional. No exclamation marks unless truly earned. Sounds like a real marketer, not a cheerful AI assistant.`;
 
-  const response = callClaude(prompt, 4000);
+  const response = callClaude(prompt, 8000);
   let posts;
   try {
     posts = JSON.parse(response);
